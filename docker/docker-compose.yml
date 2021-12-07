@@ -23,14 +23,12 @@ services:
     depends_on:
       - php
     ports:
-      - "80:80"
+      - "81:80"
   db:
-    image: mysql
     container_name: "j2b_db"
+    build:
+      context: ./mysql
     restart: always
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MYSQL_DATABASE: "j2b"
     volumes:
       - db-data:/var/lib/mysql
     networks:
