@@ -1,6 +1,18 @@
 version: '3'
 
 services:
+  node:
+    container_name: "j2b_node"
+    restart: always
+    build:
+      context: ../
+      dockerfile:
+    command:
+      - npm start
+    volumes:
+      - ${NODE_FOLDER}:${NODE_DOCKER_FOLDER}
+      - ${NODE_DOCKER_FOLDER}/node_modules:${NODE_DOCKER_FOLDER}/node_modules
+
   php:
     container_name: "j2b_php"
     restart: always
