@@ -1,6 +1,20 @@
 version: '3'
 
 services:
+  node:
+    container_name: "j2b_node"
+    command: npm start
+    build:
+      context: ${NODE_FOLDER}
+    volumes:
+      - ${NODE_FOLDER}:/app/
+      - /app/node_modules
+    depends_on:
+    - db
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      PORT: $NODE_DOCKER_PORT
   php:
     container_name: "j2b_php"
     restart: always
@@ -31,6 +45,7 @@ services:
     restart: always
     volumes:
       - db-data:/var/lib/mysql
+      - ./mysql/scripts/:/docker-entrypoint-initdb.d
     networks:
       - dev
   phpmyadmin:
