@@ -1,6 +1,0 @@
-2021/12/06 19:29:03 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/nginx.conf:33
-2021/12/06 19:29:25 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/nginx.conf:33
-2021/12/06 19:38:47 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/nginx.conf:33
-2021/12/06 19:39:10 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/nginx.conf:33
-2021/12/06 19:40:21 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/nginx.conf:33
-2021/12/06 19:41:19 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/nginx.conf:33
