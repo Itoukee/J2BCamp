@@ -11,6 +11,8 @@ body
     width: 100vw;
     height: 100vh;
 
+    background-attachment: fixed;
+    overscroll-behavior-y: none;
     background-image: url("../images/background_image.png");
     background-size: 100% 100%;
 
