@@ -16,6 +16,7 @@ app.use((err, req, resp, next) => {
         next(err)
     }
 })
+
 app.get("/", (req, res) => {
     res.json({"data": "lol"})
 })
