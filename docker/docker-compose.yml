@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   node:
@@ -10,7 +10,7 @@ services:
       - ${NODE_FOLDER}:/app/
       - /app/node_modules
     depends_on:
-    - db
+      - db
     ports:
       - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
     environment:
@@ -42,6 +42,10 @@ services:
       - php
     ports:
       - "81:80"
+    networks:
+      - dev
+    links:
+      - php
   db:
     container_name: "j2b_db"
     build:
@@ -68,5 +72,3 @@ networks:
   dev:
 volumes:
   db-data:
-
-docker-compose exec php php bin/console make:migration
