@@ -25,6 +25,10 @@ services:
       - APP_SECRET=${APP_SECRET}
     volumes:
       - ${APP_FOLDER}:/var/www
+    networks:
+      - dev
+    links:
+      - db
   nginx:
     container_name: "j2b_nginx"
     restart: always
