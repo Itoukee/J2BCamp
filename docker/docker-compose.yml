@@ -3,9 +3,11 @@ version: '3'
 services:
   node:
     container_name: "j2b_node"
+    restart: always
     command: npm start
     build:
-      context: ${NODE_FOLDER}
+      context: ../node
+      dockerfile: ../docker/node/Dockerfile
     volumes:
       - ${NODE_FOLDER}:/app/
       - /app/node_modules
