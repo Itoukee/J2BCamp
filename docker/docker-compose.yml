@@ -69,3 +69,4 @@ networks:
 volumes:
   db-data:
 
+docker-compose exec php php bin/console make:migration
