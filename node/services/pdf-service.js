@@ -10,7 +10,7 @@ const pdf_options = {
         top: "40px",
         bottom: "100px"
     },
-    printBackground: true,
+    printBackground:true,
     path: 'invoice.pdf'
 }
 handlebars.registerHelper("log", function (str) {
@@ -26,16 +26,21 @@ function  compileTemplate(data, template_name) {
 
 async function genPdfFromHtml(html) {
     try{
-        console.log(process.env.CHROME_BIN)
-        // const browser = await puppeteer.launch({
-        //     args: ["--no-sandbox",'--headless'],
-        // })
-        // const page = await browser.newPage();
-        // await page.goto(`data:text/html;charset=UTF-8,${html}`,{
-        //     waitUntil: 'networkidle0'
-        // })
-        // await page.pdf(pdf_options)
-        // await browser.close()
+        const browser = await puppeteer.launch({
+
+            args: [
+                '--headless',
+                '--no-sandbox',
+                '--disable-setuid-sandbox'
+            ]
+        })
+        const page = await browser.newPage();
+        await page.emulateMediaType('screen');
+        await page.goto(`data:text/html;charset=UTF-8,${html}`,{
+            waitUntil: 'networkidle0'
+        })
+        await page.pdf(pdf_options)
+        await browser.close()
         console.log("created pdf")
     }catch (err){
         console.log("error:",err)

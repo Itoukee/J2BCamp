@@ -1,8 +1,5 @@
-FROM zenika/alpine-chrome
+FROM zenato/puppeteer
 USER root
-ENV CHROME_BIN="/usr/bin/chromium-browser"
-FROM node:alpine
-RUN apk add --no-cache nss
 WORKDIR /usr/app
 COPY node/package.json /usr/app
 RUN npm install

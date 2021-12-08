@@ -8,10 +8,10 @@ const {validate} = new Validator();
 
 router.get('/bill', validate({body: bill}), (req, res) => {
     let html = compileTemplate(req.body, "bill.hbs")
-    // genPdfFromHtml(html)
-    //     .then(r => res.json({"data": "pdf done"}))
-    //     .catch(e => res.json({"data": e}))
-    res.json({"data":"lo"})
+    genPdfFromHtml(html)
+        .then(r => res.json({"data": "pdf done"}))
+        .catch(e => res.json({"data": "error"}))
+    // res.json({"data":"lo"})
 
 });
 
