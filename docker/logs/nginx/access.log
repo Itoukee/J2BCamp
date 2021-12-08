@@ -15,3 +15,8 @@
 172.19.0.1 - - [07/Dec/2021:08:40:34 +0000] "GET /_wdt/b48f68 HTTP/1.1" 200 15707 "http://localhost:81/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
 172.19.0.1 - - [07/Dec/2021:08:40:34 +0000] "GET /favicon.ico HTTP/1.1" 404 274828 "http://localhost:81/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
 172.19.0.1 - - [07/Dec/2021:08:41:50 +0000] "GET /_profiler/b48f68?panel=logger HTTP/1.1" 200 695758 "http://localhost:81/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+172.18.0.1 - - [07/Dec/2021:09:51:54 +0000] "GET / HTTP/1.1" 404 88306 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+172.18.0.1 - - [07/Dec/2021:09:51:55 +0000] "GET /_wdt/e198e9 HTTP/1.1" 200 15708 "http://localhost:81/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+172.18.0.1 - - [07/Dec/2021:09:51:55 +0000] "GET /favicon.ico HTTP/1.1" 404 274820 "http://localhost:81/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+172.18.0.1 - - [07/Dec/2021:10:09:16 +0000] "GET / HTTP/1.1" 404 88322 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+172.18.0.1 - - [07/Dec/2021:10:09:16 +0000] "GET /_wdt/5180a3 HTTP/1.1" 200 15708 "http://localhost:81/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
