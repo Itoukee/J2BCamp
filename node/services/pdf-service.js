@@ -26,16 +26,16 @@ function compileTemplate(data, template_name) {
 
 async function genPdfFromHtml(html) {
     try{
-        const browser = await puppeteer.launch({
-            args: ["--no-sandbox"],
-            headless: true
-        })
-        const page = await browser.newPage();
-        await page.goto(`data:text/html;charset=UTF-8,${html}`,{
-            waitUntil: 'networkidle0'
-        })
-        await page.pdf(pdf_options)
-        await browser.close()
+        console.log(process.env.CHROME_BIN)
+        // const browser = await puppeteer.launch({
+        //     args: ["--no-sandbox",'--headless'],
+        // })
+        // const page = await browser.newPage();
+        // await page.goto(`data:text/html;charset=UTF-8,${html}`,{
+        //     waitUntil: 'networkidle0'
+        // })
+        // await page.pdf(pdf_options)
+        // await browser.close()
         console.log("created pdf")
     }catch (err){
         console.log("error:",err)
