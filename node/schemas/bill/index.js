@@ -41,7 +41,7 @@ const billSchema = {
         },
         "client_infos": {
             type: "object",
-            required: ["business_name","address","city"]
+            required: ["business_name","address","city"],
             properties: {
                 "business_name": {
                     type: "string",
