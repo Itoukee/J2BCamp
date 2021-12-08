@@ -13,17 +13,16 @@ class ApiController extends AbstractController
     #[Route('/api', name: 'api')]
     public function index(): Response
     {
-        $this->apiCall();
         return $this->render('api/index.html.twig', [
             'controller_name' => 'ApiController',
         ]);
-
     }
     public function __construct(HttpClientInterface $client)
     {
         $this->client = $client;
     }
-    public function apiCall(array $start, array $end){
+    public function apiCall(array $start, array $end)
+    {
         $response = $this->client->request(
             'GET',
             "https://api.tomtom.com/routing/1/calculateRoute/${start[0]},${start[1]}:${end[0]},${end[1]}/json?&key=93QPGYDZ5RHyBkovgCLGwwl5QKroBF9U"
