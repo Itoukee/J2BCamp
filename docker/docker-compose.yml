@@ -3,16 +3,15 @@ version: '3'
 services:
   node:
     container_name: "j2b_node"
-    restart: always
-    command: npm start
+    command: npm run start
     build:
-      context: ../node
-      dockerfile: ../docker/node/Dockerfile
+      context: ../
+      dockerfile: node/Dockerfile
     volumes:
-      - ${NODE_FOLDER}:/app/
+      - ../node:/usr/app
       - /app/node_modules
     depends_on:
-    - db
+      - db
     ports:
       - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
     environment:
@@ -68,7 +67,8 @@ services:
     networks:
       - dev
 networks:
-  dev:
+  dev: null
 volumes:
   db-data:
 
+    null

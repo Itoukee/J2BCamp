@@ -17,7 +17,7 @@ handlebars.registerHelper("log", function (str) {
     console.log(str)
 })
 
-function compileTemplate(data, template_name) {
+function  compileTemplate(data, template_name) {
     let full_path = path.join(process.cwd(), VIEWS_FOLDER, template_name)
     let templateRaw = fs.readFileSync(full_path, "utf-8");
     let template = handlebars.compile(templateRaw);
