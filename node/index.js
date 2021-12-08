@@ -1,6 +1,7 @@
 'use strict'
 
 const express = require('express')
+const {checkValidity, getPriceFromKm} = require("./services/package-service")
 const router = require("./routes")
 const {ValidationError} = require("express-json-validator-middleware");
 const port = process.env.PORT
@@ -18,7 +19,10 @@ app.use((err, req, resp, next) => {
 })
 
 app.get("/", (req, res) => {
-    res.json({"data": "lol"})
+    // res.json({"data": "lol"})
+    let x=getPriceFromKm(900)
+    res.json({"data":x})
+
 })
 app.listen(port, function () {
     console.log(`app listen ${port}`)

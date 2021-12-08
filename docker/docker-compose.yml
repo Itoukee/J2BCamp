@@ -40,6 +40,8 @@ services:
       - ./logs:/var/log
     depends_on:
       - php
+    networks:
+      - dev
     ports:
       - "81:80"
   db:

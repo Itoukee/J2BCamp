@@ -4,4 +4,4 @@ function genFromTemplate(data, template) {
 
 }
 
-module.exports = {genBill}
+module.exports = {genFromTemplate}
