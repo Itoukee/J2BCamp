@@ -29,6 +29,18 @@ body
     border: 2px solid black; */
 }
 
+.middle
+{
+    display: flex;
+    flex-direction: column;
+
+    align-self: center;
+    width: 80%;
+    height: 100%;
+
+    background-color: rgba(255,255,255,0.3);
+}
+
 .child1, .child2, .child3
 {
     text-align: center;
