@@ -22,4 +22,4 @@ function getPriceFromKm(km) {
     return final
 }
 
-module.exports = {checkValidity, kilometersPackage,getPriceFromKm}
+module.exports = {getPriceFromKm}

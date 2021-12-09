@@ -1,6 +1,9 @@
 const handlebars = require("handlebars")
+const helpers = require("../helpers/hbs_helper")
 const puppeteer = require("puppeteer")
 const fs = require("fs");
+require('dayjs/locale/fr')
+const dayjs = require("dayjs")
 const path = require("path");
 const VIEWS_FOLDER = "views"
 const pdf_options = {
@@ -9,18 +12,16 @@ const pdf_options = {
     margin: {
         top: "70px",
         bottom: "70px",
-        right:"50px",
-        left:"50px"
+        right: "50px",
+        left: "50px"
     },
-    preferCSSPageSize:true,
-    printBackground:true,
+    preferCSSPageSize: true,
+    printBackground: true,
     path: 'invoice.pdf'
 }
-handlebars.registerHelper("log", function (str) {
-    console.log(str)
-})
-
-function  compileTemplate(data, template_name) {
+dayjs.locale("fr")
+handlebars.registerHelper(helpers);
+function compileTemplate(data, template_name) {
     let full_path = path.join(process.cwd(), VIEWS_FOLDER, template_name)
     let templateRaw = fs.readFileSync(full_path, "utf-8");
     let template = handlebars.compile(templateRaw);
@@ -28,7 +29,7 @@ function  compileTemplate(data, template_name) {
 }
 
 async function genPdfFromHtml(html) {
-    try{
+    try {
         const browser = await puppeteer.launch({
 
             args: [
@@ -40,14 +41,14 @@ async function genPdfFromHtml(html) {
         })
         const page = await browser.newPage();
         await page.emulateMediaType('screen');
-        await page.goto(`data:text/html;charset=UTF-8,${html}`,{
+        await page.goto(`data:text/html;charset=UTF-8,${html}`, {
             waitUntil: 'networkidle2'
         })
         await page.pdf(pdf_options)
         await browser.close()
         console.log("created pdf")
-    }catch (err){
-        console.log("error:",err)
+    } catch (err) {
+        console.log("error:", err)
     }
 
 }

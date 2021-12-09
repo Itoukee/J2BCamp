@@ -1,3 +1,5 @@
+FROM node:alpine
+ENV TZ=Europe/Paris
 FROM zenato/puppeteer
 USER root
 WORKDIR /usr/app

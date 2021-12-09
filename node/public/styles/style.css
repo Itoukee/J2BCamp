@@ -1,20 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto&display=swap');
 
-
-#header-wrapper{
-    display: flex;
-    justify-content: space-between;
-}
-#j2b_logo{
-    width: 180px;
-    height: auto;
-}
-a{
+a {
     color: #0a0a0a;
     text-decoration: none;
 }
-p a{
+
+p, a {
     margin: 0px;
     padding: 0px;
-    font-family: "PT Sans";
+    font-family: "PT Sans", serif;
+    overflow-wrap: break-word;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 50px;
+}
+#header-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+#infos-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+#main-wrapper{
+    width: 100%;
+    height: 100%;
+}
+#j2b_logo {
+    width: 180px;
+    height: auto;
+}
+
+#comedian_infos {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+#client_infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#ids-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+#curr-date{
+    /*width: 100%;*/
+    text-align: center;
+    font-size: 0.8rem;
+}
+table{
+
+    border-collapse: collapse;
+}
+thead th {
+
+    padding: 10px;
+    background-color: #f3ae16;
+    color: white;
+    text-align: left;
+    font-family: "Roboto";
+    font-size: 0.9rem;
+}
+tbody th{
+    border-collapse: collapse;
+    box-sizing: border-box;
+    background-color: blanchedalmond;
+    font-family: "Roboto";
+    font-weight: normal;
+    font-size: 1rem;
+    text-align: justify;
+    border: 2px solid #f3ae16;
+}
+.nbr{
+    text-align: end;
 }

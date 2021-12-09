@@ -6,24 +6,105 @@
 </head>
 <body>
 <div id="header-wrapper">
-    <div id="comedian_infos">
-        <img src="http://localhost:4242/images/J2B_logo.png" alt="logo" id="j2b_logo"/>
+    <div id="infos-wrapper">
+        <div id="comedian_infos">
+            <img src="http://localhost:4242/images/J2B_logo.png" alt="logo" id="j2b_logo"/>
 
-        <p>{{comedian_infos.address}}</p>
-        <p>{{comedian_infos.city}}</p>
-        <a href="mailto:{{comedian_infos.email}}">{{comedian_infos.email}}</a>
-        <p>{{comedian_infos.phone}}</p>
-        <p>N° TVA Intra. {{agency_infos.tva_intra}}</p>
+            <p>{{comedian_infos.address}}</p>
+            <p>{{comedian_infos.city}}</p>
+            <a href="mailto:{{comedian_infos.email}}">{{comedian_infos.email}}</a>
+            <p>{{comedian_infos.phone}}</p>
+            <p>N° TVA Intra. {{agency_infos.tva_intra}}</p>
+        </div>
+        <div id="client_infos">
+            <div id="client_coords">
+                <p>{{client_infos.business_name}}</p>
+                <p>{{client_infos.address}}</p>
+                <p>{{client_infos.region_num}} {{client_infos.city}}</p>
+
+            </div>
+            <div id="client_ids">
+                <p>N° d’affaire: {{bill_ids.case_number}}</p>
+                <p>N° de stage: {{bill_ids.traineeship_number}}</p>
+                <p>N° de BDC: {{handle_opt bill_ids.bdc_number}}</p>
+            </div>
+        </div>
+
     </div>
-    <div id="client_infos">
-        <p>{{client_infos.business_name}}</p>
-        <p>{{client_infos.address}}</p>
-        <p>{{client_infos.city}}</p>
-
+    <div id="ids-wrapper">
+        <p>Numéro de Facture: {{bill_ids.bill_id}}</p>
+        <p>Réalisé le: <span id="curr-date">{{upper (curr_date "DD-MM-YYYY")}}</span></p>
+    </div>
+    <div id="object-wrapper">
+        <p>{{upper client_infos.business_name}} - {{upper client_infos.city}} - Affaire n°{{bill_ids.case_number}}
+            - {{format_date_full (to_date training_infos.training_date)}} - {{comedian_infos.name}}</p>
     </div>
 </div>
 
+<div id="main-wrapper">
+    <table>
+        <thead>
+        <tr>
+            <th>
+                Désignation
+            </th>
+            <th>
+                Prix unitaire HT
+            </th>
+            <th>
+                Nombre (Unité : Jour)
+            </th>
+            <th>
+                TVA
+            </th>
+            <th>
+                Montant HT
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>
+                {{upper client_infos.business_name}} - {{upper client_infos.city}} - Affaire n°{{bill_ids.case_number}}
+                - {{format_date_full (to_date training_infos.training_date)}}
+            </th>
+            <th class="nbr">
+                {{training_infos.price}} €
+            </th>
+            <th class="nbr">
+                {{training_infos.days}}
+            </th>
+            <th class="nbr">
+                20%
+            </th>
+            <th class="nbr">
+                {{mult training_infos.days training_infos.price}}
+            </th>
+        </tr>
+        <tr>
+            <th>
+                FORFAIT FRAIS ({{training_infos.days}} {{handle_day training_infos.days }} -
+                KILOMETRAGE AR {{training_infos.km}} km)
+            </th>
+            <th class="nbr">
+                {{handle_package training_infos.km}} €
+            </th>
+            <th class="nbr">
+                {{training_infos.days}}
+            </th>
+            <th class="nbr">
+                20%
+            </th>
+            <th class="nbr">
+                {{handle_package training_infos.km}}
+            </th>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
+<footer>
 
+</footer>
 </body>
 </html>
