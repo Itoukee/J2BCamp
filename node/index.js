@@ -18,10 +18,6 @@ app.use((err, req, resp, next) => {
         next(err);
     }
 });
-app.get("/", (req, res) => {
-    let x = getPriceFromKm(900);
-    res.json({data: x});
-});
 app.listen(port, function () {
     console.log(`app listen ${port}`);
 });

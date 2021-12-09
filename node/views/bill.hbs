@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="http://localhost:4242/styles/style.css">
 </head>
 <body>
+{{#if bill_status.paid}}
+    <div id="overlay">
+        <img src="http://localhost:4242/images/paid.png">
+    </div>
+{{/if}}
+</div>
 <div id="header-wrapper">
     <div id="infos-wrapper">
         <div id="comedian_infos">

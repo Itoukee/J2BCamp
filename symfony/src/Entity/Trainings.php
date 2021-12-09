@@ -20,37 +20,37 @@ class Trainings
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $name;
+    private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $name_comedian;
+    private ?string $name_comedian;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $price;
+    private ?int $price;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $duration;
+    private ?int $duration;
 
     /**
      * @ORM\Column(type="string", length=300, nullable=true)
      */
-    private $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adress;
+    private ?string $adress;
 
     /**
      * @ORM\Column(type="datetime_immutable")
      */
-    private $date_begin;
+    private ?\DateTimeImmutable $date_begin;
 
     public function getId(): ?int
     {

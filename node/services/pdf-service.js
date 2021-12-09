@@ -9,12 +9,6 @@ const VIEWS_FOLDER = "views"
 const pdf_options = {
     format: 'a4',
     displayHeaderFooter: false,
-    margin: {
-        top: "70px",
-        bottom: "70px",
-        right: "50px",
-        left: "50px"
-    },
     preferCSSPageSize: true,
     printBackground: true,
     path: 'invoice.pdf'

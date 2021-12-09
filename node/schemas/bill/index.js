@@ -1,7 +1,16 @@
 const billSchema = {
     type: "object",
-    required: ["bill_ids", "training_infos", "client_infos","comedian_infos","agency_infos"],
+    required: ["bill_status", "bill_ids", "training_infos", "client_infos", "comedian_infos", "agency_infos"],
     properties: {
+        "bill_status": {
+            type: "object",
+            required: ["paid"],
+            properties: {
+                "paid": {
+                    type: "boolean"
+                }
+            }
+        },
         "bill_ids": {
             type: "object",
             required: ["bill_id", "case_number", "traineeship_number"],
@@ -27,7 +36,7 @@ const billSchema = {
         },
         "training_infos": {
             type: "object",
-            required: ["training_date", "price", "days","km"],
+            required: ["training_date", "price", "days", "km"],
             properties: {
                 "training_date": {
                     type: "string",
@@ -41,9 +50,9 @@ const billSchema = {
                     type: "integer",
                     minimum: 1
                 },
-                "km":{
-                    type:"integer",
-                    minimum:1
+                "km": {
+                    type: "integer",
+                    minimum: 1
                 }
 
 
@@ -51,7 +60,7 @@ const billSchema = {
         },
         "client_infos": {
             type: "object",
-            required: ["business_name","address","city"],
+            required: ["business_name", "address", "city"],
             properties: {
                 "business_name": {
                     type: "string",
@@ -67,10 +76,10 @@ const billSchema = {
         },
         "comedian_infos": {
             type: "object",
-            required: ["name","address","city","email","phone"],
+            required: ["name", "address", "city", "email", "phone"],
             properties: {
-                "name":{
-                    type:"string"
+                "name": {
+                    type: "string"
                 },
                 "address": {
                     type: "string",
@@ -84,7 +93,7 @@ const billSchema = {
                 },
                 "phone": {
                     type: "string",
-                    pattern:"([0-9]{2} ?){5}"
+                    pattern: "([0-9]{2} ?){5}"
                 },
 
             }
@@ -95,7 +104,7 @@ const billSchema = {
             properties: {
                 "tva_intra": {
                     type: "string",
-                    pattern:"^FR[0-9]{11}"
+                    pattern: "^FR[0-9]{11}"
                 },
 
 
