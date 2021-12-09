@@ -37,12 +37,12 @@
     </div>
     <div id="object-wrapper">
         <p>{{upper client_infos.business_name}} - {{upper client_infos.city}} - Affaire n°{{bill_ids.case_number}}
-            - {{format_date_full (to_date training_infos.training_date)}} - {{comedian_infos.name}}</p>
+            - {{upper (format_date_full (to_date training_infos.training_date))}} - {{comedian_infos.name}}</p>
     </div>
 </div>
 
 <div id="main-wrapper">
-    <table>
+    <table id="assignement">
         <thead>
         <tr>
             <th>
@@ -75,7 +75,7 @@
                 {{training_infos.days}}
             </th>
             <th class="nbr">
-                20%
+                {{training_infos.tva}}%
             </th>
             <th class="nbr">
                 {{mult training_infos.days training_infos.price}}
@@ -93,13 +93,52 @@
                 {{training_infos.days}}
             </th>
             <th class="nbr">
-                20%
+                {{training_infos.tva}}%
             </th>
             <th class="nbr">
                 {{handle_package training_infos.km}}
             </th>
         </tr>
         </tbody>
+    </table>
+    <table id="total">
+        <tbody>
+        <tr>
+            <div>
+                <td rowspan="3" id="law-desc">En cas de retard de paiement, seront exigibles, conformément à
+                    l'article L 441-6 du code de commerce, une indemnité calculée sur
+                    la base de trois fois le taux de l'intérêt légal en vigueur ainsi qu'une
+                    indemnité forfaitaire pour frais de recouvrement de 40€.
+                </td>
+                <th>
+                    TOTAL HT
+                </th>
+                <td>
+                    {{handle_total_ht training_infos}} €
+                </td>
+            </div>
+
+
+        </tr>
+        <tr>
+            <th>
+                TVA {{training_infos.tva}}%
+            </th>
+            <td>
+                {{get_tva training_infos}} €
+            </td>
+        </tr>
+        <tr>
+            <th>
+                TOTAL TTC {{training_infos.tva}}%
+            </th>
+            <td>
+                {{handle_total_tva training_infos}} €
+            </td>
+        </tr>
+        </tbody>
+
+
     </table>
 </div>
 

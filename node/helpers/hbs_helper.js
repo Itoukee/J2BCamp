@@ -27,7 +27,18 @@ function handle_price(price){
 function handle_package(km) {
     return package.getPriceFromKm(km)
 }
+function get_tva(infos){
 
+    return (infos.tva.toFixed(1)/100)*handle_total_ht(infos)
+}
+function handle_total_ht(infos){
+    return (infos.price * infos.days) + handle_package(infos.km)
+
+}
+function handle_total_tva(infos){
+    const ht = handle_total_ht(infos)
+    return ht + get_tva(infos)
+}
 function upper(string) {
     return string.toString().toUpperCase()
 }
@@ -41,6 +52,18 @@ function mult(a, b) {
 }
 
 module.exports = {
-    format_date_full, to_date, curr_date, handle_opt, upper, lower, mult, handle_day,handle_package
+    format_date_full,
+    to_date,
+    curr_date,
+    handle_opt,
+    upper,
+    lower,
+    mult,
+    handle_day,
+    handle_package,
+    handle_total_tva,
+    handle_total_ht,
+    get_tva,
+    handle_price
 }
 

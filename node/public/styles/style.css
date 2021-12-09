@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@300&display=swap');
+
 
 a {
     color: #0a0a0a;
@@ -6,22 +7,25 @@ a {
 }
 
 p, a {
-    margin: 0px;
-    padding: 0px;
-    font-family: "PT Sans", serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans";
     overflow-wrap: break-word;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     gap: 50px;
 }
+
 #header-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 0.9rem;
     gap: 50px;
 }
 
@@ -29,10 +33,16 @@ body{
     display: flex;
     justify-content: space-between;
 }
-#main-wrapper{
+
+#main-wrapper {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 250px;
 }
+
 #j2b_logo {
     width: 180px;
     height: auto;
@@ -49,20 +59,24 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
 }
-#ids-wrapper{
+
+#ids-wrapper {
     display: flex;
     justify-content: space-between;
 }
-#curr-date{
+
+#curr-date {
     /*width: 100%;*/
     text-align: center;
     font-size: 0.8rem;
 }
-table{
+
+table {
 
     border-collapse: collapse;
 }
-thead th {
+
+#assignement thead th {
 
     padding: 10px;
     background-color: #f3ae16;
@@ -70,8 +84,10 @@ thead th {
     text-align: left;
     font-family: "Roboto";
     font-size: 0.9rem;
+    font-weight: bold;
 }
-tbody th{
+
+#assignement tbody th {
     border-collapse: collapse;
     box-sizing: border-box;
     background-color: blanchedalmond;
@@ -81,6 +97,36 @@ tbody th{
     text-align: justify;
     border: 2px solid #f3ae16;
 }
-.nbr{
+
+.nbr {
     text-align: end;
+    border-collapse: collapse;
+}
+
+#total{
+    display: flex;
+    border: 1px solid black;
+    font-family: "Roboto";
+}
+
+#total th{
+    text-align: center;
+
+    font-size: 1.2rem;
+}
+#total td,#total th{
+    border: 2px solid black;
+}
+#total th {
+    width: 10%;
+}
+#total td {
+    width: 10%;
+}
+
+#law-desc {
+    width: 80%;
+    margin: 0;
+    font-size: 0.7rem;
+    text-align: left;
 }
