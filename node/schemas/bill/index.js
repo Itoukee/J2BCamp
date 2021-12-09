@@ -1,6 +1,6 @@
 const billSchema = {
     type: "object",
-    required: ["bill_ids", "bill_infos", "client_infos"],
+    required: ["bill_ids", "bill_infos", "client_infos","comedian_infos","agency_infos"],
     properties: {
         "bill_ids": {
             type: "object",
@@ -27,14 +27,11 @@ const billSchema = {
         },
         "bill_infos": {
             type: "object",
-            required: ["training_date", "comedian_name"],
+            required: ["training_date"],
             properties: {
                 "training_date": {
                     type: "string",
                     format: "date"
-                },
-                "comedian_name": {
-                    type: "string",
                 },
 
             }
@@ -54,7 +51,41 @@ const billSchema = {
                 },
 
             }
+        },
+        "comedian_infos": {
+            type: "object",
+            required: ["address","city","email","phone"],
+            properties: {
+                "address": {
+                    type: "string",
+                },
+                "city": {
+                    type: "string",
+                },
+                "email": {
+                    type: "string",
+                    format: "email"
+                },
+                "phone": {
+                    type: "string",
+                    pattern:"([0-9]{2} ?){5}"
+                },
+
+            }
+        },
+        "agency_infos": {
+            type: "object",
+            required: ["tva_intra"],
+            properties: {
+                "tva_intra": {
+                    type: "string",
+                    pattern:"^FR[0-9]{11}"
+                },
+
+
+            }
         }
+
 
     }
 

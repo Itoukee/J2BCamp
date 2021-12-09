@@ -7,9 +7,12 @@ const pdf_options = {
     format: 'a4',
     displayHeaderFooter: false,
     margin: {
-        top: "40px",
-        bottom: "100px"
+        top: "70px",
+        bottom: "70px",
+        right:"50px",
+        left:"50px"
     },
+    preferCSSPageSize:true,
     printBackground:true,
     path: 'invoice.pdf'
 }
@@ -31,13 +34,14 @@ async function genPdfFromHtml(html) {
             args: [
                 '--headless',
                 '--no-sandbox',
-                '--disable-setuid-sandbox'
+                '--disable-setuid-sandbox',
+                '--disable-web-security'
             ]
         })
         const page = await browser.newPage();
         await page.emulateMediaType('screen');
         await page.goto(`data:text/html;charset=UTF-8,${html}`,{
-            waitUntil: 'networkidle0'
+            waitUntil: 'networkidle2'
         })
         await page.pdf(pdf_options)
         await browser.close()

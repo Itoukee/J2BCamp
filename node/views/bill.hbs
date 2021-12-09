@@ -5,8 +5,25 @@
     <link rel="stylesheet" href="http://localhost:4242/styles/style.css">
 </head>
 <body>
-<img src="http://localhost:4242/images/J2B_logo.png" alt="logo"/>
-<h1>Invoice</h1>
-<p>{{bill_ids.bill_id}}</p>
+<div id="header-wrapper">
+    <div id="comedian_infos">
+        <img src="http://localhost:4242/images/J2B_logo.png" alt="logo" id="j2b_logo"/>
+
+        <p>{{comedian_infos.address}}</p>
+        <p>{{comedian_infos.city}}</p>
+        <a href="mailto:{{comedian_infos.email}}">{{comedian_infos.email}}</a>
+        <p>{{comedian_infos.phone}}</p>
+        <p>N° TVA Intra. {{agency_infos.tva_intra}}</p>
+    </div>
+    <div id="client_infos">
+        <p>{{client_infos.business_name}}</p>
+        <p>{{client_infos.address}}</p>
+        <p>{{client_infos.city}}</p>
+
+    </div>
+</div>
+
+
+
 </body>
 </html>

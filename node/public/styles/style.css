@@ -1,3 +1,20 @@
-body{
-    background-color: #5eb5e0;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto&display=swap');
+
+
+#header-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+#j2b_logo{
+    width: 180px;
+    height: auto;
+}
+a{
+    color: #0a0a0a;
+    text-decoration: none;
+}
+p a{
+    margin: 0px;
+    padding: 0px;
+    font-family: "PT Sans";
 }
