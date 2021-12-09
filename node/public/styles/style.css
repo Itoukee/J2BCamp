@@ -9,7 +9,7 @@ a {
 p, a {
     margin: 0;
     padding: 0;
-    font-family: "Noto Sans";
+    font-family: "Roboto";
     overflow-wrap: break-word;
 }
 
@@ -40,7 +40,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 250px;
+    gap: 100px;
 }
 
 #j2b_logo {
@@ -122,6 +122,7 @@ table {
 }
 #total td {
     width: 10%;
+    text-align: end;
 }
 
 #law-desc {
@@ -129,4 +130,14 @@ table {
     margin: 0;
     font-size: 0.7rem;
     text-align: left;
+}
+footer {
+    font-family: Roboto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer p  {
+    color: gray;
+    text-align: center;
 }
