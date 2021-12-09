@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "Myriad pro";
+    src: url("Myriad-Pro_31655.ttf") format("truetype");
+   }
+
+body
+{
+    /*Taille*/
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+
+    /*Polices*/
+    --title: "Roboto";
+    --text-bloc: "Myriad Pro";
+    font-family: var(--text-bloc);
+
+    /*Couleurs*/
+    --red: rgb(215,84,71);
+    --red-light: rgb(214,130,122);
+    --red-lighter: rgb(228,172,166);
+    --red-lighterer: rgb(241,214,210);
+
+
+    --pink: rgb(241,78,172);
+    --pink-light: rgb(219,130,175);
+    --pink-lighter: rgb(232,172,201);
+    --pink-lighterer: rgb(244,214,228);
+
+    --yellow: rgb(254,176,0);
+    --yellow-light: rgb(243,190,114);
+    --yellow-lighter: rgb(248,211,162);
+    --yellow-lighterer: rgb(251,233,208);
+}
+
+.main_wrapper
+{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    
+    /* background-color: black;
+    border: 2px solid black; */
+}
+
+.child1, .child2, .child3
+{
+    text-align: center;
+    width: 90%;
+    background-color: white;
+    margin: auto;
+    box-shadow: 10px 10px rgba(0,0,0,0.15);
+}
+
+.child1
+{
+    border-bottom: 5px solid var(--red);
+    border-left: 10px solid var(--red-light);
+    border-top: 10px solid var(--red-lighter);
+    border-right: 10px solid var(--red-lighterer);
+}
+
+.child2
+{
+    border-bottom: 5px solid var(--pink);
+    border-left: 10px solid var(--pink-light);
+    border-top: 10px solid var(--pink-lighter);
+    border-right: 10px solid var(--pink-lighterer);
+}
+
+.child3
+{
+    border-bottom: 5px solid var(--yellow);
+    border-left: 10px solid var(--yellow-light);
+    border-top: 10px solid var(--yellow-lighter);
+    border-right: 10px solid var(--yellow-lighterer);
+}
+
+.title
+{
+    font-family: var(--title);
+}
+
