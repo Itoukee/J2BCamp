@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://localhost:4242/styles/style.css">
+</head>
+<body>
+<div id="header-wrapper">
+    <div id="infos-wrapper">
+        <div id="comedian_infos">
+            <img src="http://localhost:4242/images/J2B_logo.png" alt="logo" id="j2b_logo"/>
+
+            <p>{{comedian_infos.address}}</p>
+            <p>{{comedian_infos.city}}</p>
+            <a href="mailto:{{comedian_infos.email}}">{{comedian_infos.email}}</a>
+            <p>{{comedian_infos.phone}}</p>
+            <p>N° TVA Intra. {{agency_infos.tva_intra}}</p>
+        </div>
+        <div id="client_infos">
+            <div id="client_coords">
+                <p>{{client_infos.business_name}}</p>
+                <p>{{client_infos.address}}</p>
+                <p>{{client_infos.region_num}} {{client_infos.city}}</p>
+
+            </div>
+            <div id="client_ids">
+                <p>N° d’affaire: {{bill_ids.case_number}}</p>
+                <p>N° de stage: {{bill_ids.traineeship_number}}</p>
+                <p>N° de BDC: {{handle_opt bill_ids.bdc_number}}</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="ids-wrapper">
+        <p>Numéro de Facture: {{bill_ids.bill_id}}</p>
+        <p>Réalisé le: <span id="curr-date">{{upper (curr_date "DD-MM-YYYY")}}</span></p>
+    </div>
+    <div id="object-wrapper">
+        <p>{{upper client_infos.business_name}} - {{upper client_infos.city}} - Affaire n°{{bill_ids.case_number}}
+            - {{upper (format_date_full (to_date training_infos.training_date))}} - {{comedian_infos.name}}</p>
+    </div>
+</div>
+
+<div id="main-wrapper">
+    <table id="assignement">
+        <thead>
+        <tr>
+            <th>
+                Désignation
+            </th>
+            <th>
+                Prix unitaire HT
+            </th>
+            <th>
+                Nombre (Unité : Jour)
+            </th>
+            <th>
+                TVA
+            </th>
+            <th>
+                Montant HT
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>
+                {{upper client_infos.business_name}} - {{upper client_infos.city}} - Affaire n°{{bill_ids.case_number}}
+                - {{format_date_full (to_date training_infos.training_date)}}
+            </th>
+            <th class="nbr">
+                {{training_infos.price}} €
+            </th>
+            <th class="nbr">
+                {{training_infos.days}}
+            </th>
+            <th class="nbr">
+                {{training_infos.tva}}%
+            </th>
+            <th class="nbr">
+                {{mult training_infos.days training_infos.price}}
+            </th>
+        </tr>
+        <tr>
+            <th>
+                FORFAIT FRAIS ({{training_infos.days}} {{handle_day training_infos.days }} -
+                KILOMETRAGE AR {{training_infos.km}} km)
+            </th>
+            <th class="nbr">
+                {{handle_package training_infos.km}} €
+            </th>
+            <th class="nbr">
+                {{training_infos.days}}
+            </th>
+            <th class="nbr">
+                {{training_infos.tva}}%
+            </th>
+            <th class="nbr">
+                {{handle_package training_infos.km}}
+            </th>
+        </tr>
+        </tbody>
+    </table>
+    <table id="total">
+        <tbody>
+        <tr>
+            <div>
+                <td rowspan="3" id="law-desc">En cas de retard de paiement, seront exigibles, conformément à
+                    l'article L 441-6 du code de commerce, une indemnité calculée sur
+                    la base de trois fois le taux de l'intérêt légal en vigueur ainsi qu'une
+                    indemnité forfaitaire pour frais de recouvrement de 40€.
+                </td>
+                <th>
+                    TOTAL HT
+                </th>
+                <td>
+                    {{handle_total_ht training_infos}} €
+                </td>
+            </div>
+
+
+        </tr>
+        <tr>
+            <th>
+                TVA {{training_infos.tva}}%
+            </th>
+            <td>
+                {{get_tva training_infos}} €
+            </td>
+        </tr>
+        <tr>
+            <th>
+                TOTAL TTC {{training_infos.tva}}%
+            </th>
+            <td>
+                {{handle_total_tva training_infos}} €
+            </td>
+        </tr>
+        </tbody>
+
+
+    </table>
+</div>
+
+<p>En votre aimable règlement à 30 jours en date de réception de notre facture.</p>
+
+<footer>
+    <p>SARL au capital de 10000 € inscrite au RCS de Nanterre – 481 413 847
+
+    <p>
+    <p>
+        N° TVA Intra. {{agency_infos.tva_intra}}
+    </p>
+</footer>
+</body>
+</html>

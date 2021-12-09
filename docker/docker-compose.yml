@@ -3,11 +3,12 @@ version: "3"
 services:
   node:
     container_name: "j2b_node"
-    command: npm start
+    command: npm run start
     build:
-      context: ${NODE_FOLDER}
+      context: ../
+      dockerfile: node/Dockerfile
     volumes:
-      - ${NODE_FOLDER}:/app/
+      - ../node:/usr/app
       - /app/node_modules
     depends_on:
       - db
@@ -27,8 +28,7 @@ services:
       - ${APP_FOLDER}:/var/www
     networks:
       - dev
-    links:
-      - db
+
   nginx:
     container_name: "j2b_nginx"
     restart: always
@@ -40,6 +40,8 @@ services:
       - ./logs:/var/log
     depends_on:
       - php
+    networks:
+      - dev
     ports:
       - "81:80"
     networks:
@@ -69,6 +71,6 @@ services:
     networks:
       - dev
 networks:
-  dev:
+  dev: null
 volumes:
   db-data:
