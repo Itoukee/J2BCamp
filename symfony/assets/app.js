@@ -11,10 +11,11 @@ import "./styles/app.css";
 // start the Stimulus application
 import "./bootstrap";
 
-import { h, render } from "preact";
+import React from "react";
+import ReactDOM from "react-dom";
 
-function App() {
-  return <h1>Bonjour, le monde</h1>;
-}
+const element = <h1>TEST</h1>;
+const div = document.getElementById("middle");
 
-render(App(), document.getElementById("app"));
+console.log(div);
+ReactDOM.render(element, div);
