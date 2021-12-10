@@ -3,7 +3,7 @@
         <a class="logo" href="">
             <img src="{{ asset("images/logos/J2B_logo.png") }}">
         </a>
-
+        {% if app.user %}
         <div class="user_info">
             <div class="user_name">
                 <a href="[profil]">
@@ -13,9 +13,10 @@
             </div>
 
             <div class="buttons">
-                <button>Déconnexion</button>
+                <a href="{{ path('app_logout') }}">Déconnexion</a>
             </div>
         </div>
+        {% endif %}
     </div>
 
     <nav>
