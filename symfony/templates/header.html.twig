@@ -4,18 +4,18 @@
             <img src="{{ asset("images/logos/J2B_logo.png") }}">
         </a>
         {% if app.user %}
-        <div class="user_info">
-            <div class="user_name">
-                <a href="[profil]">
-                    [Firstname]<br>
-                    [Lastname]
-                </a>
-            </div>
+            <div class="user_info">
+                <div class="user_name">
+                    <a href="[profil]">
+                        [{{ app.user.firstName }}]<br>
+                        [{{ app.user.lastName }}]
+                    </a>
+                </div>
 
-            <div class="buttons">
-                <a href="{{ path('app_logout') }}">Déconnexion</a>
+                <div class="buttons">
+                    <a href="{{ path('app_logout') }}">Déconnexion</a>
+                </div>
             </div>
-        </div>
         {% endif %}
     </div>
 
