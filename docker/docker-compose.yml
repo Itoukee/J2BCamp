@@ -40,8 +40,6 @@ services:
       - ./logs:/var/log
     depends_on:
       - php
-    networks:
-      - dev
     ports:
       - "81:80"
     networks:
@@ -53,6 +51,7 @@ services:
     build:
       context: ./mysql
     restart: always
+
     volumes:
       - db-data:/var/lib/mysql
       - ./mysql/scripts/:/docker-entrypoint-initdb.d
@@ -71,6 +70,6 @@ services:
     networks:
       - dev
 networks:
-  dev: null
+  dev:
 volumes:
   db-data:
