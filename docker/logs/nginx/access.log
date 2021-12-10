@@ -333,3 +333,4 @@
 172.19.0.1 - - [10/Dec/2021:15:36:44 +0000] "GET /fonts/Myriad-Pro_31655.ttf HTTP/1.1" 304 0 "http://localhost:81/styles/style.css" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
 172.19.0.1 - - [10/Dec/2021:15:36:45 +0000] "GET /_wdt/788367 HTTP/1.1" 200 17562 "http://localhost:81/test" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
 172.19.0.1 - - [10/Dec/2021:15:36:45 +0000] "GET /images/logos/J2B_logo_icon.png HTTP/1.1" 304 0 "http://localhost:81/test" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+172.19.0.1 - - [10/Dec/2021:15:40:02 +0000] "GET /test HTTP/1.1" 500 88865 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
