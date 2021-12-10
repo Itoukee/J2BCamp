@@ -14,8 +14,32 @@ import "./bootstrap";
 import React from "react";
 import ReactDOM from "react-dom";
 
-const element = <h1>TEST</h1>;
-const div = document.getElementById("middle");
+function showRegister() {
+  const element = <p></p>;
+  const div = document.getElementById("app");
 
-console.log(div);
-ReactDOM.render(element, div);
+  ReactDOM.render(element, div);
+}
+
+function showBills() {
+  const element = "";
+  const div = document.getElementById("app");
+
+  ReactDOM.render(element, div);
+}
+
+function showAdmin() {
+  const element = "";
+  const div = document.getElementById("app");
+
+  ReactDOM.render(element, div);
+}
+
+function showMessenger() {
+  const element = "";
+  const div = document.getElementById("app");
+
+  ReactDOM.render(element, div);
+}
+
+showRegister();
