@@ -48,6 +48,7 @@
       "ext-curl": "*"
     },
     "require-dev": {
+        "orm-fixture": "^2.12|^3.0",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "5.4.*",
         "symfony/css-selector": "5.4.*",

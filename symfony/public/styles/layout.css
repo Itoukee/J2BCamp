@@ -24,6 +24,10 @@ body
     --brown: rgb(45,45,45);
 }
 
+button
+{
+    cursor: pointer;
+}
 
 /*Header*/
 header
@@ -72,16 +76,11 @@ header
     transform: translate(-20% ,10%);
 }
 
-.user_info a
-{
-    text-decoration: none;
-    color: black;
-}
-
 .user_name
 {
     /*line-height: 100%;*/
     /*margin-right: 2%;*/
+    transform: translateY(-20%);
     transition: margin-right linear 500ms;
 }
 

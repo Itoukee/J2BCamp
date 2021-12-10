@@ -1,26 +1,27 @@
 <header>
     <div class="top">
-        <a class="logo" href="">
+        <div class="logo">
             <img src="{{ asset("images/logos/J2B_logo.png") }}">
         </a>
-
+        {% if app.user %}
         <div class="user_info">
             <div class="user_name">
-                <a href="[profil]">
+                <p>
                     [Firstname]<br>
                     [Lastname]
-                </a>
+                </p>
             </div>
 
             <div class="buttons">
-                <button>Déconnexion</button>
+                <a href="{{ path('app_logout') }}">Déconnexion</a>
             </div>
         </div>
+        {% endif %}
     </div>
 
     <nav>
-        <a href=""><p>LIEN</p></a>
-        <a href=""><p>LIEN</p></a>
-        <a href=""><p>LIEN</p></a>
+        <a href="/beals"><p>FACTURES</p></a>
+        <a href="/ketchup"><p>MESSAGES</p></a>
+        <a href="/poulet_frit"><p>GESTION</p></a>
     </nav>
 </header>

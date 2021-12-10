@@ -3,11 +3,12 @@ version: "3"
 services:
   node:
     container_name: "j2b_node"
-    command: npm start
+    command: npm run start
     build:
-      context: ${NODE_FOLDER}
+      context: ../
+      dockerfile: node/Dockerfile
     volumes:
-      - ${NODE_FOLDER}:/app/
+      - ../node:/usr/app
       - /app/node_modules
     depends_on:
       - db
@@ -27,8 +28,7 @@ services:
       - ${APP_FOLDER}:/var/www
     networks:
       - dev
-    links:
-      - db
+
   nginx:
     container_name: "j2b_nginx"
     restart: always
@@ -51,6 +51,7 @@ services:
     build:
       context: ./mysql
     restart: always
+
     volumes:
       - db-data:/var/lib/mysql
       - ./mysql/scripts/:/docker-entrypoint-initdb.d
