@@ -1,18 +1,16 @@
 <header>
     <div class="top">
-        <div class="first">
-            <div class="logo">
-                <img src="{{ asset("images/logos/J2B_logo.png") }}">
-
-            </div>
-            {% if app.user %}
-                <div class="user_info">
-                    <div class="user_name">
-                        <p>
-                            [{{ app.user.firstName }}]<br>
-                            [{{ app.user.lastName }}]
-                        </p>
-                    </div>
+        <a class="logo" href="">
+            <img src="{{ asset("images/logos/J2B_logo.png") }}">
+        </a>
+        {% if app.user %}
+            <div class="user_info">
+                <div class="user_name">
+                    <a href="[profil]">
+                        [{{ app.user.firstName }}]<br>
+                        [{{ app.user.lastName }}]
+                    </a>
+                </div>
 
                     <div class="buttons">
                         <a href="{{ path('app_logout') }}">Déconnexion</a>
