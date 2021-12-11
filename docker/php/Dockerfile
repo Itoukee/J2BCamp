@@ -3,6 +3,6 @@ RUN apk --update --no-cache add git bash
 RUN docker-php-ext-install pdo_mysql
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
-CMD composer install ; php-fpm
+CMD composer install ; wait-for-it database:3306 -- bin/console doctrine:migrations:migrate ;  php-fpm ; npm install
 RUN chown -R www-data:www-data /var/www
 EXPOSE 9000

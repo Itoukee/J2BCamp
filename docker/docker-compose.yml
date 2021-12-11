@@ -20,7 +20,8 @@ services:
     container_name: "j2b_php"
     restart: always
     build:
-      context: ./php
+      context: ../
+      dockerfile: docker/php/Dockerfile
     environment:
       - APP_ENV=${APP_ENV}
       - APP_SECRET=${APP_SECRET}
