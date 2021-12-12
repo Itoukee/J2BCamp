@@ -50,7 +50,7 @@ class AuthControllerAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('profile'));
+        return new RedirectResponse($this->urlGenerator->generate('profile_show',["id"=>$token->getUser()->getId()]));
 //        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

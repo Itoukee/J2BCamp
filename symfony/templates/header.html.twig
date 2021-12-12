@@ -6,7 +6,7 @@
         {% if app.user %}
             <div class="user_info">
                 <div class="user_name">
-                    <a href="[profil]">
+                    <a href="{{ path('profile_show',{id: app.user.id}) }}">
                         [{{ app.user.firstName }}]<br>
                         [{{ app.user.lastName }}]
                     </a>
