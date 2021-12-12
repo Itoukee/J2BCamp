@@ -185,7 +185,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
-
+    /**
+     * @see UserInterface
+     */
     public function getfirstName(): ?string
     {
         return $this->firstname;
@@ -197,7 +199,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
+    /**
+     * @see UserInterface
+     */
     public function getlastName(): ?string
     {
         return $this->lastname;
@@ -224,7 +228,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->updatedAt = new \DateTimeImmutable();
         }
     }
-
+    /**
+     * @see UserInterface
+     */
     public function getImageFile(): ?File
     {
         return $this->imageFile;
@@ -234,7 +240,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->imageName = $imageName;
     }
-
+    /**
+     * @see UserInterface
+     */
     public function getImageName(): ?string
     {
         return $this->imageName;

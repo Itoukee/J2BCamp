@@ -1,3 +1,7 @@
+#profile-title{
+  text-align: center;
+  color: wheat;
+}
 .child1 {
   display: flex;
   padding: 0px;
