@@ -24,7 +24,9 @@
         <nav>
             <a href="/beals"><p>FACTURES</p></a>
             <a href="/ketchup"><p>MESSAGES</p></a>
-            <a href="/poulet_frit"><p>GESTION</p></a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="/poulet_frit"><p>GESTION</p></a>
+            {% endif %}
         </nav>
     </div>
 </header>

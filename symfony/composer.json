@@ -48,6 +48,7 @@
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
         "vich/uploader-bundle": "^1.18.0",
+        "scienta/doctrine-json-functions": "^4.4.0"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4.1",

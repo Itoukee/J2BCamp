@@ -38,6 +38,7 @@ security:
     - { path: '^/admin', roles: ROLE_ADMIN }
     - { path: '^/profile', roles: ROLE_USER }
     - { path: '^/register', roles: ROLE_ADMIN }
+    - { path: '^/poulet_frit', roles: ROLE_ADMIN }
     - { path: '^/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: '^/', roles: ROLE_USER }
 

@@ -10,6 +10,9 @@ doctrine:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
     orm:
+        dql:
+            string_functions:
+                JSON_CONTAINS: Scienta\DoctrineJsonFunctions\Query\AST\Functions\Mysql\JsonContains
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
