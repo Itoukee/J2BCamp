@@ -14,7 +14,7 @@
                 <div class="list">
                     {% for comedian in comedians %}
                         <div><p>[{{ comedian.firstName }}] [{{ comedian.lastName }}]</p>
-                            <a href="{{ path('profile_show',{id: comedian.id})}}"><</a>
+                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}"><</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -27,7 +27,18 @@
                 <div class="list">
                     {% for client in clients %}
                         <div><p>[{{ client.name }}]</p>
-                            <a href="{{ path('profile_show',{id: comedian.id})}}"><</a>
+                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}"><</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="child3"></div>
+            <div class="child4">
+                <div class="title">FORMATIONS</div>
+                <div class="list">
+                    {% for formation in formations %}
+                        <div><p>[{{ formation.name }}]</p>
+                            <a class="black-button" href="{{ path('training_show',{id: formation.id}) }}"><</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -35,8 +46,9 @@
         </div>
 
         <div class="bottom">
-            <button class="child1">AJOUTER UN COMÉDIEN</button>
-            <button class="child2">AJOUTER UNE ENTREPRISE</button>
+            <a class="child1">AJOUTER UN COMÉDIEN</a>
+            <a class="child2">AJOUTER UNE ENTREPRISE</a>
+            <a class="child4" href="{{ path('training_add') }}">AJOUTER UNE FORMATION</a>
         </div>
     </div>
 {% endblock %}

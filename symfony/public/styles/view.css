@@ -1,4 +1,4 @@
-#profile-title{
+.view-title{
   text-align: center;
   color: wheat;
 }
@@ -35,4 +35,18 @@
   color: white;
   border: none;
   background-color: var(--brown);
+}
+span{
+  font-weight: bold;
+}
+#buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+#buttons a {
+  width: 100%;
+  cursor: pointer;
 }
