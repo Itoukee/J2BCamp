@@ -88,7 +88,7 @@
     /*border: 2px solid red;*/
 }
 
-.list button
+.list a
 {
     border: none;
     color: white;
@@ -100,7 +100,7 @@
     transform: translateY(50%);
 }
 
-.list button:hover
+.list a:hover
 {
     background-color: white;
     color: black;

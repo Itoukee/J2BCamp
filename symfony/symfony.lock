@@ -183,6 +183,9 @@
     "psr/log": {
         "version": "2.0.0"
     },
+    "scienta/doctrine-json-functions": {
+        "version": "4.4.0"
+    },
     "sebastian/cli-parser": {
         "version": "1.0.1"
     },
