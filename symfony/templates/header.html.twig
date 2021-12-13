@@ -1,27 +1,30 @@
 <header>
     <div class="top">
-        <div class="logo">
+        <a class="logo" href="">
             <img src="{{ asset("images/logos/J2B_logo.png") }}">
         </a>
         {% if app.user %}
-        <div class="user_info">
-            <div class="user_name">
-                <p>
-                    [Firstname]<br>
-                    [Lastname]
-                </p>
-            </div>
+            <div class="user_info">
+                <div class="user_name">
+                    <a href="{{ path('profile_show',{id: app.user.id}) }}">
+                        [{{ app.user.firstName }}]<br>
+                        [{{ app.user.lastName }}]
+                    </a>
+                </div>
 
-            <div class="buttons">
-                <a href="{{ path('app_logout') }}">Déconnexion</a>
-            </div>
+                    <div class="buttons">
+                        <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    </div>
+                </div>
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
 
-    <nav>
-        <a href="/beals"><p>FACTURES</p></a>
-        <a href="/ketchup"><p>MESSAGES</p></a>
-        <a href="/poulet_frit"><p>GESTION</p></a>
-    </nav>
+
+
+        <nav>
+            <a href="/beals"><p>FACTURES</p></a>
+            <a href="/ketchup"><p>MESSAGES</p></a>
+            <a href="/poulet_frit"><p>GESTION</p></a>
+        </nav>
+    </div>
 </header>

@@ -44,6 +44,11 @@ class Companies
      */
     private $bills;
 
+    /**
+     * @ORM\Column(type="datetime_immutable")
+     */
+    private $createdAt;
+
     public function __construct()
     {
         $this->bills = new ArrayCollection();
@@ -116,6 +121,18 @@ class Companies
             $this->bills[] = $bill;
             $bill->setIdCompany($this);
         }
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }
