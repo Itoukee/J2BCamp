@@ -13,8 +13,8 @@
                 <div class="title">COMÉDIENS</div>
                 <div class="list">
                     {% for comedian in comedians %}
-                        <div><p>[{{ comedian.firstName }}] [{{ comedian.lastName }}]</p>
-                            <a href="{{ path('profile_show',{id: comedian.id})}}"><</a>
+                        <div><p>{{ comedian.firstName }} {{ comedian.lastName }}</p>
+                            <a href="{{ path('profile_show',{id: comedian.id})}}">Profil</a>
                         </div>
                     {% endfor %}
                 </div>

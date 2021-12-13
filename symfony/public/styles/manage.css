@@ -26,7 +26,7 @@
 .bottom button
 {
     height: 200%;
-    transition: all ease-in-out 50ms;
+    transition: all ease-in-out 500ms;
     transition: box-shadow ease 500ms;
 }
 
@@ -73,13 +73,18 @@
     display: flex;
     flex-direction: column;
     height: 90%;
-    margin-top: -5%;
+    margin-top: -8%;
+}
+
+.list p
+{
+    margin-left: 2%;
 }
 
 .list div
 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     /*Height à revoir...*/
     /*height: 1000px;*/
     border-bottom: 2px solid var(--brown);
@@ -90,6 +95,8 @@
 
 .list a
 {
+    text-decoration: none;
+    font-size: 115%;
     border: none;
     color: white;
     background-color: var(--brown);
@@ -97,7 +104,8 @@
     height: 50%;
 
     margin-right: 2%;
-    transform: translateY(50%);
+    transform: translateY(35%);
+    border: 2px solid var(--brown);
 }
 
 .list a:hover
