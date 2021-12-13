@@ -60,7 +60,7 @@ form div
 form input
 {
     width: 50%;
-    height: 100%;
+    /*height: 100%;*/
     border: none;
     border: 2px solid var(--brown);
 }
@@ -88,7 +88,7 @@ form select
     border: none;
     color: white;
     background-color: var(--brown);
-    transition:;
+    /*transition:;*/
 }
 
 .btn:active
