@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}[{{ app.user.firstname }}] - Profil{% endblock %}
+{% block title %}{{ app.user.firstname }}- Profil{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('styles/view.css') }}" rel="stylesheet">
