@@ -1,10 +1,42 @@
+#middle
+{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.title
+{
+  align-self: center;
+  width: 30%;
+  height: 10%;
+  background-color: white;
+
+  border-bottom: 10px solid var(--red);
+  border-left: 10px solid var(--red-light);
+  border-right: 10px solid var(--red-lighter);
+  border-top: 10px solid var(--red-lighterer);
+}
+
 #profile-title{
   text-align: center;
-  color: wheat;
+  color: black;
 }
 .child1 {
   display: flex;
   padding: 0px;
+
+  border-bottom: 10px solid var(--yellow);
+  border-left: 10px solid var(--yellow-light);
+  border-right: 10px solid var(--yellow-lighter);
+  border-top: 10px solid var(--yellow-lighterer);
+}
+
+.child2
+{
+  border-bottom: 10px solid var(--pink);
+  border-left: 10px solid var(--pink-light);
+  border-right: 10px solid var(--pink-lighter);
+  border-top: 10px solid var(--pink-lighterer);
 }
 
 .right {
@@ -30,7 +62,9 @@
   height: 100%;
 }
 
-.edit {
+.edit
+{
+  width: 20%;
   font-family: var(--text-bloc);
   color: white;
   border: none;

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}[{{ app.user.firstname }}] - Profil{% endblock %}
+{% block title %}{{ app.user.firstname }}- Profil{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('styles/profile.css') }}" rel="stylesheet">
@@ -8,7 +8,9 @@
 
 {% block content %}
     <div id="middle">
-        <h1 id="profile-title">{{ profile.firstName }}'s Profile</h1>
+        <div class="title">
+            <h1 id="profile-title">Profil de {{ profile.firstName }}</h1>
+        </div>
         <div class="child1">
             <div class="picture"><img src="{{ asset(handle_profile_picture(profile)) }}" alt="profile_picture"></div>
             <div class="right">

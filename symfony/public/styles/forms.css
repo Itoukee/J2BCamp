@@ -1,0 +1,97 @@
+#middle
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#middle .title
+{
+    align-self: center;
+
+    text-align: center;
+    background-color: white;
+    width: 40%;
+    height: 10%;
+    border-bottom: 10px solid var(--red);
+    border-left: 10px solid var(--red-light);
+    border-right: 10px solid var(--red-lighter);
+    border-top: 10px solid var(--red-lighterer);
+}
+
+form
+{
+    padding: 2%;
+
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+    font-size: larger;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-color: white;
+    width: 50%;
+    height: 60%;
+
+    border-bottom: 10px solid var(--yellow);
+    border-left: 10px solid var(--yellow-light);
+    border-right: 10px solid var(--yellow-lighter);
+    border-top: 10px solid var(--yellow-lighterer);
+}
+
+form *
+{
+    font-family: var(--text-bloc);
+    align-self: center;
+}
+
+form div
+{
+    display: flex;
+    justify-content: space-around;
+
+    width: 60%;
+}
+
+form input
+{
+    width: 50%;
+    height: 100%;
+    border: none;
+    border: 2px solid var(--brown);
+}
+
+form select
+{
+    font-size: large;
+    text-align: center;
+    width: 40%;
+    height: 76%;
+    height: 76%;
+    align-self: center;
+    border: none;
+    border: 2px solid var(--brown);
+}
+
+.btn
+{
+    font-size: large;
+    text-align: center;
+    width: 25%;
+    height: 15%;
+    align-self: center;
+
+    border: none;
+    color: white;
+    background-color: var(--brown);
+    transition:;
+}
+
+.btn:active
+{
+
+}
