@@ -85,7 +85,7 @@ header {
   transition: margin-right linear 500ms;
 }
 
-.buttons a
+.buttons button
 {
     text-decoration: none;
     color: black;
@@ -99,7 +99,7 @@ header {
     border: 2px solid white;
 }
 
-.buttons a:active
+.buttons button:active
 {
     color: white;
     background-color: rgba(0,0,0,0.3);
