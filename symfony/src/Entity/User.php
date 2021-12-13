@@ -89,11 +89,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $updatedAt;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Bills::class, mappedBy="comedian", orphanRemoval=true)
+     */
+    private $bills;
+
 
 
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
+        $this->bills = new ArrayCollection();
     }
 
 
@@ -329,5 +335,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function onPreUpdate()
     {
         $this->updatedAt = new \DateTime("now");
+    }
+
+    /**
+     * @return Collection|Bills[]
+     */
+    public function getBills(): Collection
+    {
+        return $this->bills;
+    }
+
+    public function addBill(Bills $bill): self
+    {
+        if (!$this->bills->contains($bill)) {
+            $this->bills[] = $bill;
+            $bill->setComedian($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBill(Bills $bill): self
+    {
+        if ($this->bills->removeElement($bill)) {
+            // set the owning side to null (unless already changed)
+            if ($bill->getComedian() === $this) {
+                $bill->setComedian(null);
+            }
+        }
+
+        return $this;
     }
 }

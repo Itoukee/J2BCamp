@@ -27,15 +27,6 @@ class Bills
      */
     private $bdc;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Companies::class, inversedBy="bills")
-     */
-    private $id_company;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Trainings::class)
-     */
-    private $id_training;
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -46,6 +37,35 @@ class Bills
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Trainings::class, inversedBy="bills")
+     */
+    private $trainings;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Companies::class, inversedBy="bills")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $company;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="bills")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $comedian;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $paid;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $inter_date;
+
+
 
     public function getId(): ?int
     {
@@ -76,29 +96,19 @@ class Bills
         return $this;
     }
 
-    public function getIdCompany(): ?Companies
+    public function getCompany(): ?Companies
     {
-        return $this->id_company;
+        return $this->company;
     }
 
-    public function setIdCompany(?Companies $id_company): self
+    public function setCompany(?Companies $company): self
     {
-        $this->id_company = $id_company;
+        $this->company = $company;
 
         return $this;
     }
 
-    public function getIdTraining(): ?Trainings
-    {
-        return $this->id_training;
-    }
 
-    public function setIdTraining(?Trainings $id_training): self
-    {
-        $this->id_training = $id_training;
-
-        return $this;
-    }
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -123,4 +133,53 @@ class Bills
 
         return $this;
     }
+
+    public function getTrainings(): ?Trainings
+    {
+        return $this->trainings;
+    }
+
+    public function setTrainings(?Trainings $trainings): self
+    {
+        $this->trainings = $trainings;
+
+        return $this;
+    }
+
+    public function getComedian(): ?User
+    {
+        return $this->comedian;
+    }
+
+    public function setComedian(?User $comedian): self
+    {
+        $this->comedian = $comedian;
+
+        return $this;
+    }
+
+    public function getPaid(): ?bool
+    {
+        return $this->paid;
+    }
+
+    public function setPaid(bool $paid): self
+    {
+        $this->paid = $paid;
+
+        return $this;
+    }
+
+    public function getInterDate(): ?\DateTimeInterface
+    {
+        return $this->inter_date;
+    }
+
+    public function setInterDate(\DateTimeInterface $inter_date): self
+    {
+        $this->inter_date = $inter_date;
+
+        return $this;
+    }
+
 }

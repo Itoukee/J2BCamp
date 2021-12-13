@@ -40,19 +40,20 @@ class Companies
     private $adress;
 
     /**
-     * @ORM\OneToMany(targetEntity=Bills::class, mappedBy="id_company")
-     */
-    private $bills;
-
-    /**
      * @ORM\Column(type="datetime_immutable")
      */
     private $createdAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Bills::class, mappedBy="company", orphanRemoval=true)
+     */
+    private $bills;
 
     public function __construct()
     {
         $this->bills = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -107,6 +108,18 @@ class Companies
         return $this;
     }
 
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Bills[]
      */
@@ -119,20 +132,20 @@ class Companies
     {
         if (!$this->bills->contains($bill)) {
             $this->bills[] = $bill;
-            $bill->setIdCompany($this);
+            $bill->setCompany($this);
         }
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function removeBill(Bills $bill): self
     {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
-    {
-        $this->createdAt = $createdAt;
+        if ($this->bills->removeElement($bill)) {
+            // set the owning side to null (unless already changed)
+            if ($bill->getCompany() === $this) {
+                $bill->setCompany(null);
+            }
+        }
 
         return $this;
     }

@@ -32,7 +32,7 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('/profile'[$user->getId()]);
+            return $this->redirectToRoute('profile_show',["id"=>$user->getId()]);
         }
 
         return $this->render('registration/register.html.twig', [
