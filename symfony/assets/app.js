@@ -14,32 +14,8 @@ import "./bootstrap";
 import React from "react";
 import ReactDOM from "react-dom";
 
-function showRegister() {
-  const element = <p></p>;
-  const div = document.getElementById("app");
+const buttonComedian = document.getElementById("addComedian");
 
-  ReactDOM.render(element, div);
-}
+buttonComedian.addEventListener("click", function () {});
 
-function showBills() {
-  const element = "";
-  const div = document.getElementById("app");
-
-  ReactDOM.render(element, div);
-}
-
-function showAdmin() {
-  const element = "";
-  const div = document.getElementById("app");
-
-  ReactDOM.render(element, div);
-}
-
-function showMessenger() {
-  const element = "";
-  const div = document.getElementById("app");
-
-  ReactDOM.render(element, div);
-}
-
-showRegister();
+const buttonComedy = document.getElementById("addCompany");

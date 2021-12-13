@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\UpdateProfileType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Security\Voter\ProfileVoter;
@@ -19,8 +20,10 @@ class ProfileController extends AbstractController
         $profile = $userRepository->find($id);
         $this->denyAccessUnlessGranted(ProfileVoter::VIEW, $profile);
         $form = $this->createForm(UserType::class);
+        $updateProfile = $this->createForm(UpdateProfileType::class);
         return $this->render('profile/profile.html.twig', [
             'form' => $form->createView(),
+            'updateProfile' => $updateProfile->createView(),
             'profile' => $profile
         ]);
     }

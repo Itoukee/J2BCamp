@@ -14,7 +14,7 @@
                 <div class="list">
                     {% for comedian in comedians %}
                         <div><p>[{{ comedian.firstName }}] [{{ comedian.lastName }}]</p>
-                            <a href="{{ path('profile_show',{id: comedian.id})}}"><</a>
+                            <a href="{{ path('profile_show',{id: comedian.id})}}"></a>
                         </div>
                     {% endfor %}
                 </div>
@@ -35,8 +35,8 @@
         </div>
 
         <div class="bottom">
-            <button class="child1">AJOUTER UN COMÉDIEN</button>
-            <button class="child2">AJOUTER UNE ENTREPRISE</button>
+            <button id="addComedian" class="child1">AJOUTER UN COMÉDIEN</button>
+            <button id="addCompany" class="child2">AJOUTER UNE ENTREPRISE</button>
         </div>
     </div>
 {% endblock %}

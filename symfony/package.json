@@ -21,6 +21,7 @@
         "@babel/preset-react": "^7.16.0",
         "babel-preset-preact": "^2.0.0",
         "bootstrap": "^5.1.3",
+        "encore": "^0.0.30-beta",
         "html-webpack-plugin": "^5.5.0",
         "jquery": "^3.6.0",
         "preact": "^10.6.4",

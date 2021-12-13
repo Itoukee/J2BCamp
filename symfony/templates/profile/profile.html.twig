@@ -7,14 +7,35 @@
 {% endblock %}
 
 {% block content %}
+{{ dump(updateProfile) }}
     <div class="middle">
         <h1 id="profile-title">{{ profile.firstName }}'s Profile</h1>
         <div class="child1">
             <div class="picture"><img src="{{ asset(handle_profile_picture(profile)) }}" alt="profile_picture"></div>
             <div class="right">
                 <div class="bottom">
-                    <p class="role">Rôle</p>
-                    <button class="edit">Modifier</button>
+                    <p class="role">{{profile.roles[0]}}</p>
+                    {# <button class="edit">Modifier</button> #}
+                    <div>
+                    {{ form_start(updateProfile) }}
+                        {{form_row(updateProfile.firstname,{
+                            label: "Nom uwu"
+                        })}}
+                        {{form_row(updateProfile.lastname, {
+                            label: "Prénom -^-"
+                        })}}
+                        {{form_row(updateProfile.password, {
+                            label: "Mot de passe :3"
+                        })}}
+                        {{form_row(updateProfile.email, {
+                            label: "Email ^^"
+                        })}}
+                        {{form_row(updateProfile.roles, {
+                            label: "Rôle .-."
+                        })}}
+                        <button type="submit">PUTE</button>
+                    {{ form_end(updateProfile) }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -29,6 +50,7 @@
             <button type="button" class="add_item_link" data-collection-holder-class="addresses">Add an address</button>
             {{ form_end(form) }}
         </div>
+
     </div>
 
 
