@@ -1,1 +1,6 @@
 .idea
+node/node_modules
+node/package-lock.json
+.vscode
+node/invoice.pdf
+docker/logs/nginx/*.log

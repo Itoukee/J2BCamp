@@ -1,6 +1,21 @@
-version: '3'
+version: "3"
 
 services:
+  node:
+    container_name: "j2b_node"
+    command: npm run start
+    build:
+      context: ../
+      dockerfile: node/Dockerfile
+    volumes:
+      - ../node:/usr/app
+      - /app/node_modules
+    depends_on:
+      - db
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      PORT: $NODE_DOCKER_PORT
   php:
     container_name: "j2b_php"
     restart: always
@@ -11,6 +26,9 @@ services:
       - APP_SECRET=${APP_SECRET}
     volumes:
       - ${APP_FOLDER}:/var/www
+    networks:
+      - dev
+
   nginx:
     container_name: "j2b_nginx"
     restart: always
@@ -24,13 +42,19 @@ services:
       - php
     ports:
       - "81:80"
+    networks:
+      - dev
+    links:
+      - php
   db:
     container_name: "j2b_db"
     build:
       context: ./mysql
     restart: always
+
     volumes:
       - db-data:/var/lib/mysql
+      - ./mysql/scripts/:/docker-entrypoint-initdb.d
     networks:
       - dev
   phpmyadmin:
@@ -49,4 +73,3 @@ networks:
   dev:
 volumes:
   db-data:
-
