@@ -32,6 +32,6 @@ class ApiController extends AbstractController
         );
         $content = json_decode($response->getContent());
 
-        return $content->routes[0]->legs[0]->summary->lengthInMeters;
+        return ($content->routes[0]->legs[0]->summary->lengthInMeters) * 2;
     }
 }
