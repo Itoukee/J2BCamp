@@ -21,24 +21,30 @@ function handle_opt(obj) {
 function handle_day(day) {
     return day > 1 ? "jours" : "jour";
 }
-function handle_price(price){
+
+function handle_price(price) {
     return price.toFixed(2)
 }
+
 function handle_package(km) {
     return package.getPriceFromKm(km)
 }
-function get_tva(infos){
 
-    return (infos.tva.toFixed(1)/100)*handle_total_ht(infos)
+function get_tva(infos) {
+
+    return (infos.tva.toFixed(1) / 100) * handle_total_ht(infos)
 }
-function handle_total_ht(infos){
+
+function handle_total_ht(infos) {
     return (infos.price * infos.days) + handle_package(infos.km)
 
 }
-function handle_total_tva(infos){
+
+function handle_total_tva(infos) {
     const ht = handle_total_ht(infos)
     return ht + get_tva(infos)
 }
+
 function upper(string) {
     return string.toString().toUpperCase()
 }

@@ -8,6 +8,7 @@
     "require": {
         "php": ">=8.0",
         "ext-ctype": "*",
+        "ext-curl": "*",
         "ext-iconv": "*",
         "composer/package-versions-deprecated": "1.11.99.4",
         "doctrine/annotations": "^1.0",
@@ -42,13 +43,16 @@
         "symfony/twig-bundle": "5.4.*",
         "symfony/validator": "5.4.*",
         "symfony/web-link": "5.4.*",
+        "symfony/webpack-encore-bundle": "^1.13",
         "symfony/yaml": "5.4.*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
-      "ext-curl": "*"
+        "vich/uploader-bundle": "^1.18.0",
+        "scienta/doctrine-json-functions": "^4.4.0"
     },
     "require-dev": {
-        "orm-fixture": "^2.12|^3.0",
+        "doctrine/doctrine-fixtures-bundle": "^3.4.1",
+        "doctrine/data-fixtures": "^1.5.1",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "5.4.*",
         "symfony/css-selector": "5.4.*",

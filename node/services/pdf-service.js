@@ -6,15 +6,17 @@ require('dayjs/locale/fr')
 const dayjs = require("dayjs")
 const path = require("path");
 const VIEWS_FOLDER = "views"
+const OUTPUT_PATH = "invoice.pdf"
 const pdf_options = {
     format: 'a4',
     displayHeaderFooter: false,
     preferCSSPageSize: true,
     printBackground: true,
-    path: 'invoice.pdf'
+    path: OUTPUT_PATH
 }
 dayjs.locale("fr")
 handlebars.registerHelper(helpers);
+
 function compileTemplate(data, template_name) {
     let full_path = path.join(process.cwd(), VIEWS_FOLDER, template_name)
     let templateRaw = fs.readFileSync(full_path, "utf-8");
@@ -25,7 +27,6 @@ function compileTemplate(data, template_name) {
 async function genPdfFromHtml(html) {
     try {
         const browser = await puppeteer.launch({
-
             args: [
                 '--headless',
                 '--no-sandbox',
@@ -47,4 +48,4 @@ async function genPdfFromHtml(html) {
 
 }
 
-module.exports = {compileTemplate, genPdfFromHtml}
+module.exports = {compileTemplate, genPdfFromHtml, OUTPUT_PATH}

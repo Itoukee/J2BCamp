@@ -1,98 +1,95 @@
 /*Variables*/
-body
-{
-    /*Polices*/
-    --title: "Roboto";
-    --text-bloc: "Myriad Pro";
+body {
+  /*Polices*/
+  --title: "Roboto";
+  --text-bloc: "Myriad Pro";
 
-    /*Couleurs*/
-    --red: rgb(215,84,71);
-    --red-light: rgb(214,130,122);
-    --red-lighter: rgb(228,172,166);
-    --red-lighterer: rgb(241,214,210);
+  /*Couleurs*/
+  --red: rgb(215, 84, 71);
+  --red-light: rgb(214, 130, 122);
+  --red-lighter: rgb(228, 172, 166);
+  --red-lighterer: rgb(241, 214, 210);
 
-    --yellow: rgb(254,176,0);
-    --yellow-light: rgb(243,190,114);
-    --yellow-lighter: rgb(248,211,162);
-    --yellow-lighterer: rgb(251,233,208);
+  --yellow: rgb(254, 176, 0);
+  --yellow-light: rgb(243, 190, 114);
+  --yellow-lighter: rgb(248, 211, 162);
+  --yellow-lighterer: rgb(251, 233, 208);
 
-    --pink: rgb(241,78,172);
-    --pink-light: rgb(219,130,175);
-    --pink-lighter: rgb(232,172,201);
-    --pink-lighterer: rgb(244,214,228);
+  --pink: rgb(241, 78, 172);
+  --pink-light: rgb(219, 130, 175);
+  --pink-lighter: rgb(232, 172, 201);
+  --pink-lighterer: rgb(244, 214, 228);
 
-    --brown: rgb(45,45,45);
+  --brown: rgb(45, 45, 45);
 }
 
-button
-{
-    cursor: pointer;
+button {
+  cursor: pointer;
 }
 
 /*Header*/
-header
-{
-    display: flex;
-    flex-direction: column;
+header {
+  display: flex;
+  flex-direction: column;
 
-    background-image: url("../images/header_image.png");
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,.5);
-    height: fit-content;
-    padding-top: 2%;
+  background-image: url("../images/header_image.png");
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+  height: fit-content;
+  padding-top: 2%;
 }
 
 /*Header top*/
-.top
-{
+.top {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100vw;
+}
+
+.logo {
+  width: 125px;
+  height: 60px;
+
+  /*margin-left: 2%;*/
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+.first{
     display: flex;
     justify-content: space-between;
-
-    width: 100vw;
 }
-
-.logo
-{
-    width: 125px;
-    height: 60px;
-
-    /*margin-left: 2%;*/
-}
-
-.logo img
-{
-    width: 100%;
-    height: 100%;
-}
-
 /*Revoir responsive*/
-.user_info
-{
-    display: flex;
-    justify-content: space-around;
+.user_info {
+  display: flex;
+  justify-content: space-around;
 
-    margin-right: 2%;
+  margin-right: 2%;
 
-    width: 20%;
-    transform: translate(-20% ,10%);
+  width: 20%;
+  transform: translate(-20%, 10%);
 }
 
-.user_name
-{
-    /*line-height: 100%;*/
-    /*margin-right: 2%;*/
-    transform: translateY(-20%);
-    transition: margin-right linear 500ms;
+.user_name {
+  /*line-height: 100%;*/
+  /*margin-right: 2%;*/
+  transform: translateY(-20%);
+  transition: margin-right linear 500ms;
 }
 
 /*Boutons d'inscription, de connexion et de déconnexion*/
 
-.buttons
-{
-    transition: margin-right linear 500ms;
+.buttons {
+  transition: margin-right linear 500ms;
 }
 
 .buttons button
 {
+    text-decoration: none;
+    color: black;
+    padding:2px 6px;
     font-family: var(--title);
     width: 100%;
     height: 50%;
@@ -135,16 +132,13 @@ header
 /*    }*/
 /*}*/
 
-@media screen and (max-width: 950px)
-{
-    .user_name
-    {
-        margin-right: 20%;
-    }
-    .buttons
-    {
-        margin-right: 50%;
-    }
+@media screen and (max-width: 950px) {
+  .user_name {
+    margin-right: 20%;
+  }
+  .buttons {
+    margin-right: 50%;
+  }
 }
 
 /*Fin revoir responsive*/
@@ -153,98 +147,86 @@ nav
 {
     display: flex;
     justify-content: space-around;
+    width:100%;
     padding-top: 2%;
 }
 
-nav a
-{
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    font-size: large;
-    width: 100%;
-    height: 3em;
-    background-color: rgba(255,255,255,0.5);
-    transition: all ease-in-out 250ms;
-    border-top: 2px solid #2b2b2b;
+nav button {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-size: large;
+  width: 100%;
+  height: 3em;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all ease-in-out 250ms;
+  border-top: 2px solid #2b2b2b;
 }
 
-nav a:hover
-{
-    color: white;
-    background-color: rgba(0,0,0,0.3);
+nav button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 /*Fin header*/
 
-
 /*Footer*/
-footer
-{
-    display: flex;
-    flex-direction: column;
+footer {
+  display: flex;
+  flex-direction: column;
 
-    color: white;
-    text-align: center;
-    background-color: var(--brown);
-    height: fit-content;
-    padding-top: 2%;
+  color: white;
+  text-align: center;
+  background-color: var(--brown);
+  height: fit-content;
+  padding-top: 2%;
 }
 
-.credits
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    width: 100%;
+  width: 100%;
 }
 
 /*Réseaux sociaux*/
-.socials
-{
-    display: flex;
+.socials {
+  display: flex;
 
-    justify-content: space-around;
+  justify-content: space-around;
 
-    padding-bottom: 2%;
-    padding-top: 1% ;
+  padding-bottom: 2%;
+  padding-top: 1%;
 }
 
-.socials div
-{
-    width: 20px;
-    height: 20px;
+.socials div {
+  width: 20px;
+  height: 20px;
 
-    /*border: 2px solid red;*/
+  /*border: 2px solid red;*/
 }
 
-#facebook
-{
-    content: url("../images/logos/facebook_logo.png");
+#facebook {
+  content: url("../images/logos/facebook_logo.png");
 }
 
-#instagram
-{
-    content: url("../images/logos/instagram_logo.png");
+#instagram {
+  content: url("../images/logos/instagram_logo.png");
 }
 
-#linkedin
-{
-    content: url("../images/logos/linkedin_logo.png");
+#linkedin {
+  content: url("../images/logos/linkedin_logo.png");
 }
 
-#facebook:hover
-{
-    content: url("../images/logos/facebook_logo_red.png");
+#facebook:hover {
+  content: url("../images/logos/facebook_logo_red.png");
 }
 
-#instagram:hover
-{
-    content: url("../images/logos/instagram_logo_red.png");
+#instagram:hover {
+  content: url("../images/logos/instagram_logo_red.png");
 }
 
-#linkedin:hover
-{
-    content: url("../images/logos/linkedin_logo_red.png");
+#linkedin:hover {
+  content: url("../images/logos/linkedin_logo_red.png");
 }
 /*Fin footer*/

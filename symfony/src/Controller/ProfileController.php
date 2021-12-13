@@ -2,17 +2,26 @@
 
 namespace App\Controller;
 
+use App\Form\UserType;
+use App\Repository\UserRepository;
+use App\Security\Voter\ProfileVoter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProfileController extends AbstractController
 {
-    #[Route('/profile', name: 'profile')]
-    public function index(): Response
+
+
+    #[Route('/profile/{id}', name: 'profile_show')]
+    public function index(int $id, UserRepository $userRepository): Response
     {
+        $profile = $userRepository->find($id);
+        $this->denyAccessUnlessGranted(ProfileVoter::VIEW, $profile);
+        $form = $this->createForm(UserType::class);
         return $this->render('profile/profile.html.twig', [
-            'controller_name' => 'ProfileController',
+            'form' => $form->createView(),
+            'profile' => $profile
         ]);
     }
 }

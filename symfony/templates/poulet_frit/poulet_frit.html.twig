@@ -7,32 +7,16 @@
 {% endblock %}
 
 {% block content %}
-    <div class="middle">
+    <div id="middle">
         <div class="creation">
             <div class="child1">
                 <div class="title">COMÉDIENS</div>
                 <div class="list">
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
-                    <div><p>[Firstname] [Lastname]</p><button><</button></div>
+                    {% for comedian in comedians %}
+                        <div><p>[{{ comedian.firstName }}] [{{ comedian.lastName }}]</p>
+                            <a href="{{ path('profile_show',{id: comedian.id})}}"><</a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -41,20 +25,11 @@
             <div class="child2">
                 <div class="title">ENTREPRISES</div>
                 <div class="list">
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
-                    <div><p>[Nom entreprise]</p><button><</button></div>
+                    {% for client in clients %}
+                        <div><p>[{{ client.name }}]</p>
+                            <a href="{{ path('profile_show',{id: comedian.id})}}"><</a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
