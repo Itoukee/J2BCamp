@@ -1,5 +1,4 @@
 {
   "build/app.js": "/build/app.js",
-  "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_tomtom-international_web-sdk-plugin-searchbox_dist_SearchBox_js-node_mod-fd23ef.js": "/build/vendors-node_modules_tomtom-international_web-sdk-plugin-searchbox_dist_SearchBox_js-node_mod-fd23ef.js"
+  "build/runtime.js": "/build/runtime.js"
 }
