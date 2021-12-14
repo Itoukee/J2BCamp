@@ -74,10 +74,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $imageSize;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Addresses::class, mappedBy="user_id", orphanRemoval=true)
-     */
-    private $addresses;
 
     /**
      * @ORM\Column(type="datetime")
@@ -89,11 +85,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $updatedAt;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Bills::class, mappedBy="comedian", orphanRemoval=true)
+     */
+    private $bills;
+
 
 
     public function __construct()
     {
-        $this->addresses = new ArrayCollection();
+        $this->bills = new ArrayCollection();
+        $this->userAddresses = new ArrayCollection();
+
     }
 
 
@@ -185,6 +188,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+
     /**
      * @see UserInterface
      */
@@ -199,6 +203,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
     /**
      * @see UserInterface
      */
@@ -228,6 +233,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->updatedAt = new \DateTimeImmutable();
         }
     }
+
     /**
      * @see UserInterface
      */
@@ -240,6 +246,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->imageName = $imageName;
     }
+
     /**
      * @see UserInterface
      */
@@ -258,35 +265,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->imageSize;
     }
 
-    /**
-     * @return Collection|Addresses[]
-     */
-    public function getAddresses(): Collection
-    {
-        return $this->addresses;
-    }
-
-    public function addAddress(Addresses $address): self
-    {
-        if (!$this->addresses->contains($address)) {
-            $this->addresses[] = $address;
-            $address->setUserId($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAddress(Addresses $address): self
-    {
-        if ($this->addresses->removeElement($address)) {
-            // set the owning side to null (unless already changed)
-            if ($address->getUserId() === $this) {
-                $address->setUserId(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getCreatedAt(): ?\DateTimeInterface
     {
@@ -311,9 +289,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
     /**
      * Gets triggered only on insert
-
      * @ORM\PrePersist
      */
     public function onPrePersist()
@@ -323,11 +301,44 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Gets triggered every time on update
-
      * @ORM\PreUpdate
      */
     public function onPreUpdate()
     {
         $this->updatedAt = new \DateTime("now");
     }
+
+    /**
+     * @return Collection|Bills[]
+     */
+    public function getBills(): Collection
+    {
+        return $this->bills;
+    }
+
+    public function addBill(Bills $bill): self
+    {
+        if (!$this->bills->contains($bill)) {
+            $this->bills[] = $bill;
+            $bill->setComedian($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBill(Bills $bill): self
+    {
+        if ($this->bills->removeElement($bill)) {
+            // set the owning side to null (unless already changed)
+            if ($bill->getComedian() === $this) {
+                $bill->setComedian(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+
+
 }

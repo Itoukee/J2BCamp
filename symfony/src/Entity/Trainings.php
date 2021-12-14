@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TrainingsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,11 +25,6 @@ class Trainings
     private ?string $name;
 
     /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private ?string $name_comedian;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private ?int $price;
@@ -43,14 +40,18 @@ class Trainings
     private ?string $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity=Bills::class, mappedBy="trainings")
      */
-    private ?string $adress;
+    private $bills;
 
-    /**
-     * @ORM\Column(type="datetime_immutable")
-     */
-    private ?\DateTimeImmutable $date_begin;
+
+
+    public function __construct()
+    {
+        $this->bills = new ArrayCollection();
+    }
+
+
 
     public function getId(): ?int
     {
@@ -69,17 +70,6 @@ class Trainings
         return $this;
     }
 
-    public function getNameComedian(): ?string
-    {
-        return $this->name_comedian;
-    }
-
-    public function setNameComedian(string $name_comedian): self
-    {
-        $this->name_comedian = $name_comedian;
-
-        return $this;
-    }
 
     public function getPrice(): ?int
     {
@@ -117,27 +107,38 @@ class Trainings
         return $this;
     }
 
-    public function getAdress(): ?string
+    /**
+     * @return Collection|Bills[]
+     */
+    public function getBills(): Collection
     {
-        return $this->adress;
+        return $this->bills;
     }
 
-    public function setAdress(string $adress): self
+    public function addBill(Bills $bill): self
     {
-        $this->adress = $adress;
+        if (!$this->bills->contains($bill)) {
+            $this->bills[] = $bill;
+            $bill->setTrainings($this);
+        }
 
         return $this;
     }
 
-    public function getDateBegin(): ?\DateTimeImmutable
+    public function removeBill(Bills $bill): self
     {
-        return $this->date_begin;
-    }
-
-    public function setDateBegin(\DateTimeImmutable $date_begin): self
-    {
-        $this->date_begin = $date_begin;
+        if ($this->bills->removeElement($bill)) {
+            // set the owning side to null (unless already changed)
+            if ($bill->getTrainings() === $this) {
+                $bill->setTrainings(null);
+            }
+        }
 
         return $this;
     }
+
+
+
+
+
 }
