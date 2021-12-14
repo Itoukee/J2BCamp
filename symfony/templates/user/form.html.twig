@@ -1,0 +1,12 @@
+{{ form_start(registrationForm) }}
+        {{ form_errors(registrationForm) }}
+
+        {{ form_row(registrationForm.firstName) }}
+        {{ form_row(registrationForm.lastName) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.password) }}
+        {{ form_row(registrationForm.roles) }}
+        {% include "utils/address.html.twig" with {"form":registrationForm} %}
+
+<button type="submit" class="btn">Créer</button>
+{{ form_end(registrationForm) }}

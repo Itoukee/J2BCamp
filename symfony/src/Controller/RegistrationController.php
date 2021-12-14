@@ -6,6 +6,7 @@ use App\Entity\Companies;
 use App\Entity\User;
 use App\Form\CompanyFormType;
 use App\Form\RegistrationFormType;
+use App\Form\UserType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,12 +20,12 @@ class RegistrationController extends AbstractController
     public function register_user(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setPassword(
-            $userPasswordHasher->hashPassword(
+                $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('password')->getData()
                 )
@@ -34,10 +35,10 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('profile_show',["id"=>$user->getId()]);
+            return $this->redirectToRoute('profile_show', ["id" => $user->getId()]);
         }
 
-        return $this->render('registration/register_user.html.twig', [
+        return $this->render('user/create.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }

@@ -28,7 +28,7 @@ class CompanyController extends AbstractController
             return $this->redirectToRoute('company_show', ["id" => $company->getId()]);
         }
 
-        return $this->render('registration/register_company.html.twig', [
+        return $this->render('company/create.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }
