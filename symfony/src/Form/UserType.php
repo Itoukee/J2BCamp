@@ -11,15 +11,14 @@ use Symfony\Component\Security\Core\Security;
 
 class UserType extends AbstractType
 {
-    public function __construct(private Security $security){}
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
 
         $builder
-            ->add('addresses',CollectionType::class,[
-                'entry_type'=> AddressType::class,
-                'entry_options'=>['label'=>true],
-                'allow_add'=>true,
+            ->add('addresses', CollectionType::class, [
+                'entry_type' => AddressType::class,
+                'entry_options' => ['label' => true],
+                'allow_add' => true,
             ]);
     }
 
