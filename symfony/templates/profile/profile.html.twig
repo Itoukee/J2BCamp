@@ -20,13 +20,13 @@
         </div>
         <div class="child2">
             {{ form_start(form) }}
-            <h3>Addresses</h3>
-            <ul class="addresses"
-                data-index="{{ form.addresses|length >0 ? form.addresses|last.vars.name +1 : 0 }}"
-                data-prototype="{{ form_row(form.addresses) }}">
+{#            <h3>Addresses</h3>#}
+{#            <ul class="addresses"#}
+{#                data-index="{{ form.addresses|length >0 ? form.addresses|last.vars.name +1 : 0 }}"#}
+{#                data-prototype="{{ form_row(form.addresses) }}">#}
 
-            </ul>
-            <button type="button" class="add_item_link" data-collection-holder-class="addresses">Add an address</button>
+{#            </ul>#}
+{#            <button type="button" class="add_item_link" data-collection-holder-class="addresses">Add an address</button>#}
             {{ form_end(form) }}
         </div>
     </div>

@@ -60,10 +60,18 @@ form div
 form input
 {
     width: 50%;
-    /*height: 100%;*/
+    height: 100%;
     border: none;
     border: 2px solid var(--brown);
 }
+form button
+{
+    width: 50%;
+    height: 100%;
+    border: none;
+    border: 2px solid var(--brown);
+}
+
 
 form select
 {
@@ -82,7 +90,7 @@ form select
     font-size: large;
     text-align: center;
     width: 25%;
-    height: 15%;
+    height: 25%;
     align-self: center;
 
     border: none;
@@ -94,4 +102,7 @@ form select
 .btn:active
 {
 
+}
+.searchbox{
+    width:100%
 }

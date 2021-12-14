@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/forms.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCgRU9bdQ3rMJod4xzJYN-5iWpMfPqz10o"></script>
+
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div class="title"><h1>Créer une nouvelle entreprise</h1></div>
+
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.name ) }}
+        {{ form_row(registrationForm.phone_number) }}
+        {{ form_row(registrationForm.siret) }}
+        <div>
+            <label>L'addresse</label>
+            <input id="user_input_autocomplete_address" placeholder="L'addresse, la seule et l'unique">
+        </div>
+        <div>
+            <label>street_number</label>
+            <input id="street_number" name="street_number" disabled>
+        </div>
+        <div>
+            <label>route</label>
+            <input id="route" name="route" disabled>
+        </div>
+        <div>
+            <label>locality</label>
+            <input id="locality" name="locality" disabled>
+        </div>
+        <div>
+            <label>country</label>
+            <input id="country" name="country" disabled>
+        </div>
+
+        <button type="submit" class="btn">Créer</button>
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}
