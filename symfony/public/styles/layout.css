@@ -75,7 +75,8 @@ header {
 .user_name {
   /*line-height: 100%;*/
   /*margin-right: 2%;*/
-  transform: translateY(-10%);
+  font-size: larger;
+  transform: translateY(-15%);
   transition: margin-right linear 500ms;
 }
 
