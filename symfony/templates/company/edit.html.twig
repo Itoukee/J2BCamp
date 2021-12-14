@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Update{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('styles/forms.css') }}" rel="stylesheet">
@@ -11,9 +11,9 @@
 
 {% block content %}
     <div id="middle">
-        <div class="title"><h1>Créer une nouvelle entreprise</h1></div>
+        <div class="title"><h1>Mettre à jour une entreprise</h1></div>
 
         {{ include("company/form.html.twig",
-            {button_text:"Créer"}) }}
+            {button_text:"Mettre à jour"}) }}
     </div>
 {% endblock %}

@@ -18,7 +18,7 @@ class Bills
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string",length=50)
      */
     private $num_stage;
 
@@ -34,14 +34,14 @@ class Bills
     private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime",nullable=true)
      */
     private $updatedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity=Trainings::class, inversedBy="bills")
      */
-    private $trainings;
+    private $training;
 
     /**
      * @ORM\ManyToOne(targetEntity=Companies::class, inversedBy="bills")
@@ -65,19 +65,32 @@ class Bills
      */
     private $inter_date;
 
+    public function __construct()
+    {
+        $this->setCreatedAt(new \DateTimeImmutable('now'));
+    }
 
+    /**
+     *
+     * @ORM\PreUpdate
+     */
+    public function updatedTimestamps(): void
+    {
+        $this->setUpdatedAt(new \DateTime('now'));
+
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNumStage(): ?int
+    public function getNumStage(): ?string
     {
         return $this->num_stage;
     }
 
-    public function setNumStage(int $num_stage): self
+    public function setNumStage(string $num_stage): self
     {
         $this->num_stage = $num_stage;
 
@@ -109,7 +122,6 @@ class Bills
     }
 
 
-
     public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
@@ -134,14 +146,14 @@ class Bills
         return $this;
     }
 
-    public function getTrainings(): ?Trainings
+    public function getTraining(): ?Trainings
     {
-        return $this->trainings;
+        return $this->training;
     }
 
-    public function setTrainings(?Trainings $trainings): self
+    public function setTraining(?Trainings $training): self
     {
-        $this->trainings = $trainings;
+        $this->training = $training;
 
         return $this;
     }

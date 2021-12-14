@@ -8,15 +8,20 @@
 
 {% block content %}
     <div class="middle">
-        <h1 class="view-title">{{ company.name }}</h1>
+        <h1 class="view-title">Facture numéro {{ bill.id }}</h1>
         <div class="child1">
             <div class="right">
                 <div class="bottom">
-                    <p class="tel"><span>Numéro de téléphone :</span> {{ company.getPhoneNumber() }}</p>
+                    <p class="numstage"><span>Numéro de stage</span> {{ bill.getNumStage() }}</p>
 
                 </div>
                 <div class="bottom">
-                    <p class="siret"><span>Siret :</span> {{ company.siret }}</p>
+                    <p class="bdc"><span>BDC :</span> {{ bill.bdc }}</p>
+                </div>
+                <div class="bottom">
+                    <p class="training"><span>Formation impliquée :</span> {{ bill.training.name }}</p>
+                </div> <div class="bottom">
+                    <p class="company"><span>Entreprise impliquée :</span> {{ bill.company.name }}</p>
                 </div>
             </div>
             <div id="buttons">

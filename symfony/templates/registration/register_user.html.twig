@@ -11,6 +11,8 @@
         <div class="title"><h1>Create new User</h1></div>
 
         {{ form_start(registrationForm) }}
+        {{ form_errors(registrationForm) }}
+
         {{ form_row(registrationForm.firstName,{
             label:"First name"
         }) }}

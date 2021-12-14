@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div id="buttons">
-                <a class="black-button" >Modifier</a>
+                <a class="black-button">Modifier</a>
                 <a class="black-button" href="{{ path("bills_add") }}">Créer intervention</a>
             </div>
 
@@ -32,9 +32,11 @@
         <h1 class="view-title">Dernieres prestations</h1>
 
         <div class="child2">
-            {% for bill in training.bills %}
-                <p>bill.name</p>
-            {% endfor %}
+            <div class="list">
+                {% for bill in training.bills %}
+                    {% include "beals/bill_row.html.twig" with {"bill":bill} %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 

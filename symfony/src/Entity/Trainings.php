@@ -40,7 +40,7 @@ class Trainings
     private ?string $description;
 
     /**
-     * @ORM\OneToMany(targetEntity=Bills::class, mappedBy="trainings")
+     * @ORM\OneToMany(targetEntity=Bills::class, mappedBy="training")
      */
     private $bills;
 
@@ -119,7 +119,7 @@ class Trainings
     {
         if (!$this->bills->contains($bill)) {
             $this->bills[] = $bill;
-            $bill->setTrainings($this);
+            $bill->setTraining($this);
         }
 
         return $this;
@@ -129,8 +129,8 @@ class Trainings
     {
         if ($this->bills->removeElement($bill)) {
             // set the owning side to null (unless already changed)
-            if ($bill->getTrainings() === $this) {
-                $bill->setTrainings(null);
+            if ($bill->getTraining() === $this) {
+                $bill->setTraining(null);
             }
         }
 
