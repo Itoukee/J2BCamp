@@ -32,14 +32,14 @@ class BealsController extends AbstractController
         ]);
     }
 
-    #[Route('/trainings/show/{id}', name: "training_show")]
-    public function show(int $id, TrainingsRepository $trainingsRepository)
-    {
-        $training = $trainingsRepository->find($id);
-
-        return $this->render("trainings/show.html.twig", [
-            "training" => $training,
-        ]);
-    }
+//    #[Route('/trainings/show/{id}', name: "training_show")]
+//    public function show(int $id, TrainingsRepository $trainingsRepository)
+//    {
+//        $training = $trainingsRepository->find($id);
+//
+//        return $this->render("trainings/show.html.twig", [
+//            "training" => $training,
+//        ]);
+//    }
 
 }

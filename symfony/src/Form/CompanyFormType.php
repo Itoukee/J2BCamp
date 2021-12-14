@@ -26,6 +26,30 @@ class CompanyFormType extends AbstractType
             ->add('siret', TextType::class, [
                 "label" => "Entrez le numero de siret de l'entreprise",
                 "required" => true
+            ])
+            ->add("street_number",TextType::class, [
+                'attr'=>[
+                    "readonly"=>"readonly",
+                    "id"=>"street_number"
+                ]
+            ])
+            ->add("route",TextType::class, [
+                'attr'=>[
+                    "readonly"=>"readonly",
+                    "id"=>"route"
+                ]
+            ])
+            ->add("locality",TextType::class, [
+                'attr'=>[
+                    "readonly"=>"readonly",
+                    "id"=>"locality"
+                ]
+            ])
+            ->add("country",TextType::class, [
+                'attr'=>[
+                    "readonly"=>"readonly",
+                    "id"=>"country"
+                ]
             ]);
 
 
