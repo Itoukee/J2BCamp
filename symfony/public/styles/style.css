@@ -41,7 +41,8 @@ body {
 
 .child1,
 .child2,
-.child3 {
+.child3,
+.child4{
   text-align: center;
   width: 90%;
   background-color: white;
@@ -69,7 +70,33 @@ body {
   border-right: 10px solid var(--pink-lighter);
   border-top: 10px solid var(--pink-lighterer);
 }
+.child4 {
+  border-bottom: 10px solid var(--pink);
+  border-left: 10px solid var(--pink-light);
+  border-right: 10px solid var(--pink-lighter);
+  border-top: 10px solid var(--pink-lighterer);
+}
+
 
 .title {
   font-family: var(--title);
+}
+
+.black-button
+{
+  border: none;
+  color: white;
+  background-color: var(--brown);
+  width: 20%;
+  height: 50%;
+
+  margin-right: 2%;
+  /*transform: translateY(50%);*/
+}
+
+.black-button:hover
+{
+  background-color: white;
+  color: black;
+  border: 2px solid var(--brown);
 }

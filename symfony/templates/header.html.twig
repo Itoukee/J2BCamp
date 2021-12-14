@@ -7,8 +7,8 @@
             <div class="user_info">
                 <div class="user_name">
                     <a href="{{ path('profile_show',{id: app.user.id}) }}">
-                        [{{ app.user.firstName }}]<br>
-                        [{{ app.user.lastName }}]
+                        {{ app.user.firstName }}<br>
+                        {{ app.user.lastName }}
                     </a>
                 </div>
 
@@ -22,7 +22,7 @@
 
 
         <nav>
-            <a href="/beals"><p>FACTURES</p></a>
+            <a href="{{ path("bills_add") }}"><p>FACTURES</p></a>
             <a href="/ketchup"><p>MESSAGES</p></a>
             {% if is_granted('ROLE_ADMIN') %}
                 <a href="/poulet_frit"><p>GESTION</p></a>

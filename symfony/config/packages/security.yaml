@@ -37,6 +37,7 @@ security:
   access_control:
     - { path: '^/admin', roles: ROLE_ADMIN }
     - { path: '^/profile', roles: ROLE_USER }
+    - { path: '^/trainings', roles: ROLE_ADMIN }
     - { path: '^/register', roles: ROLE_ADMIN }
     - { path: '^/poulet_frit', roles: ROLE_ADMIN }
     - { path: '^/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
