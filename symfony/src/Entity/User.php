@@ -90,12 +90,32 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $bills;
 
+    /**
+     * @ORM\Column(type="integer",nullable=true)
+     */
+    private $street_number;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $route;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $locality;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $country;
+
 
 
     public function __construct()
     {
         $this->bills = new ArrayCollection();
-        $this->userAddresses = new ArrayCollection();
+
 
     }
 
@@ -334,6 +354,54 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $bill->setComedian(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getStreetNumber(): ?int
+    {
+        return $this->street_number;
+    }
+
+    public function setStreetNumber(int $street_number): self
+    {
+        $this->street_number = $street_number;
+
+        return $this;
+    }
+
+    public function getRoute(): ?string
+    {
+        return $this->route;
+    }
+
+    public function setRoute(?string $route): self
+    {
+        $this->route = $route;
+
+        return $this;
+    }
+
+    public function getLocality(): ?string
+    {
+        return $this->locality;
+    }
+
+    public function setLocality(?string $locality): self
+    {
+        $this->locality = $locality;
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?string $country): self
+    {
+        $this->country = $country;
 
         return $this;
     }

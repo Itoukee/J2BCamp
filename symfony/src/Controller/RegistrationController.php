@@ -41,23 +41,5 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
-    #[Route('/register/company', name: 'app_register_company')]
-    public function register_company(Request $request,EntityManagerInterface $entityManager): Response
-    {
-        $company = new Companies();
-        $form = $this->createForm(CompanyFormType::class, $company);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
 
-            $entityManager->persist($company);
-            $entityManager->flush();
-            // do anything else you need here, like send an email
-
-            return $this->redirectToRoute('company_show',["id"=>$company->getId()]);
-        }
-
-        return $this->render('registration/register_company.html.twig', [
-            'registrationForm' => $form->createView(),
-        ]);
-    }
 }

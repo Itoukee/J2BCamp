@@ -35,7 +35,6 @@ class Companies
     private $siret;
 
 
-
     /**
      * @ORM\Column(type="datetime_immutable")
      */
@@ -47,13 +46,31 @@ class Companies
     private $bills;
 
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $street_number;
 
+    /**
+     * @ORM\Column(type="string", length=255 )
+     */
+    private $route;
+
+    /**
+     * @ORM\Column(type="string", length=255 )
+     */
+    private $locality;
+
+    /**
+     * @ORM\Column(type="string", length=255 )
+     */
+    private $country;
 
 
     public function __construct()
     {
         $this->bills = new ArrayCollection();
-        $this->companyAddresses = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable();
     }
 
 
@@ -141,4 +158,63 @@ class Companies
         return $this;
     }
 
+    public function getstreet_number(): ?int
+    {
+        return $this->street_number;
+    }
+
+    public function setstreet_number(int $street_number): self
+    {
+        $this->street_number = $street_number;
+
+        return $this;
+    }
+
+    public function getRoute(): ?string
+    {
+        return $this->route;
+    }
+
+    public function setRoute(?string $route): self
+    {
+        $this->route = $route;
+
+        return $this;
+    }
+
+    public function getLocality(): ?string
+    {
+        return $this->locality;
+    }
+
+    public function setLocality(?string $locality): self
+    {
+        $this->locality = $locality;
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?string $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    public function getStreetNumber(): ?int
+    {
+        return $this->street_number;
+    }
+
+    public function setStreetNumber(int $street_number): self
+    {
+        $this->street_number = $street_number;
+
+        return $this;
+    }
 }
