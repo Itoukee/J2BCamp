@@ -106,6 +106,10 @@
 
 .bottom a
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     height: 150%;
     transition: all ease-in-out 500ms;
     transition: box-shadow ease 500ms;
@@ -126,7 +130,7 @@
 
 .bottom a:active
 {
-    height: 190%;
+    height: 152%;
     transform: translate(2%, -2%);
     box-shadow: 10px 10px rgba(0,0,0,0.5);
 }
