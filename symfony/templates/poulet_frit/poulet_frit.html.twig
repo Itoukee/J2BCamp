@@ -13,8 +13,8 @@
                 <div class="title">COMÉDIENS</div>
                 <div class="list">
                     {% for comedian in comedians %}
-                        <div><p>[{{ comedian.firstName }}] [{{ comedian.lastName }}]</p>
-                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}"><</a>
+                        <div><p>{{ comedian.firstName }} {{ comedian.lastName }}</p>
+                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}">&#9740;</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -26,8 +26,8 @@
                 <div class="title">ENTREPRISES</div>
                 <div class="list">
                     {% for client in clients %}
-                        <div><p>[{{ client.name }}]</p>
-                            <a class="black-button" href="{{ path('app_company_show',{id: client.id}) }}"><</a>
+                        <div><p>{{ client.name }}</p>
+                            <a class="black-button" href="{{ path('app_company_show',{id: comedian.id}) }}">Détails</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -37,8 +37,8 @@
                 <div class="title">FORMATIONS</div>
                 <div class="list">
                     {% for formation in formations %}
-                        <div><p>[{{ formation.name }}]</p>
-                            <a class="black-button" href="{{ path('app_training_show',{id: formation.id}) }}"><</a>
+                        <div><p>{{ formation.name }}</p>
+                            <a class="black-button" href="{{ path('app_training_show',{id: formation.id}) }}">Détails</a>
                         </div>
                     {% endfor %}
                 </div>

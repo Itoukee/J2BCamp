@@ -7,19 +7,36 @@
 {% endblock %}
 
 {% block content %}
-    <div class="middle">
-        <h1 class="profile-title">{{ profile.firstName }}'s Profile</h1>
+    <div id="middle">
         <div class="child1">
-            <div class="picture"><img src="{{ asset(handle_profile_picture(profile)) }}" alt="profile_picture"></div>
-            <div class="right">
-                <div class="bottom">
-                    <p class="role">Rôle</p>
-                    <button class="edit">Modifier</button>
-                </div>
-            </div>
+            <h1>Profil de <span>{{ profile.firstName }}</span></h1>
         </div>
-        <div class="child2">
 
+        <div class="child2">
+            <div class="picture">
+                <img src="{{ asset(handle_profile_picture(profile)) }}" alt="profile_picture">
+            </div>
+
+            <div class="info">
+                <p>{{ profile.firstName }}</p>
+                <p>{{ profile.lastName }}</p>
+                <p>{{ profile.roles[0] }}</p>
+            </div>
+
+            <div><button class="edit">Modifier</button></div>
+
+
+        </div>
+        <div class="child3">
+            {{ form_start(form) }}
+{#            <h3>Addresses</h3>#}
+{#            <ul class="addresses"#}
+{#                data-index="{{ form.addresses|length >0 ? form.addresses|last.vars.name +1 : 0 }}"#}
+{#                data-prototype="{{ form_row(form.addresses) }}">#}
+
+{#            </ul>#}
+{#            <button type="button" class="add_item_link" data-collection-holder-class="addresses">Add an address</button>#}
+            {{ form_end(form) }}
         </div>
     </div>
 
