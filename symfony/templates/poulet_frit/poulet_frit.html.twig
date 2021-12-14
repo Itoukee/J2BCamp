@@ -38,7 +38,7 @@
                 <div class="list">
                     {% for formation in formations %}
                         <div><p>[{{ formation.name }}]</p>
-                            <a class="black-button" href="{{ path('training_show',{id: formation.id}) }}"><</a>
+                            <a class="black-button" href="{{ path('app_training_show',{id: formation.id}) }}"><</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -48,7 +48,7 @@
         <div class="bottom">
             <a href="{{ path("app_register_user") }}" class="child1">AJOUTER UN UTILISATEUR</a>
             <a href="{{ path("app_company_add") }}" class="child2">AJOUTER UNE ENTREPRISE</a>
-            <a class="child4" href="{{ path('training_add') }}">AJOUTER UNE FORMATION</a>
+            <a class="child4" href="{{ path('app_training_add') }}">AJOUTER UNE FORMATION</a>
         </div>
     </div>
 {% endblock %}
