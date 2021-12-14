@@ -1,0 +1,5 @@
+{
+    "require": {
+        "symfonycasts/reset-password-bundle": "^1.11"
+    }
+}
