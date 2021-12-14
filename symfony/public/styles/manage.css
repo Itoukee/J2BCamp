@@ -15,26 +15,10 @@
     /*border: 2px solid red;*/
 }
 
-/*Tests boutons en bas là*/
-.bottom
-{
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 5%;
-}
-
-.bottom button
-{
-    height: 200%;
-    transition: all ease-in-out 500ms;
-    transition: box-shadow ease 500ms;
-}
-
-
-.child1, .child2,.child4
+.child1, .child2, .child4
 {
     /*width: 40%;*/
-    width: 30%;
+    width: 25%;
     min-width: 150px;
     height: 80%;
 
@@ -63,7 +47,8 @@
 
 .list p
 {
-    margin-left: 2%;
+    margin-left: 4%;
+    text-align: left;
 }
 
 .list div
@@ -81,16 +66,18 @@
 .list a
 {
     text-decoration: none;
-    font-size: 115%;
+    font-size: x-large;
     border: none;
     color: white;
     background-color: var(--brown);
-    width: 20%;
-    height: 50%;
+    width: 15%;
+    height: 60%;
 
-    margin-right: 2%;
-    transform: translateY(35%);
+    margin-right: 4%;
+    transform: translateY(25%) rotate(180deg);
     border: 2px solid var(--brown);
+
+    transition: all ease-in-out 200ms;
 }
 
 .list a:hover
@@ -107,4 +94,39 @@
     /*transform: rotate(25deg);*/
     border: 5px white dashed;
     box-shadow: 0 0 black;
+}
+
+/*Tests boutons en bas là*/
+.bottom
+{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.bottom a
+{
+    height: 150%;
+    transition: all ease-in-out 500ms;
+    transition: box-shadow ease 500ms;
+
+    text-decoration: none;
+    color: black;
+    vertical-align: baseline;
+}
+
+.bottom a:hover
+{
+    /*filter: saturate(150%);*/
+    /*box-shadow: inset 3px 3px rgba(0,0,0,0.15), 10px 10px rgba(0,0,0,0.15);*/
+    color: var(--brown);
+    box-shadow: 10px 10px rgba(0,0,0,0.3);
+    /*text-decoration: underline;*/
+}
+
+.bottom a:active
+{
+    height: 190%;
+    transform: translate(2%, -2%);
+    box-shadow: 10px 10px rgba(0,0,0,0.5);
 }

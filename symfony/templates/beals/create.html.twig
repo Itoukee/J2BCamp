@@ -1,11 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Créer une facture!{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/forms.css') }}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
+    <div id="middle">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
 
-    {{ form_start(form) }}
-    {{ form_errors(form) }}
-
-    {{ form_end(form) }}
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

@@ -13,8 +13,8 @@
                 <div class="title">COMÉDIENS</div>
                 <div class="list">
                     {% for comedian in comedians %}
-                        <div><p>[{{ comedian.firstName }}] [{{ comedian.lastName }}]</p>
-                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}"><</a>
+                        <div><p>{{ comedian.firstName }} {{ comedian.lastName }}</p>
+                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}">&#9740;</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -26,8 +26,8 @@
                 <div class="title">ENTREPRISES</div>
                 <div class="list">
                     {% for client in clients %}
-                        <div><p>[{{ client.name }}]</p>
-                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}"><</a>
+                        <div><p>{{ client.name }}</p>
+                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}">Détails</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -37,8 +37,8 @@
                 <div class="title">FORMATIONS</div>
                 <div class="list">
                     {% for formation in formations %}
-                        <div><p>[{{ formation.name }}]</p>
-                            <a class="black-button" href="{{ path('training_show',{id: formation.id}) }}"><</a>
+                        <div><p>{{ formation.name }}</p>
+                            <a class="black-button" href="{{ path('training_show',{id: formation.id}) }}">Détails</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -48,7 +48,7 @@
         <div class="bottom">
             <a href="{{ path("app_register_user") }}" class="child1">AJOUTER UN UTILISATEUR</a>
             <a href="{{ path("app_register_company")}}" class="child2">AJOUTER UNE ENTREPRISE</a>
-            <a class="child4" href="{{ path('training_add') }}">AJOUTER UNE FORMATION</a>
+            <a href="{{ path('training_add') }}" class="child4">AJOUTER UNE FORMATION</a>
         </div>
     </div>
 {% endblock %}
