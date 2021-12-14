@@ -15,12 +15,12 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
 
-        $builder
-            ->add('addresses',CollectionType::class,[
-                'entry_type'=> AddressType::class,
-                'entry_options'=>['label'=>true],
-                'allow_add'=>true,
-            ]);
+//        $builder
+//            ->add('addresses',CollectionType::class,[
+//                'entry_type'=> AddressType::class,
+//                'entry_options'=>['label'=>true],
+//                'allow_add'=>true,
+//            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

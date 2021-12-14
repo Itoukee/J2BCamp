@@ -34,10 +34,7 @@ class Companies
      */
     private $siret;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $adress;
+
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -49,9 +46,14 @@ class Companies
      */
     private $bills;
 
+
+
+
+
     public function __construct()
     {
         $this->bills = new ArrayCollection();
+        $this->companyAddresses = new ArrayCollection();
     }
 
 
@@ -96,17 +98,6 @@ class Companies
         return $this;
     }
 
-    public function getAdress(): ?string
-    {
-        return $this->adress;
-    }
-
-    public function setAdress(string $adress): self
-    {
-        $this->adress = $adress;
-
-        return $this;
-    }
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -149,4 +140,5 @@ class Companies
 
         return $this;
     }
+
 }
