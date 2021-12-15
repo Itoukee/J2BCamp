@@ -15,8 +15,42 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BealsController extends AbstractController
 {
-    #[Route('/bills/add', name: "bills_add")]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/bills/client/add', name: "bills_client_add")]
+    public function new_client(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $bill = new Bills();
+        $form = $this->createForm(BillType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $bill = $form->getData();
+            $entityManager->persist($bill);
+            $entityManager->flush();
+            return $this->redirect($this->generateUrl('poulet_frit'));
+        }
+        return $this->render("beals/create.html.twig", [
+            "form" => $form->createView()
+        ]);
+    }
+
+//    #[Route('/bills/comedian', name: "bills_comedian_index")]
+//    public function index_comedian(): Response
+//    {
+//        $bill = new Bills();
+//        $form = $this->createForm(BillType::class);
+//        $form->handleRequest($request);
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $bill = $form->getData();
+//            $entityManager->persist($bill);
+//            $entityManager->flush();
+//            return $this->redirect($this->generateUrl('poulet_frit'));
+//        }
+//        return $this->render("beals/create.html.twig", [
+//            "form" => $form->createView()
+//        ]);
+//    }
+
+    #[Route('/bills/comedian/add', name: "bills_comedian_add")]
+    public function new_comedian(Request $request, EntityManagerInterface $entityManager): Response
     {
         $bill = new Bills();
         $form = $this->createForm(BillType::class);

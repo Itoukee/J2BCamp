@@ -16,6 +16,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class UserType extends AbstractType
 {
@@ -43,12 +44,6 @@ class UserType extends AbstractType
                     "Client" => 'ROLE_CLIENT',
                 ]
             ])
-            ->add("street_number", TextType::class, [
-                'attr' => [
-                    "readonly" => "readonly",
-                    "id" => "street_number"
-                ]
-            ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'Les deux password doivent être pareil',
@@ -67,6 +62,20 @@ class UserType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+            ])
+            ->add("imageFile", VichImageType::class, [
+                "label" => "Insérer une photo de profil",
+                "required" => false,
+                'storage_resolve_method' => VichImageType::STORAGE_RESOLVE_PATH_RELATIVE,
+                'allow_delete'  => true,
+                "delete_label"=>"",
+                'download_link' => false, // not mandatory, default is true
+            ])
+            ->add("street_number", TextType::class, [
+                'attr' => [
+                    "readonly" => "readonly",
+                    "id" => "street_number"
+                ]
             ])
             ->add("route", TextType::class, [
                 'attr' => [

@@ -6,6 +6,7 @@
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.password) }}
         {{ form_row(registrationForm.roles) }}
+        {{ form_row(registrationForm.imageFile) }}
         {% include "utils/address.html.twig" with {"form":registrationForm} %}
 
 <button type="submit" class="btn">Créer</button>
