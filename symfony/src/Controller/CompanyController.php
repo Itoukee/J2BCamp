@@ -25,7 +25,7 @@ class CompanyController extends AbstractController
             $entityManager->persist($company);
             $entityManager->flush();
 
-            return $this->redirectToRoute('company_show', ["id" => $company->getId()]);
+            return $this->redirectToRoute('app_company_show', ["id" => $company->getId()]);
         }
 
         return $this->render('company/create.html.twig', [
