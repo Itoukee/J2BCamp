@@ -57,6 +57,13 @@ header {
   width: 100%;
   height: 100%;
 }
+
+/*Si l'utilisateur n'est pas connecté*/
+.logo_out
+{
+  padding-bottom: 2%;
+}
+
 .first{
     display: flex;
     justify-content: space-between;

@@ -67,6 +67,7 @@ form input
     border: none;
     border: 2px solid var(--brown);
 }
+
 form button
 {
     width: 50%;
@@ -74,7 +75,6 @@ form button
     border: none;
     border: 2px solid var(--brown);
 }
-
 
 form select
 {
