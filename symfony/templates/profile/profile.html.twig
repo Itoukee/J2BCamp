@@ -14,7 +14,7 @@
 
         <div class="child2">
             <div class="picture">
-                <img src="{{ asset(handle_profile_picture(profile)) }}" alt="profile_picture">
+                <img src="{{ handle_profile_picture(vich_uploader_asset(profile,'imageFile')) }}" alt="profile_picture">
             </div>
 
             <div class="info">
@@ -23,7 +23,7 @@
                 <p>{{ profile.roles[0] }}</p>
             </div>
 
-            <div><button class="edit">Modifier</button></div>
+            <div><a class="edit" href="{{ path("profile_edit",{"id":profile.id}) }}">Modifier</a></div>
 
 
         </div>

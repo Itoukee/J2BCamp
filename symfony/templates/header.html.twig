@@ -1,6 +1,6 @@
 <header>
     <div class="top">
-        <a class="logo" href="">
+        <a class="logo" href="/">
             <img src="{{ asset("images/logos/J2B_logo.png") }}">
         </a>
         {% if app.user %}
@@ -18,15 +18,19 @@
                 </div>
             {% endif %}
         </div>
-
-
-
-        <nav>
-            <a href="{{ path("bills_add") }}"><p>FACTURES</p></a>
-            <a href="/ketchup"><p>MESSAGES</p></a>
-            {% if is_granted('ROLE_ADMIN') %}
-                <a href="/poulet_frit"><p>GESTION</p></a>
-            {% endif %}
-        </nav>
+        {% if app.user  %}
+            <nav>
+                {% if is_granted("ROLE_ADMIN") %}
+                <a href="{{ path("bills_client_add") }}"><p>FACTURES CLIENTS</p></a>
+                {% endif %}
+                {% if is_granted("ROLE_COMEDIAN") %}
+                    <a href="{{ path("bills_comedian_add") }}"><p>FACTURES COMEDIENS</p></a>
+                {% endif %}
+                <a href="/ketchup"><p>MESSAGES</p></a>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="/poulet_frit"><p>GESTION</p></a>
+                {% endif %}
+            </nav>
+        {% endif %}
     </div>
 </header>

@@ -18,7 +18,10 @@
     border-right: 10px solid var(--red-lighter);
     border-top: 10px solid var(--red-lighterer);
 }
-
+img{
+    width: 150px;
+    height: 150px;
+}
 form
 {
     padding: 2%;
