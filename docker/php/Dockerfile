@@ -6,4 +6,6 @@ RUN docker-php-ext-install pdo_mysql
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 CMD composer install ; composer update ; php-fpm ; npm install
+RUN chown -R root:www-data .
+RUN chmod -R 777 .
 EXPOSE 9000

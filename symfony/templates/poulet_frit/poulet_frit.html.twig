@@ -27,7 +27,7 @@
                 <div class="list">
                     {% for client in clients %}
                         <div><p>{{ client.name }}</p>
-                            <a class="black-button" href="{{ path('app_company_show',{id: comedian.id}) }}">Détails</a>
+                            <a class="black-button" href="{{ path('app_company_show',{id: client.id}) }}">Détails</a>
                         </div>
                     {% endfor %}
                 </div>
