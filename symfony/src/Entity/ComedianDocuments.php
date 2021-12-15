@@ -24,6 +24,7 @@ class ComedianDocuments
      */
     private $comedian_id;
 
+    private $imageFile;
 
     public function getId(): ?int
     {
@@ -62,27 +63,5 @@ class ComedianDocuments
     public function getImageFile(): ?File
     {
         return $this->imageFile;
-    }
-
-    public function setImageName(?string $imageName): void
-    {
-        $this->imageName = $imageName;
-    }
-    /**
-     * @see UserInterface
-     */
-    public function getImageName(): ?string
-    {
-        return $this->imageName;
-    }
-
-    public function setImageSize(?int $imageSize): void
-    {
-        $this->imageSize = $imageSize;
-    }
-
-    public function getImageSize(): ?int
-    {
-        return $this->imageSize;
     }
 }

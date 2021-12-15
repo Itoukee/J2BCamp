@@ -22,11 +22,12 @@
             <nav>
                 {% if is_granted("ROLE_ADMIN") %}
                 <a href="{{ path("bills_client_add") }}"><p>FACTURES CLIENTS</p></a>
+                <a href="/ketchup"><p>ETAT FACTURES</p></a>
                 {% endif %}
                 {% if is_granted("ROLE_COMEDIAN") %}
-                    <a href="{{ path("bills_comedian_add") }}"><p>FACTURES COMEDIENS</p></a>
+                    <a href="{{ path("documents") }}"><p>MES FACTURES</p></a>
                 {% endif %}
-                <a href="/ketchup"><p>MESSAGES</p></a>
+                <a href="/ketchup"><p>ETAT FACTURES</p></a>
                 {% if is_granted('ROLE_ADMIN') %}
                     <a href="/poulet_frit"><p>GESTION</p></a>
                 {% endif %}
