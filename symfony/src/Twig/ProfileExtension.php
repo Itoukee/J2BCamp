@@ -10,7 +10,7 @@ use Twig\TwigFunction;
 
 class ProfileExtension extends AbstractExtension
 {
-    const DEFAULT_PROFILE_PATH = "images/default_picture.png";
+    const DEFAULT_PROFILE_PATH = "/images/default_picture.png";
 
     public function __construct(private Security $security)
     {
@@ -23,10 +23,10 @@ class ProfileExtension extends AbstractExtension
         ];
     }
 
-    public function handleProfilePicture(User $user)
+    public function handleProfilePicture(?string $path)
     {
-        if ($user->getImageName() != "") {
-            return $user->getImageName();
+        if ($path != null) {
+            return $path;
         }
         return self::DEFAULT_PROFILE_PATH;
     }
