@@ -40,7 +40,7 @@ security:
     - { path: '^/trainings', roles: ROLE_ADMIN }
     - { path: '^/register', roles: ROLE_ADMIN }
     - { path: '^/poulet_frit', roles: ROLE_ADMIN }
-    - { path: '^/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: '^/login|reset-password', roles: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: '^/', roles: ROLE_USER }
 
   role_hierarchy:
