@@ -27,7 +27,7 @@
                 <div class="list">
                     {% for client in clients %}
                         <div><p>{{ client.name }}</p>
-                            <a class="black-button" href="{{ path('app_company_show',{id: client.id}) }}">Détails</a>
+                            <a class="black-button" href="{{ path('app_company_show',{id: client.id}) }}">☌</a>
                         </div>
                     {% endfor %}
                 </div>
@@ -38,7 +38,7 @@
                 <div class="list">
                     {% for formation in formations %}
                         <div><p>{{ formation.name }}</p>
-                            <a class="black-button" href="{{ path('app_training_show',{id: formation.id}) }}">Détails</a>
+                            <a class="black-button" href="{{ path('app_training_show',{id: formation.id}) }}">☌</a>
                         </div>
                     {% endfor %}
                 </div>
