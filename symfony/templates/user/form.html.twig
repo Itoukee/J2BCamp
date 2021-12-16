@@ -4,21 +4,16 @@
         {{ form_row(registrationForm.firstName, {"label":"Prénom"})}}
         {{ form_row(registrationForm.lastName, {"label":"Nom"})}}
         {{ form_row(registrationForm.email) }}
-<<<<<<< HEAD
-        {{ form_row(registrationForm.phoneNumber) }}
+        {{ form_row(registrationForm.phoneNumber, {"label":"Entrez votre N° de téléphone"}) }}
         {% if registrationForm.password is defined %}
             {{ form_row(registrationForm.password) }}
         {% endif %}
         {% if registrationForm.roles is defined %}
-            {{ form_row(registrationForm.roles) }}
+            {{ form_row(registrationForm.roles, {"label":"Rôle"}) }}
 
         {% endif %}
             {{ form_row(registrationForm.imageFile) }}
-=======
-        {{ form_row(registrationForm.password)}}
-        {{ form_row(registrationForm.roles, {"label":"Rôle"})}}
-        {{ form_row(registrationForm.imageFile) }}
->>>>>>> julie
+
         {% include "utils/address.html.twig" with {"form":registrationForm} %}
 
 <button type="submit" class="btn">Ajouter</button>
