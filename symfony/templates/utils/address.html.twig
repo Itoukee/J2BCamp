@@ -1,10 +1,10 @@
 <div>
-    <label>L'addresse</label>
+    <label>Addresse</label>
     <input id="user_input_autocomplete_address" placeholder="L'addresse, la seule et l'unique">
 </div>
-{{ form_row(form.street_number,{"id":"street_number"}) }}
+{{ form_row(form.street_number,{"id":"street_number","label":"N° de rue"}) }}
 {{ form_row(form.route,{"id":"route"}) }}
-{{ form_row(form.locality,{"id":"locality"}) }}
-{{ form_row(form.country,{"id":"country"}) }}
-{{ form_row(form.lat,{"id":"lat"}) }}
-{{ form_row(form.lng,{"id":"lng"}) }}
+{{ form_row(form.locality,{"id":"locality","label":"Ville"}) }}
+{{ form_row(form.country,{"id":"country","label":"Pays"}) }}
+{{ form_row(form.lat,{"id":"lat","label":"Latitude"}) }}
+{{ form_row(form.lng,{"id":"lng","label":"Longitude"}) }}

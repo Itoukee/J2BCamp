@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ app.user.firstname }}- Profil{% endblock %}
+{% block title %}{{ app.user.firstname }} - Profil{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('styles/view.css') }}" rel="stylesheet">
@@ -24,9 +24,8 @@
             </div>
 
             <div><a class="edit" href="{{ path("profile_edit",{"id":profile.id}) }}">Modifier</a></div>
-
-
         </div>
+
         <div class="child3">
             <div class="bottom">
                 <p class="street_number"><span>Numéro de route</span> {{ profile.getStreetNumber() }}</p>

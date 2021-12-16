@@ -1,9 +1,16 @@
 <header>
     <div class="top">
-        <a class="logo" href="/">
-            <img src="{{ asset("images/logos/J2B_logo.png") }}">
-        </a>
-                {% if app.user %}
+        {% if app.user %}
+            <a class="logo" href="/">
+                <img src="{{ asset("images/logos/J2B_logo.png") }}">
+            </a>
+        {% else %}
+            <a class="logo logo_out" href="/">
+                <img src="{{ asset("images/logos/J2B_logo.png") }}">
+            </a>
+        {% endif %}
+
+        {% if app.user %}
             <div class="user_info">
                 <div class="user_name">
                     <a href="{{ path('profile_show',{id: app.user.id}) }}">

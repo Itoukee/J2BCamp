@@ -1,0 +1,29 @@
+form
+{
+    height: fit-content;
+
+}
+
+form input
+{
+    height: 100%;
+}
+
+form input[type=file]
+{
+    border: none;
+    width: 90%;
+
+    border-left: 2px solid black;
+    padding-left: 4%;
+}
+
+form div
+{
+    width: 80%;
+}
+
+form .btn
+{
+    height: 10%;
+}

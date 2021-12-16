@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion comédiens & entreprises{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/home.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div id="first">
+            <div class="child1">
+                <h1 class="title">Bienvenue, <span>{{ app.user.firstName }} {{ app.user.lastName }}</span> !</h1>
+            </div>
+
+            <div class="child2">
+                <h2>Vous êtes <span>{{ app.user.roles[0] }}.</span></h2>
+            </div>
+        </div>
+
+        <div class="child3">
+            Petit texte explicatif de ce que l'utilisateur peut faire sur le site (change en fonction du rôle de l'utilisateur).<br>
+
+            {% if is_granted("ROLE_ADMIN") %}
+                T'es admin
+            {% endif %}
+
+            {% if is_granted("ROLE_COMEDIAN") %}
+                T'es comédien
+            {% endif %}
+        </div>
+
+
+    </div>
+{% endblock %}
+
