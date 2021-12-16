@@ -7,18 +7,20 @@
   - Via HTTPS: https://github.com/garoNits/J2BCamp.git
 - Compose le docker
 
-  - _Depuis Linux_
+  - ### _Depuis Linux_
 
   ```
   $ cd docker
   $ ./init.sh
   ```
 
-  - _Depuis Windows_
+  - ### _Depuis Windows_
+
     - Avoir sur sa machine sous windows WSL avec docker installer sous sa machine: [Lien Tutoriel](https://docs.microsoft.com/fr-fr/windows/wsl/tutorials/wsl-containers)
     - Build le docker depuis le dossier docker et up le conteneur avec le serveur symfony et MySQL
 
-  * _Depuis MacOC/OS X_
-    -
+  - ### _Depuis MacOC/OS X_
+
+    **LEO**
 
 _Lien vers le [Diaporama](https://docs.google.com/presentation/d/1QikhU1qTnJB7HJkKbSU5iziktsObBMMy/edit?usp=sharing&ouid=117149520027415065755&rtpof=true&sd=true)_
