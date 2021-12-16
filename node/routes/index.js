@@ -10,7 +10,6 @@ router.get("/", (req, res) => {
     res.json({"data": "lol"})
 })
 router.get('/bill', validate({body: bill}), (req, res) => {
-    console.log(req)
     let html = compileTemplate(req.body, "bill.hbs")
     let opt = {
         root: path.dirname(require.main.filename)
