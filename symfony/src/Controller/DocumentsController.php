@@ -35,6 +35,7 @@ class DocumentsController extends AbstractController
             $doc->setCreatedAt(new \DateTime());
             $entityManager->persist($doc);
             $entityManager->flush();
+            return $this->redirectToRoute("documents");
         }
         return $this->render('documents/index.html.twig', [
             'form' => $form->createView(),
@@ -49,7 +50,7 @@ class DocumentsController extends AbstractController
         $doc->setPaid(1 - $doc->getPaid());
         $entityManager->persist($doc);
         $entityManager->flush();
-        return $this->redirectToRoute($this->redirect($this->generateUrl("ketchup")));
+        return $this->redirectToRoute("ketchup");
     }
 
     #[Route('/documents/download/{id}', name: 'document_download')]
