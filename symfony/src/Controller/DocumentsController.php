@@ -49,7 +49,7 @@ class DocumentsController extends AbstractController
         $doc->setPaid(1 - $doc->getPaid());
         $entityManager->persist($doc);
         $entityManager->flush();
-        return $this->redirect($this->generateUrl("ketchup"));
+        return $this->redirectToRoute($this->redirect($this->generateUrl("ketchup")));
     }
 
     #[Route('/documents/download/{id}', name: 'document_download')]

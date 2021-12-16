@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Companies;
 use App\Form\CompanyFormType;
 use App\Repository\CompaniesRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -60,4 +61,13 @@ class CompanyController extends AbstractController
             'company' => $company,
         ]);
     }
+
+    #[Route('/company/delete/{id}', name: 'app_company_delete')]
+    public function delete(int $id, Request $request, CompaniesRepository $companiesRepository, EntityManagerInterface $entityManager)
+    {
+        $company = $companiesRepository->find($id);
+        $entityManager->remove($company);
+        $entityManager->flush();
+        return $this->redirectToRoute("poulet_frit");
+        }
 }

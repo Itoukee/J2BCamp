@@ -9,6 +9,7 @@ use App\Form\UserType;
 use App\Repository\BillsRepository;
 use App\Repository\CompaniesRepository;
 use App\Repository\TrainingsRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -62,6 +63,15 @@ class TrainingsController extends AbstractController
         return $this->render("trainings/show.html.twig", [
             "training" => $training,
         ]);
+    }
+
+    #[Route('/trainings/delete/{id}', name: 'app_training_delete')]
+    public function delete(int $id, Request $request, TrainingsRepository $trainingsRepository, EntityManagerInterface $entityManager)
+    {
+        $training = $trainingsRepository->find($id);
+        $entityManager->remove($training);
+        $entityManager->flush();
+        return $this->redirectToRoute("poulet_frit");
     }
 
 
