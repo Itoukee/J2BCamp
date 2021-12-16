@@ -20,6 +20,7 @@ class DocumentsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $user = $this->security->getUser()->getId();
             $doc->setComedianId($user);
         }
