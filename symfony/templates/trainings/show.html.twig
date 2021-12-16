@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="middle">
+    <div id="middle">
         <div class="child1">
             <h1 class="view-title">{{ training.name }}</h1>
 
@@ -27,7 +27,7 @@
             </div>
             <div id="buttons">
                 <a href="{{ path("app_training_edit",{"id":training.id}) }}" class="black-button">Modifier</a>
-                <a class="black-button" href="{{ path("bills_comedian_add") }}">Créer intervention</a>
+                <a class="black-button" href="{{ path("bills_client_add") }}">Créer intervention</a>
             </div>
 
 

@@ -3,11 +3,11 @@
     {{ parent() }}
     <link href="{{ asset('styles/forms.css') }}" rel="stylesheet">
 {% endblock %}
-{% block title %}Créer une facture!{% endblock %}
+{% block title %}Editer une facture!{% endblock %}
 
 {% block content %}
     <div id="middle">
-        {% include "beals/form.html.twig" with {text_button:"Créer"} %}
+        {% include "beals/form.html.twig" with {text_button:"Update"} %}
     </div>
 
     {{ form_end(form) }}

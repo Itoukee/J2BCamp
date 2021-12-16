@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion comédiens & entreprises{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/manage.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div class="creation">
+            <div class="child1">
+                <div class="title">PAYÉS</div>
+                <div class="list">
+{#                    {% for comedian in comedians %}#}
+{#                        <div><p>{{ comedian.firstName }} {{ comedian.lastName }}</p>#}
+{#                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}">&#9740;</a>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+                </div>
+            </div>
+
+            <div class="child3"></div>
+
+            <div class="child2">
+                <div class="title">NON PAYES</div>
+                <div class="list">
+{#                    {% for client in clients %}#}
+{#                        <div><p>{{ client.name }}</p>#}
+{#                            <a class="black-button" href="{{ path('app_company_show',{id: client.id}) }}">☌</a>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+

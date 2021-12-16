@@ -37,7 +37,8 @@
                 <div class="title">FORMATIONS</div>
                 <div class="list">
                     {% for formation in formations %}
-                        <div><p>{{ formation.name }}</p>
+                        <div>
+                            <p>{{ formation.name }}</p>
                             <a class="black-button" href="{{ path('app_training_show',{id: formation.id}) }}">☌</a>
                         </div>
                     {% endfor %}

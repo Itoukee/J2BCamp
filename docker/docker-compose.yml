@@ -16,6 +16,8 @@ services:
       - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
     environment:
       PORT: $NODE_DOCKER_PORT
+    networks:
+      - dev
   php:
     container_name: "j2b_php"
     restart: always

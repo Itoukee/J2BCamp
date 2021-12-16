@@ -1,14 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}[{{ company.name }}] - Entreprise{% endblock %}
+{% block title %}[{{ bill.id }}] - Facture client{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('styles/view.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <div class="middle">
-        <h1 class="view-title">Facture numéro {{ bill.id }}</h1>
+    <div id="middle">
+        <div class="child1">
+            <h1 class="view-title">Facture numéro {{ bill.id }}</h1>
+
+        </div>
+
         <div class="child1">
             <div class="right">
                 <div class="bottom">
@@ -28,39 +32,13 @@
 
             </div>
             <div id="buttons">
-                <a href="{{ path('app_company_edit',{id:company.id}) }}" class="black-button">Modifier</a>
-                <a class="black-button" href="{{ path("bills_add") }}">Créer intervention</a>
+                <a href="{{ path('bills_client_edit',{id:bill.id}) }}" class="black-button">Modifier</a>
+                <a href="{{ path('bills_client_generate',{id:bill.id}) }}" class="black-button">Générer un pdf</a>
             </div>
 
 
         </div>
-        <h1 class="view-title">Addresse</h1>
 
-        <div class="child2">
-            <div class="bottom">
-                <p class="street_number"><span>Numéro de route</span> {{ company.street_number }}</p>
-
-            </div>
-            <div class="bottom">
-                <p class="route"><span>Route</span> {{ company.route }}</p>
-
-            </div>
-            <div class="bottom">
-                <p class="locality"><span>Ville</span> {{ company.locality }}</p>
-
-            </div>
-            <div class="bottom">
-                <p class="country"><span>Pays</span> {{ company.country }}</p>
-
-            </div>
-        </div>
-        {# <h1 class="view-title">Dernieres prestations</h1> #}
-
-        {# <div class="child2"> #}
-        {# {% for bill in company.bills %} #}
-        {# <p>bill.name</p> #}
-        {# {% endfor %} #}
-        {# </div> #}
     </div>
 
 

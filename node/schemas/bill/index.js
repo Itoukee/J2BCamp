@@ -28,7 +28,7 @@ const billSchema = {
                     minLength: 2,
                 },
                 "bdc_number": {
-                    type: "integer",
+                    type: "string",
                     minimum: 1,
                 },
 

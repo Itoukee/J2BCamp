@@ -7,5 +7,5 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 CMD composer install ; composer update ; php-fpm ; npm install
 RUN chown -R root:www-data .
-RUN chmod -R 777 .
+RUN chmod 777 -R .
 EXPOSE 9000

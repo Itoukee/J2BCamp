@@ -23,7 +23,8 @@ class ProfileController extends AbstractController
         $profile = $userRepository->find($id);
         $this->denyAccessUnlessGranted(ProfileVoter::VIEW, $profile);
         return $this->render('profile/profile.html.twig', [
-            'profile' => $profile
+            'profile' => $profile,
+
         ]);
     }
 
@@ -31,16 +32,13 @@ class ProfileController extends AbstractController
     public function edit(int $id, Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = $userRepository->find($id);
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user, [
+            "usePassword" => false,
+            'useRole' => false
+        ]);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $user->setPassword(
-                $userPasswordHasher->hashPassword(
-                    $user,
-                    $form->get('password')->getData()
-                )
-            );
+
 
             $entityManager->persist($user);
             $entityManager->flush();
