@@ -13,10 +13,6 @@ class UserFixtures extends Fixture
     public function __construct(private UserPasswordHasherInterface $hasher)
     {
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> nino
     public function load(ObjectManager $manager): void
     {
         $user = new User();

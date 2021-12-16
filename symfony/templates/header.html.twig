@@ -15,9 +15,6 @@
                 <div class="buttons">
                     <a href="{{ path('app_logout') }}">Déconnexion</a>
                 </div>
-<<<<<<< HEAD
-            </div>
-=======
             {% endif %}
         </div>
         {% if app.user  %}
@@ -34,22 +31,5 @@
                     <a href="/poulet_frit"><p>GESTION</p></a>
                 {% endif %}
             </nav>
->>>>>>> nino
         {% endif %}
-    </div>
-    {% if app.user %}
-        <nav>
-            {% if is_granted("ROLE_ADMIN") %}
-                <a href="{{ path("bills_client_index") }}"><p>FACTURES CLIENTS</p></a>
-            {% endif %}
-            {% if is_granted("ROLE_COMEDIAN") %}
-                <a href="{{ path("bills_comedian_add") }}"><p>FACTURES COMEDIENS</p></a>
-            {% endif %}
-            <a href="/ketchup"><p>MESSAGES</p></a>
-            {% if is_granted('ROLE_ADMIN') %}
-                <a href="/poulet_frit"><p>GESTION</p></a>
-            {% endif %}
-        </nav>
-    {% endif %}
-    </div>
 </header>
