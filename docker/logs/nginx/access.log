@@ -5824,3 +5824,13 @@
 172.19.0.1 - - [16/Dec/2021:14:08:29 +0000] "GET /js/app.js HTTP/1.1" 404 274876 "http://localhost:81/poulet_frit" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
 172.19.0.1 - - [16/Dec/2021:14:08:29 +0000] "GET /_wdt/da790a HTTP/1.1" 200 34808 "http://localhost:81/poulet_frit" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
 >>>>>>> f142755b52eff6d6de4233acb1deb1639338dd11
+172.19.0.1 - - [16/Dec/2021:14:17:12 +0000] "POST /login HTTP/1.1" 302 374 "http://localhost:81/login" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:12 +0000] "GET /documents HTTP/1.1" 200 800 "http://localhost:81/login" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:17 +0000] "GET / HTTP/1.1" 200 58187 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:17 +0000] "GET /build/app.js HTTP/1.1" 304 0 "http://localhost:81/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:17 +0000] "GET /js/app.js HTTP/1.1" 404 274810 "http://localhost:81/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:17 +0000] "GET /_wdt/398600 HTTP/1.1" 200 33245 "http://localhost:81/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:26 +0000] "GET /profile/5 HTTP/1.1" 200 59282 "http://localhost:81/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:27 +0000] "GET /js/app.js HTTP/1.1" 404 274864 "http://localhost:81/profile/5" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:27 +0000] "GET /_wdt/e8c65c HTTP/1.1" 200 33268 "http://localhost:81/profile/5" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:14:17:31 +0000] "GET /documents HTTP/1.1" 200 811 "http://localhost:81/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
