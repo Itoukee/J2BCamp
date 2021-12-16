@@ -50,7 +50,7 @@ class UserType extends AbstractType
                 'options' => ['attr' => ['autocomplete' => 'new-password', 'class' => 'password-field']],
                 'required' => true,
                 'first_options' => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Repeter le mot de passe'],
+                'second_options' => ['label' => 'Répétez le mot de passe'],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un password',
@@ -75,7 +75,8 @@ class UserType extends AbstractType
                 'attr' => [
                     "readonly" => "readonly",
                     "id" => "street_number"
-                ]
+                ],
+
             ])
             ->add("route", TextType::class, [
                 'attr' => [

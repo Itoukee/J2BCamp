@@ -12,7 +12,10 @@
     text-align: center;
     background-color: white;
     width: 40%;
-    height: 10%;
+    height: fit-content;
+    padding-left: 2%;
+    padding-right: 2%;
+
     border-bottom: 10px solid var(--red);
     border-left: 10px solid var(--red-light);
     border-right: 10px solid var(--red-lighter);
@@ -99,13 +102,16 @@ form select
     border: none;
     color: white;
     background-color: var(--brown);
-    /*transition:;*/
+    transition: all ease-in-out 200ms;
 }
 
 .btn:active
 {
-
+    background-color: white;
+    color: black;
+    border: 2px solid var(--brown);
 }
+
 .searchbox{
     width:100%
 }

@@ -1,0 +1,17 @@
+.child1 span
+{
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.child2 a
+{
+    text-decoration: none;
+    color: grey;
+    font-style: italic;
+}
+
+.child2 a:hover
+{
+    color: darkgrey;
+}

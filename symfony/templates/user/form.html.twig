@@ -1,13 +1,13 @@
 {{ form_start(registrationForm) }}
         {{ form_errors(registrationForm) }}
 
-        {{ form_row(registrationForm.firstName) }}
-        {{ form_row(registrationForm.lastName) }}
+        {{ form_row(registrationForm.firstName, {"label":"Prénom"})}}
+        {{ form_row(registrationForm.lastName, {"label":"Nom"})}}
         {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.password) }}
-        {{ form_row(registrationForm.roles) }}
+        {{ form_row(registrationForm.password)}}
+        {{ form_row(registrationForm.roles, {"label":"Rôle"})}}
         {{ form_row(registrationForm.imageFile) }}
         {% include "utils/address.html.twig" with {"form":registrationForm} %}
 
-<button type="submit" class="btn">Créer</button>
+<button type="submit" class="btn">Ajouter</button>
 {{ form_end(registrationForm) }}

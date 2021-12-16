@@ -1,9 +1,9 @@
 {{ form_start(registrationForm) }}
         {{ form_errors(registrationForm) }}
 
-        {{ form_row(registrationForm.name ) }}
-        {{ form_row(registrationForm.phone_number) }}
-        {{ form_row(registrationForm.siret) }}
+        {{ form_row(registrationForm.name, {"label":"Nom de l'entreprise"}) }}
+        {{ form_row(registrationForm.phone_number, {"label":"N° de téléphone de l'entreprise"}) }}
+        {{ form_row(registrationForm.siret, {"label":"N° de siret de l'entreprise"}) }}
 
         {% include "utils/address.html.twig" with {"form":registrationForm} %}
 <button type="submit" class="btn">{{ button_text }}</button>
