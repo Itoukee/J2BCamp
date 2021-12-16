@@ -10,8 +10,10 @@ class DistanceCalculator
     {
         $this->client = $client;
     }
-    public function getDistance(array $start, array $end)
+
+    public function getDistance(array $start, array $end): int
     {
+        $pos =
         $response = $this->client->request(
             'GET',
             "https://api.tomtom.com/routing/1/calculateRoute/${start[0]},${start[1]}:${end[0]},${end[1]}/json?&key=" . $_ENV["TOMTOM_KEY"]
