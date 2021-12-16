@@ -23,10 +23,7 @@ class UserFixtures extends Fixture
         $user->setfirstName('Emma');
         $user->setlastName("Brunat");
         $user->setEmail('emma@agencej2b.com');
-<<<<<<< HEAD
         $user->setPhoneNumber('06 81 76 95 03');
-=======
->>>>>>> nino
         $user->setPassword($this->hasher->hashPassword($user, $_ENV['ADMIN_PASSWORD']));
         $user->setRoles(["ROLE_ADMIN"]);
 
