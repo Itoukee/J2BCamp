@@ -33,6 +33,8 @@ class UserFixtures extends Fixture
         $user->setfirstName('Nino');
         $user->setlastName("Garo");
         $user->setEmail('nino.garo@gmail.com');
+
+        $user->setPhoneNumber('06 81 6 95 03');
         $user->setPassword($this->hasher->hashPassword($user, $_ENV['ADMIN_PASSWORD']));
         $user->setRoles(["ROLE_COMEDIAN"]);
 
