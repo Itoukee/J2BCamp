@@ -21,6 +21,7 @@
 
   - ### _Depuis MacOC/OS X_
 
-    **LEO**
+    - avoir installé Docker Desktop sur sa machine
+    - lancer le script init
 
 _Lien vers le [Diaporama](https://docs.google.com/presentation/d/1QikhU1qTnJB7HJkKbSU5iziktsObBMMy/edit?usp=sharing&ouid=117149520027415065755&rtpof=true&sd=true)_
