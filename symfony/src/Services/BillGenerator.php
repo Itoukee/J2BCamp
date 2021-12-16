@@ -10,7 +10,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class BillGenerator
 {
-    public function __construct(private HttpClientInterface $client)
+    public function __construct(private HttpClientInterface $client, private DistanceCalculator $distanceCalculator)
     {
     }
 
@@ -22,7 +22,7 @@ class BillGenerator
         $comedian = $bill->getComedian();
         $training = $bill->getTraining();
         $company = $bill->getCompany();
-
+        $distance = $this->distanceCalculator->getDistance($comedian->getPos(), $company->getPos())/1000;
         $resp = $this->client->request(
             'GET',
             'http://node:4242/bill',
@@ -35,7 +35,7 @@ class BillGenerator
                         "bill_id" => $bill->getId(),
                         "case_number" => $bill->getCaseNumber(),
                         "traineeship_number" => $bill->getNumStage(),
-                        "bdc_number"=>$bill->getBdc()
+                        "bdc_number" => $bill->getBdc()
 
                     ],
                     "comedian_infos" => [
@@ -50,7 +50,7 @@ class BillGenerator
                         "training_date" => $bill->getInterDate()->format("Y-m-d"),
                         "price" => $training->getPrice(),
                         "days" => $training->getDuration(),
-                        "km" => 500,
+                        "km" => $distance,
                         "tva" => 20
 
                     ],

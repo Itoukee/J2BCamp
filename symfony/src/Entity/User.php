@@ -458,7 +458,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
 
         return $this;
     }
-
+    public function getPos(): array{
+        return [$this->lat,$this->lng];
+    }
 
     public function serialize()
     {

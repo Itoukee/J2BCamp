@@ -251,4 +251,9 @@ class Companies
 
         return $this;
     }
+
+    public function getPos(): array
+    {
+        return [$this->lat,$this->lng];
+    }
 }

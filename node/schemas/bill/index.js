@@ -29,7 +29,6 @@ const billSchema = {
                 },
                 "bdc_number": {
                     type: "string",
-                    minimum: 1,
                 },
 
             }
@@ -51,7 +50,7 @@ const billSchema = {
                     minimum: 1
                 },
                 "km": {
-                    type: "integer",
+                    type: "number",
                     minimum: 1
                 }
 
