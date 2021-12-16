@@ -23,4 +23,12 @@
 
     **LEO**
 
+## Rapide explication du header
+
+Dans le header se trouve plusieurs onglets:
+
+- **\[ADMIN\]** Onglet Gestion où l'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations
+- **\[COMEDIEN\]** Onglet Upload où le comédien peut ajouter ses document
+- **\[ADMIN\]** Onglet Facture où l'admin peut voir toutes les factures des comédiens ainsi que de check les factures déjà payés
+
 _Lien vers le [Diaporama](https://docs.google.com/presentation/d/1QikhU1qTnJB7HJkKbSU5iziktsObBMMy/edit?usp=sharing&ouid=117149520027415065755&rtpof=true&sd=true)_
