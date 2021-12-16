@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion comédiens & entreprises{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/home.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div class="child1">
+            <h1 class="title">Bienvenue, <span>{{ app.user.firstName }} {{ app.user.lastName }}</span> !</h1>
+        </div>
+
+        <div class="child2">
+            {% set role = app.user.roles[0] %}
+            Vous êtes <span>{{ role }}.</span>
+        </div>
+
+        <div class="child3">
+
+        </div>
+    </div>
+{% endblock %}
+

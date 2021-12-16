@@ -49,6 +49,9 @@ form
     border-top: 10px solid var(--yellow-lighterer);
 }
 
+/*!!! Ajouter media queries taille du form pour que son contenu de dépasse pas !!!*/
+
+
 form *
 {
     font-family: var(--text-bloc);
