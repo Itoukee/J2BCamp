@@ -5630,3 +5630,13 @@
 172.19.0.1 - - [16/Dec/2021:12:52:42 +0000] "POST /documents HTTP/1.1" 500 339799 "http://localhost:81/documents" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
 172.19.0.1 - - [16/Dec/2021:12:52:42 +0000] "GET /_wdt/d3d280 HTTP/1.1" 200 35800 "http://localhost:81/documents" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
 >>>>>>> nino
+172.19.0.1 - - [16/Dec/2021:13:56:47 +0000] "GET /profile/5 HTTP/1.1" 499 0 "http://localhost:81/login" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:56:47 +0000] "GET /images/logos/facebook_logo.png HTTP/1.1" 200 12389 "http://localhost:81/styles/layout.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:56:47 +0000] "GET /images/logos/linkedin_logo.png HTTP/1.1" 200 14846 "http://localhost:81/styles/layout.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:56:47 +0000] "GET /images/logos/instagram_logo.png HTTP/1.1" 200 24770 "http://localhost:81/styles/layout.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:56:47 +0000] "GET /fonts/Myriad-Pro_31655.ttf HTTP/1.1" 200 95356 "http://localhost:81/styles/style.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:59:50 +0000] "GET /documents HTTP/1.1" 302 282 "http://localhost:81/profile/5" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:59:50 +0000] "GET /login HTTP/1.1" 200 58454 "http://localhost:81/profile/5" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:59:50 +0000] "GET /build/app.js HTTP/1.1" 304 0 "http://localhost:81/login" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:59:50 +0000] "GET /js/app.js HTTP/1.1" 404 274840 "http://localhost:81/login" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+172.19.0.1 - - [16/Dec/2021:13:59:50 +0000] "GET /_wdt/58ba40 HTTP/1.1" 200 30975 "http://localhost:81/login" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
