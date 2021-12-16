@@ -21,7 +21,8 @@
 
   - ### _Depuis MacOC/OS X_
 
-    **LEO**
+    - avoir installé Docker Desktop sur sa machine
+    - lancer le script init
 
 ## Rapide explication du header
 
