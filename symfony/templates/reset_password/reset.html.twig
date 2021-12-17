@@ -1,4 +1,9 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/forms/forms.css') }}" rel="stylesheet">
 
+{% endblock %}
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
