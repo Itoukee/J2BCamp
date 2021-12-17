@@ -3,8 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Entity\File;
+
 use App\Repository\ComedianDocumentsRepository;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -21,15 +22,13 @@ class ComedianDocuments
      * @ORM\Column(type="integer")
      */
     private $id;
-
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $comedian_id;
-
-    /** 
+     * @Assert\File(
+     *     mimeTypes = {"application/pdf", "application/x-pdf"},
+     *     mimeTypesMessage = "Veuillez inserer un PDF"
+     * )
      * @Vich\UploadableField(mapping="document_image",fileNameProperty="imageName",size="imageSize")
-     * @var File|null
+     * @var File|\Symfony\Component\HttpFoundation\File\UploadedFile|null
      */
     private $imageFile;
 
@@ -46,7 +45,6 @@ class ComedianDocuments
      */
     private $imageSize;
 
-
     /**
      * @ORM\Column(type="datetime")
      */
@@ -58,27 +56,29 @@ class ComedianDocuments
     private $updatedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity=Bills::class, mappedBy="comedian", orphanRemoval=true)
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="documents")
+     * @ORM\JoinColumn(nullable=false)
      */
+    private $user;
+
+    /**
+     * @ORM\Column(type="boolean", options={"default":true})
+     */
+    private $paid;
+
+    public function __construct()
+    {
+        $this->paid = false;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getComedianId(): ?int
-    {
-        return $this->comedian_id;
-    }
-
-    public function setComedianId(int $comedian_id): self
-    {
-        $this->comedian_id = $comedian_id;
-
-        return $this;
-    }
     /**
      *
-     * @param File|UploadedFile|null $imageFile
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
      */
     public function setImageFile(?File $imageFile = null): void
     {
@@ -143,6 +143,30 @@ class ComedianDocuments
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getPaid(): ?bool
+    {
+        return $this->paid;
+    }
+
+    public function setPaid(?bool $paid): self
+    {
+        $this->paid = $paid;
 
         return $this;
     }

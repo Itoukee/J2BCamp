@@ -21,7 +21,7 @@
         {% if app.user  %}
             <nav>
                 {% if is_granted("ROLE_ADMIN") %}
-                <a href="{{ path("bills_client_add") }}"><p>FACTURES CLIENTS</p></a>
+                <a href="{{ path("bills_client_index") }}"><p>FACTURES CLIENTS</p></a>
                 <a href="/ketchup"><p>ETAT FACTURES</p></a>
                 {% endif %}
                 {% if is_granted("ROLE_COMEDIAN") %}
@@ -32,5 +32,5 @@
                 {% endif %}
             </nav>
         {% endif %}
-x
+
 </header>

@@ -92,7 +92,7 @@ const billSchema = {
                 },
                 "phone": {
                     type: "string",
-                    pattern: "([0-9]{2} ?){5}"
+                    // pattern: "([0-9]{2} ?){5}"
                 },
 
             }

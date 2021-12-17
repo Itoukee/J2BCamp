@@ -57,6 +57,7 @@
     justify-content: space-between;
     /*Height à revoir...*/
     /*height: 1000px;*/
+    align-items: center;
     border-bottom: 2px solid var(--brown);
     padding: none;
 
@@ -74,7 +75,7 @@
     height: 60%;
 
     margin-right: 4%;
-    transform: translateY(25%) rotate(180deg);
+    /*transform: translateY(25%) rotate(180deg);*/
     border: 2px solid var(--brown);
 
     transition: all ease-in-out 200ms;

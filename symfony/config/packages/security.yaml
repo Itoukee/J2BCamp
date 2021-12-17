@@ -42,6 +42,7 @@ security:
     - { path: '^/poulet_frit', roles: ROLE_ADMIN }
     - { path: '^/login|reset-password', roles: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: '^/bills/client', roles: ROLE_ADMIN }
+    - { path: '^/profile/delete', roles: ROLE_ADMIN }
     - { path: '^/bills/comedian', roles: ROLE_COMEDIAN }
     - { path: '^/', roles: ROLE_USER }
 

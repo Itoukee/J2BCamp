@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20211216134033 extends AbstractMigration
+final class Version20211216170752 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,7 +21,7 @@ final class Version20211216134033 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE bills (id INT AUTO_INCREMENT NOT NULL, training_id INT DEFAULT NULL, company_id INT NOT NULL, comedian_id INT NOT NULL, case_number VARCHAR(50) NOT NULL, num_stage VARCHAR(50) NOT NULL, bdc VARCHAR(50) DEFAULT NULL, created_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', updated_at DATETIME DEFAULT NULL, paid TINYINT(1) NOT NULL, inter_date DATE NOT NULL, INDEX IDX_22775DD0BEFD98D1 (training_id), INDEX IDX_22775DD0979B1AD6 (company_id), INDEX IDX_22775DD01D3228F (comedian_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE comedian_documents (id INT AUTO_INCREMENT NOT NULL, comedian_id INT NOT NULL, image_name VARCHAR(255) DEFAULT NULL, image_size INT DEFAULT NULL, created_at DATETIME NOT NULL, updated_at DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE comedian_documents (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, image_name VARCHAR(255) DEFAULT NULL, image_size INT DEFAULT NULL, created_at DATETIME NOT NULL, updated_at DATETIME DEFAULT NULL, INDEX IDX_3F677C2CA76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE companies (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(60) NOT NULL, phone_number VARCHAR(12) NOT NULL, siret VARCHAR(14) NOT NULL, created_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', street_number INT NOT NULL, route VARCHAR(255) NOT NULL, locality VARCHAR(255) NOT NULL, country VARCHAR(255) NOT NULL, lat DOUBLE PRECISION NOT NULL, lng DOUBLE PRECISION NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE permissions (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(99) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE reset_password_request (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, selector VARCHAR(20) NOT NULL, hashed_token VARCHAR(100) NOT NULL, requested_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', expires_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', INDEX IDX_7CE748AA76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -32,6 +32,7 @@ final class Version20211216134033 extends AbstractMigration
         $this->addSql('ALTER TABLE bills ADD CONSTRAINT FK_22775DD0BEFD98D1 FOREIGN KEY (training_id) REFERENCES trainings (id)');
         $this->addSql('ALTER TABLE bills ADD CONSTRAINT FK_22775DD0979B1AD6 FOREIGN KEY (company_id) REFERENCES companies (id)');
         $this->addSql('ALTER TABLE bills ADD CONSTRAINT FK_22775DD01D3228F FOREIGN KEY (comedian_id) REFERENCES user (id)');
+        $this->addSql('ALTER TABLE comedian_documents ADD CONSTRAINT FK_3F677C2CA76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
         $this->addSql('ALTER TABLE reset_password_request ADD CONSTRAINT FK_7CE748AA76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
     }
 
@@ -41,6 +42,7 @@ final class Version20211216134033 extends AbstractMigration
         $this->addSql('ALTER TABLE bills DROP FOREIGN KEY FK_22775DD0979B1AD6');
         $this->addSql('ALTER TABLE bills DROP FOREIGN KEY FK_22775DD0BEFD98D1');
         $this->addSql('ALTER TABLE bills DROP FOREIGN KEY FK_22775DD01D3228F');
+        $this->addSql('ALTER TABLE comedian_documents DROP FOREIGN KEY FK_3F677C2CA76ED395');
         $this->addSql('ALTER TABLE reset_password_request DROP FOREIGN KEY FK_7CE748AA76ED395');
         $this->addSql('DROP TABLE bills');
         $this->addSql('DROP TABLE comedian_documents');
