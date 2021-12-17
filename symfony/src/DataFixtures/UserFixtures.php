@@ -13,6 +13,7 @@ class UserFixtures extends Fixture
     public function __construct(private UserPasswordHasherInterface $hasher)
     {
     }
+
     //// Fonction créant deux faux utilisateurs, un admin et un user
     public function load(ObjectManager $manager): void
     {
@@ -28,7 +29,7 @@ class UserFixtures extends Fixture
         $user->setCountry('France');
         $user->setLng('2.3268782');
         $user->setLat('48.8473421');
-  
+
 
         $manager->persist($user);
         $manager->flush();
@@ -40,6 +41,14 @@ class UserFixtures extends Fixture
         $user->setPhoneNumber('06 81 6 95 03');
         $user->setPassword($this->hasher->hashPassword($user, $_ENV['ADMIN_PASSWORD']));
         $user->setRoles(["ROLE_COMEDIAN"]);
+
+
+        $user->setRoute('Rue du Regard');
+        $user->setLocality('Paris');
+        $user->setStreetNumber('24');
+        $user->setCountry('France');
+        $user->setLng('2.3268782');
+        $user->setLat('48.8473421');
 
         $manager->persist($user);
         $manager->flush();
