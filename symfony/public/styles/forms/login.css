@@ -1,0 +1,31 @@
+form
+{
+    justify-content: space-around;
+}
+
+form input
+{
+    height: 10%;
+    font-size: medium;
+}
+
+form a
+{
+    text-decoration: none;
+    color: grey;
+    font-style: italic;
+}
+
+form a:hover
+{
+    color: darkgrey;
+}
+
+.btn
+{
+    height: 10%;
+    width: fit-content;
+
+    padding-left: 2%;
+    padding-right: 2%;
+}

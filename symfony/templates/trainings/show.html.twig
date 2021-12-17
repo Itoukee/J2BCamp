@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}[{{ training.name }}] - Formation{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/view.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div class="child1">
+            <h1 class="view-title">{{ training.name }}</h1>
+
+        </div>
+        <div class="child2">
+            <div class="right">
+                <div class="bottom">
+                    <p class="desc"><span>Description :</span> {{ training.description }}</p>
+
+                </div>
+                <div class="bottom">
+                    <p class="price"><span>Prix :</span> {{ training.price }}</p>
+                </div>
+                <div class="bottom">
+                    <p class="price"><span>Durée</span> : {{ training.duration }}</p>
+                </div>
+            </div>
+            <div id="buttons">
+                <a href="{{ path("app_training_edit",{"id":training.id}) }}" class="black-button">Modifier</a>
+                <a class="black-button" href="{{ path("bills_client_add") }}">Créer intervention</a>
+            </div>
+
+
+        </div>
+        <div class="child1">
+            <h1 class="view-title">Dernieres prestations</h1>
+
+        </div>
+
+        <div class="child2">
+            <div class="list">
+                {% for bill in training.bills %}
+                    {% include "beals/bill_row.html.twig" with {"bill":bill} %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

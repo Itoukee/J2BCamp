@@ -1,0 +1,20 @@
+form
+{
+    font-size: large;
+    height: 40%;
+}
+
+form p
+{
+    width: 80%;
+    text-align: center;
+}
+
+.btn
+{
+    height: 20%;
+    width: fit-content;
+
+    padding-left: 2%;
+    padding-right: 2%;
+}

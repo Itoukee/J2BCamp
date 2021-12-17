@@ -1,0 +1,31 @@
+#first
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    height: 60%;
+}
+
+.child1, .child2, .child3
+{
+    height: fit-content;
+    padding: 2%;
+}
+
+span
+{
+    color: grey;
+    text-decoration: underline;
+}
+
+.child3
+{
+    font-size: large;
+}
+
+.child3 ul
+{
+    text-align: left;
+}

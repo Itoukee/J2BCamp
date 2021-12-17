@@ -1,0 +1,17 @@
+<div class="list">
+    {% for doc in documents %}
+        <div>
+            <p>{{ doc.imageName }}</p>
+            <p>{{ doc.user.lastName }} {{ doc.user.firstName }}</p>
+            <a class="black-button" href="{{ path('document_download',{id: doc.id}) }}">📁</a>
+            <p>STATUT:<span>{{ doc.paid ? "PAID" : "NOT PAID" }}</span></p>
+            {% if is_granted("ROLE_ADMIN") %}
+                <a class="black-button" href="{{ path('document_toggle',{id: doc.id}) }}">🆗</a>
+
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+
+

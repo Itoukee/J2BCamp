@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ app.user.firstname }} - Profil{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/view.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div class="child1">
+            <h1>Profil de <span>{{ profile.firstName }}</span></h1>
+        </div>
+
+        <div class="child2">
+            <div class="picture">
+                <img src="{{ handle_profile_picture(vich_uploader_asset(profile,'imageFile')) }}" alt="profile_picture">
+            </div>
+
+            <div class="info">
+                <p>{{ profile.firstName }}</p>
+                <p>{{ profile.lastName }}</p>
+                <p>{{ profile.roles[0] }}</p>
+            </div>
+
+            <div><a class="edit" href="{{ path("profile_edit",{"id":profile.id}) }}">Modifier</a></div>
+        </div>
+
+        <div class="child3">
+            <div class="bottom">
+                <p class="street_number"><span>Numéro de route</span> {{ profile.getStreetNumber() }}</p>
+
+            </div>
+            <div class="bottom">
+                <p class="route"><span>Route</span> {{ profile.route }}</p>
+
+            </div>
+            <div class="bottom">
+                <p class="locality"><span>Ville</span> {{ profile.locality }}</p>
+
+            </div>
+            <div class="bottom">
+                <p class="country"><span>Pays</span> {{ profile.country }}</p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

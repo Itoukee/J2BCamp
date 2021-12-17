@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/forms/forms.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/forms/register.css') }}" rel="stylesheet">
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCgRU9bdQ3rMJod4xzJYN-5iWpMfPqz10o"></script>
+
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div class="title"><h1>Ajouter une nouvelle entreprise</h1></div>
+
+        {{ include("company/form.html.twig",
+            {button_text:"Ajouter"}) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+<header>
+    <div class="top">
+        {% if app.user %}
+            <a class="logo" href="/">
+                <img src="{{ asset("images/logos/J2B_logo.png") }}">
+            </a>
+        {% else %}
+            <a class="logo logo_out" href="/">
+                <img src="{{ asset("images/logos/J2B_logo.png") }}">
+            </a>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="user_info">
+                <div class="user_name">
+                    <a href="{{ path('profile_show',{id: app.user.id}) }}">
+                        {{ app.user.firstName }}<br>
+                        {{ app.user.lastName }}
+                    </a>
+                </div>
+
+                    <div class="buttons">
+                        <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        {% if app.user  %}
+            <nav>
+                {% if is_granted("ROLE_ADMIN") %}
+                <a href="{{ path("bills_client_index") }}"><p>FACTURES CLIENTS</p></a>
+                <a href="/ketchup"><p>ETAT FACTURES</p></a>
+                {% endif %}
+                {% if is_granted("ROLE_COMEDIAN") %}
+                    <a href="{{ path("documents") }}"><p>MES FACTURES</p></a>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="/poulet_frit"><p>GESTION</p></a>
+                {% endif %}
+            </nav>
+        {% endif %}
+
+</header>

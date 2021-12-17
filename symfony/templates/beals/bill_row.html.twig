@@ -1,0 +1,4 @@
+<div><p>[{{ bill.getInterDate()|date('Y-m-d') }}] : {{ bill.comedian.firstName }} -> {{ bill.company.name }}</p>
+    <a class="black-button" href="{{ path('bills_client_show',{id: bill.id}) }}">🔍</a>
+    <a class="black-button" href="{{ path('bills_client_generate',{id: bill.id}) }}">📁</a>
+</div>

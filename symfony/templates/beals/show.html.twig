@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}[{{ bill.id }}] - Facture client{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/view.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <<<<<<< HEAD
+    <div id="middle">
+        <div class="child1">
+            <h1 class="view-title">Facture numéro {{ bill.id }}</h1>
+
+        </div>
+
+        <div class="child1">
+            <div class="right">
+                <div class="bottom">
+                    <p class="numstage"><span>N° de stage</span> {{ bill.getNumStage() }}</p>
+
+                </div>
+                <div class="bottom">
+                    <p class="bdc"><span>BDC :</span> {{ bill.bdc }}</p>
+                </div>
+                <div class="bottom">
+                    <p class="training"><span>Formation impliquée :</span> {{ bill.training.name }}</p>
+                </div>
+                <div class="bottom">
+                    <p class="company"><span>Entreprise impliquée :</span> {{ bill.company.name }}</p>
+                </div>
+
+
+            </div>
+            <div id="buttons">
+                <a href="{{ path('bills_client_edit',{id:bill.id}) }}" class="black-button">Modifier</a>
+                <a href="{{ path('bills_client_generate',{id:bill.id}) }}" class="black-button">Générer un pdf</a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
+

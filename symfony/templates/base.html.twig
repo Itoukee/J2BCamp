@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ asset("images/logos/J2B_logo_icon.png") }}">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+        <link rel="stylesheet" href="{{ asset("styles/style.css") }}">
+        <link rel="stylesheet" href="{{ asset("styles/layout.css") }}">
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        <script type="text/javascript" src="{{ asset("js/app.js") }}"></script>
+    {% endblock %}
+</head>
+<body>
+{% include "header.html.twig" %}
+<div class="wrapper">
+    {% block content %}{% endblock %}
+</div>
+{% include "footer.html.twig" %}
+</body>
+</html>

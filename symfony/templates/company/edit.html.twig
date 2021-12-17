@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update - Bill{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/forms/forms.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/forms/register.css') }}" rel="stylesheet">
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcilAjsThOclnaQWqmxnKXSHX1cHubHDg"></script>
+
+{% endblock %}
+{% block content %}
+    <div id="middle">
+        <div class="title"><h1>Mettre à jour une nouvelle entreprise</h1></div>
+
+        {{ include("company/form.html.twig",
+            {button_text:"Mettre à a jour"}) }}
+    </div>
+{% endblock %}

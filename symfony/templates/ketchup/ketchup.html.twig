@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messages{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/manage.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div class="creation">
+            <div class="child1">
+                <h1>À PAYER</h1>
+                {% include "documents/list.html.twig" with {documents: not_paid} %}
+
+            </div>
+
+            <div class="child3"></div>
+
+            <div class="child2">
+                <h1>DÉJA PAYÉES</h1>
+                {% include "documents/list.html.twig" with {documents: paid} %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion comédiens & entreprises{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/manage.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div class="creation">
+            <div class="child1">
+                <div class="title">COMÉDIENS</div>
+                <div class="list">
+                    {% for comedian in comedians %}
+                        <div><p>{{ comedian.firstName }} {{ comedian.lastName }}</p>
+                            <a class="black-button" href="{{ path('profile_show',{id: comedian.id}) }}">🔍</a>
+                            <a class="black-button" href="{{ path('profile_delete',{id: comedian.id}) }}">🚮</a>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="child3"></div>
+
+            <div class="child2">
+                <div class="title">ENTREPRISES</div>
+                <div class="list">
+                    {% for client in clients %}
+                        <div><p>{{ client.name }}</p>
+                            <a class="black-button" href="{{ path('app_company_show',{id: client.id}) }}">🔍</a>
+                            <a class="black-button" href="{{ path('app_company_delete',{id: client.id}) }}">🚮</a>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="child3"></div>
+            <div class="child4">
+                <div class="title">FORMATIONS</div>
+                <div class="list">
+                    {% for formation in formations %}
+                        <div>
+                            <p>{{ formation.name }}</p>
+                            <a class="black-button" href="{{ path('app_training_show',{id: formation.id}) }}">🔍</a>
+                            <a class="black-button" href="{{ path('app_training_delete',{id: formation.id}) }}">🚮</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <a href="{{ path("app_register_user") }}" class="child1">AJOUTER UN UTILISATEUR</a>
+            <a href="{{ path("app_company_add") }}" class="child2">AJOUTER UNE ENTREPRISE</a>
+            <a class="child4" href="{{ path('app_training_add') }}">AJOUTER UNE FORMATION</a>
+        </div>
+    </div>
+{% endblock %}
+
