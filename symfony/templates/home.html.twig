@@ -19,21 +19,21 @@
         </div>
 
         <div class="child3">
-            Petit texte explicatif de ce que l'utilisateur peut faire sur le site (change en fonction du rôle de l'utilisateur).<br>
-
             {% if is_granted("ROLE_ADMIN") %}
-                Dans le header se trouvent plusieurs onglets:<br><br>
-
-                <p>
-                    - <b>[ADMIN]</b> Onglet Gestion où l'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations ;<br>
-                    - <b>[COMEDIEN]</b> Onglet Upload où le comédien peut ajouter ses documents ;<br>
-                    - <b>[ADMIN]</b> Onglet Facture où l'admin peut voir toutes les factures des comédiens ainsi que de check les factures déjà payées.<br>
-                </p>
+                En tant qu'admin, vous avez accès à plusieurs onglets:<br><br>
+                <ul>
+                    <li><b>Factures Clients</b> → Késako ?</li>
+                    <li><b>État Factures</b> → L'admin peut voir et télécharger toutes les factures des comédiens, et indiquer si elles sont payées ou non (changement réversible) ;</li>
+                    <li><b>Gestion</b> → L'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations.</li>
+                </ul>
 
             {% endif %}
 
             {% if is_granted("ROLE_COMEDIAN") %}
-                T'es comédien
+                En tant que comédien, vous avez accès à un onglet :
+                <ul>
+                    <li>``Mes Factures`` → Le comédien peut ajouter et télécharger ses factures.</li>
+                </ul>
             {% endif %}
         </div>
 
