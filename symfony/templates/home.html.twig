@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion comédiens & entreprises{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/home.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        <div id="first">
+            <div class="child1">
+                <h1 class="title">Bienvenue, <span>{{ app.user.firstName }} {{ app.user.lastName }}</span> !</h1>
+            </div>
+
+            <div class="child2">
+                <h2>Vous êtes <span>{{ app.user.roles[0] }}.</span></h2>
+            </div>
+        </div>
+
+        <div class="child3">
+            {% if is_granted("ROLE_ADMIN") %}
+                En tant qu'admin, vous avez accès à plusieurs onglets:<br><br>
+                <ul>
+                    <li><b>Factures Clients</b> → Késako ?</li>
+                    <li><b>État Factures</b> → L'admin peut voir et télécharger toutes les factures des comédiens, et indiquer si elles sont payées ou non (changement réversible) ;</li>
+                    <li><b>Gestion</b> → L'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations.</li>
+                </ul>
+
+            {% endif %}
+
+            {% if is_granted("ROLE_COMEDIAN") %}
+                En tant que comédien, vous avez accès à un onglet :
+                <ul>
+                    <li>``Mes Factures`` → Le comédien peut ajouter et télécharger ses factures.</li>
+                </ul>
+            {% endif %}
+        </div>
+
+
+    </div>
+{% endblock %}
+

@@ -36,7 +36,7 @@ function get_tva(infos) {
 }
 
 function handle_total_ht(infos) {
-    return (infos.price * infos.days) + handle_package(infos.km)
+    return (infos.price * infos.days) + (handle_package(infos.km) * infos.days)
 
 }
 

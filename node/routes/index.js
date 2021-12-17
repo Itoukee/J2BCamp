@@ -6,16 +6,17 @@ const path = require("path");
 
 const router = express.Router();
 const {validate} = new Validator();
-router.get("/", (req, res) => {
-    res.json({"data": "lol"})
-})
+
 router.get('/bill', validate({body: bill}), (req, res) => {
+    //on compile le template avec les données
     let html = compileTemplate(req.body, "bill.hbs")
     let opt = {
         root: path.dirname(require.main.filename)
     }
+    //on genere le pdf
     genPdfFromHtml(html)
         .then(r => {
+            //on envoie directement le pdf en binaire en tant que reponse(generé auparavant)
             res.sendFile(OUTPUT_PATH, opt, function (err) {
                 if (err) {
                     console.log("Error", err)

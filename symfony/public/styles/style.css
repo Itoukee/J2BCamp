@@ -36,6 +36,8 @@ body {
   width: 80%;
   height: 100%;
 
+  padding: 2%;
+
   background-color: rgba(255, 255, 255, 0.3);
 }
 

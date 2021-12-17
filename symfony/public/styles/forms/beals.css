@@ -1,0 +1,32 @@
+form
+{
+    justify-content: center;
+}
+
+form div
+{
+    height: 100%;
+    width: 90%;
+}
+
+form input
+{
+    height: 55%;
+}
+
+form input[type=checkbox]
+{
+    height: 40%;
+}
+
+form select
+{
+    height: fit-content;
+}
+
+form .btn
+{
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 2px solid var(--brown);
+}

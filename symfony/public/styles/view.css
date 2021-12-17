@@ -51,12 +51,14 @@ img {
 }
 
 
-#buttons {
+.edit {
+    text-decoration: none;
+    padding-left: 2%;
+    padding-right: 2%;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-
 }
 
 #buttons a {

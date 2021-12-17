@@ -26,6 +26,7 @@ function compileTemplate(data, template_name) {
 
 async function genPdfFromHtml(html) {
     try {
+        //on crée tout d'abord un "navigateur" factice
         const browser = await puppeteer.launch({
             args: [
                 '--headless',
@@ -34,11 +35,13 @@ async function genPdfFromHtml(html) {
                 '--disable-web-security'
             ]
         })
+        //on crée une page en emulant un écran et on y insère le template genére
         const page = await browser.newPage();
         await page.emulateMediaType('screen');
         await page.goto(`data:text/html;charset=UTF-8,${html}`, {
             waitUntil: 'networkidle2'
         })
+        //qu'on convertie en pdf par la suite
         await page.pdf(pdf_options)
         await browser.close()
         console.log("created pdf")
