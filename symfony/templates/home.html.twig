@@ -22,7 +22,7 @@
             {% if is_granted("ROLE_ADMIN") %}
                 En tant qu'admin, vous avez accès à plusieurs onglets:<br><br>
                 <ul>
-                    <li><b>Factures Clients</b> → Késako ?</li>
+                    <li><b>Factures Clients</b> → L'admin peut générer, télécharger et gérer les factures des entreprises clientes.</li>
                     <li><b>État Factures</b> → L'admin peut voir et télécharger toutes les factures des comédiens, et indiquer si elles sont payées ou non (changement réversible) ;</li>
                     <li><b>Gestion</b> → L'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations.</li>
                 </ul>
@@ -32,7 +32,7 @@
             {% if is_granted("ROLE_COMEDIAN") %}
                 En tant que comédien, vous avez accès à un onglet :
                 <ul>
-                    <li>``Mes Factures`` → Le comédien peut ajouter et télécharger ses factures.</li>
+                    <li><b>Mes Factures</b> → Le comédien peut ajouter et télécharger ses factures.</li>
                 </ul>
             {% endif %}
         </div>

@@ -28,7 +28,7 @@
 Dans le header se trouvent plusieurs onglets, en fonction du rôle de l'utilisateur :
 
 - **\[ADMIN\]**
-  - ``Factures Clients`` → Késako ?
+  - ``Factures Clients`` → L'admin peut générer, télécharger et gérer les factures des entreprises clientes ;
   - ``État Factures`` → L'admin peut voir et télécharger toutes les factures des comédiens, et indiquer si elles sont payées ou non (changement réversible) ;
   - ``Gestion`` → L'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations.
 
