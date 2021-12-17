@@ -25,10 +25,14 @@
 
 ## Rapide explication du header
 
-Dans le header se trouvent plusieurs onglets:
+Dans le header se trouvent plusieurs onglets, en fonction du rôle de l'utilisateur :
 
-- **\[ADMIN\]** Onglet Gestion où l'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations ;
-- **\[COMEDIEN\]** Onglet Upload où le comédien peut ajouter ses documents ;
-- **\[ADMIN\]** Onglet Facture où l'admin peut voir toutes les factures des comédiens ainsi que de check les factures déjà payées.
+- **\[ADMIN\]**
+  - ``Factures Clients`` → Késako ?
+  - ``État Factures`` → L'admin peut voir et télécharger toutes les factures des comédiens, et indiquer si elles sont payées ou non (changement réversible) ;
+  - ``Gestion`` → L'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations.
+
+- **\[COMÉDIEN\]**
+    - ``Mes Factures`` → Le comédien peut ajouter et télécharger ses factures.
 
 _Lien vers le [Diaporama](https://docs.google.com/presentation/d/1QikhU1qTnJB7HJkKbSU5iziktsObBMMy/edit?usp=sharing&ouid=117149520027415065755&rtpof=true&sd=true)_

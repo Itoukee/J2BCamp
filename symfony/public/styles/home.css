@@ -20,8 +20,12 @@ span
     text-decoration: underline;
 }
 
-.child3 p
+.child3
 {
-    text-align: justify;
-    text-justify: inter-word;
+    font-size: large;
+}
+
+.child3 ul
+{
+    text-align: left;
 }
