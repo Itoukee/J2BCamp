@@ -5,4 +5,5 @@ node/package-lock.json
 node/invoice.pdf
 docker/logs/nginx/access.log
 docker/logs/nginx/error.log
+symfony/.env
 
