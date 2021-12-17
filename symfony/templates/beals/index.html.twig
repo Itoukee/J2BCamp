@@ -10,7 +10,7 @@
     <div id="middle">
         <div class="creation">
             <div class="child1">
-                <div class="title">PAYÉS</div>
+                <div class="title">PAYÉES</div>
                 <div class="list">
                     {% for bill in paid %}
                         {% include "beals/bill_row.html.twig" with {"bill":bill} %}
@@ -21,7 +21,7 @@
             <div class="child3"></div>
 
             <div class="child2">
-                <div class="title">NON PAYES</div>
+                <div class="title">NON PAYÉES</div>
                 <div class="list">
                     {% for bill in not_paid %}
                         {% include "beals/bill_row.html.twig" with {"bill":bill} %}

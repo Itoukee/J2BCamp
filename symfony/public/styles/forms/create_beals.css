@@ -1,0 +1,21 @@
+form button
+{
+    font-size: large;
+    text-align: center;
+    width: 25%;
+    height: 40%;
+    align-self: center;
+
+    border: none;
+    color: white;
+    background-color: var(--brown);
+    border: 2px solid var(--brown);
+    transition: all ease-in-out 200ms;
+}
+
+form button:active
+{
+    background-color: white;
+    color: black;
+    border: 2px solid var(--brown);
+}
