@@ -44,6 +44,9 @@ security:
     - { path: '^/bills/client', roles: ROLE_ADMIN }
     - { path: '^/profile/delete', roles: ROLE_ADMIN }
     - { path: '^/bills/comedian', roles: ROLE_COMEDIAN }
+    - { path: '^/documents/toggle', roles: ROLE_ADMIN }
+
+    - { path: '^/documents', roles: ROLE_COMEDIAN }
     - { path: '^/', roles: ROLE_USER }
 
   role_hierarchy:
