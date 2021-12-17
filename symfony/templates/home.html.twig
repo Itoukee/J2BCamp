@@ -22,7 +22,14 @@
             Petit texte explicatif de ce que l'utilisateur peut faire sur le site (change en fonction du rôle de l'utilisateur).<br>
 
             {% if is_granted("ROLE_ADMIN") %}
-                T'es admin
+                Dans le header se trouvent plusieurs onglets:<br><br>
+
+                <p>
+                    - <b>[ADMIN]</b> Onglet Gestion où l'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations ;<br>
+                    - <b>[COMEDIEN]</b> Onglet Upload où le comédien peut ajouter ses documents ;<br>
+                    - <b>[ADMIN]</b> Onglet Facture où l'admin peut voir toutes les factures des comédiens ainsi que de check les factures déjà payées.<br>
+                </p>
+
             {% endif %}
 
             {% if is_granted("ROLE_COMEDIAN") %}

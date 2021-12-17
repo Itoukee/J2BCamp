@@ -19,3 +19,9 @@ span
     color: grey;
     text-decoration: underline;
 }
+
+.child3 p
+{
+    text-align: justify;
+    text-justify: inter-word;
+}
