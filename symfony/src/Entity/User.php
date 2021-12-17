@@ -8,10 +8,10 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -65,7 +65,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
     /**
      * @Assert\File(
      *     mimeTypes = {"image/jpeg", "image/gif", "image/png", "image/tiff"},
-     *     mimeTypesMessage = "Only the filetypes image are allowed."
+     *     mimeTypesMessage = "Veuillez inserer une image"
      * )
      * @Vich\UploadableField(mapping="profile_image",fileNameProperty="imageName",size="imageSize")
      * @var File|null
@@ -131,9 +131,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
      */
     private $lng;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ComedianDocuments::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $documents;
+
     public function __construct()
     {
         $this->bills = new ArrayCollection();
+        $this->documents = new ArrayCollection();
     }
 
 
@@ -258,7 +264,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
 
     /**
      *
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     * @param File|UploadedFile|null $imageFile
      */
     public function setImageFile(?File $imageFile = null): void
     {
@@ -481,5 +487,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serial
             // see section on salt below
             // $this->salt,
         ] = unserialize($data);
+    }
+
+    /**
+     * @return Collection|ComedianDocuments[]
+     */
+    public function getDocuments(): Collection
+    {
+        return $this->documents;
+    }
+
+    public function addDocument(ComedianDocuments $document): self
+    {
+        if (!$this->documents->contains($document)) {
+            $this->documents[] = $document;
+            $document->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDocument(ComedianDocuments $document): self
+    {
+        if ($this->documents->removeElement($document)) {
+            // set the owning side to null (unless already changed)
+            if ($document->getUser() === $this) {
+                $document->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

@@ -83,9 +83,6 @@ class BealsController extends AbstractController
     {
         $bill = $billsRepository->find($id);
         $billGenerator->generatePdf($bill);
-//        return $this->render("beals/show.html.twig", [
-//            "bill" => $bill,
-//        ]);
     }
 
 //    #[Route('/bills/comedian', name: "bills_comedian_index")]

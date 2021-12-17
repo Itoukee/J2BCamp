@@ -51,4 +51,14 @@ class ProfileController extends AbstractController
             'editForm' => $form->createView(),
         ]);
     }
+
+    #[Route('/profile/delete/{id}', name: 'profile_delete')]
+    public function delete(int $id, Request $request, UserRepository $userRepository, EntityManagerInterface $entityManager)
+    {
+        $user = $userRepository->find($id);
+        $entityManager->remove($user);
+        $entityManager->flush();
+        return $this->redirectToRoute("poulet_frit");
+    }
+
 }
