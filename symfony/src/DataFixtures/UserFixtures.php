@@ -23,6 +23,12 @@ class UserFixtures extends Fixture
         $user->setPhoneNumber('06 81 76 95 03');
         $user->setPassword($this->hasher->hashPassword($user, $_ENV['ADMIN_PASSWORD']));
         $user->setRoles(["ROLE_ADMIN"]);
+        $user->setRoute('Rue du Regard');
+        $user->setStreetNumber('24');
+        $user->setCountry('France');
+        $user->setLng('2.3268782');
+        $user->setLat('48.8473421');
+  
 
         $manager->persist($user);
         $manager->flush();
