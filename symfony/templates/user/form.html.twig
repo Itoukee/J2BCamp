@@ -4,9 +4,15 @@
         {{ form_row(registrationForm.firstName) }}
         {{ form_row(registrationForm.lastName) }}
         {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.password) }}
-        {{ form_row(registrationForm.roles) }}
-        {{ form_row(registrationForm.imageFile) }}
+        {{ form_row(registrationForm.phoneNumber) }}
+        {% if registrationForm.password is defined %}
+            {{ form_row(registrationForm.password) }}
+        {% endif %}
+        {% if registrationForm.roles is defined %}
+            {{ form_row(registrationForm.roles) }}
+
+        {% endif %}
+            {{ form_row(registrationForm.imageFile) }}
         {% include "utils/address.html.twig" with {"form":registrationForm} %}
 
 <button type="submit" class="btn">Créer</button>

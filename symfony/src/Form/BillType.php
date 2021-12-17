@@ -32,6 +32,13 @@ class BillType extends AbstractType
                 'label' => "Le numero de stage(XXX-n caractères)",
 
             ])
+            ->add('case_number', TextType::class, [
+                "required" => true,
+                "label" => "Le numéro d'affaire",
+                'constraints'=>[
+                    new Regex('/[0-9]{2}-[0-9]{2,}/')
+                ]
+            ])
             ->add('bdc', NumberType::class, [
                 "required" => false,
                 "label" => "Le numero de Bon De Commande"

@@ -6,7 +6,9 @@ const path = require("path");
 
 const router = express.Router();
 const {validate} = new Validator();
-
+router.get("/", (req, res) => {
+    res.json({"data": "lol"})
+})
 router.get('/bill', validate({body: bill}), (req, res) => {
     let html = compileTemplate(req.body, "bill.hbs")
     let opt = {
@@ -16,7 +18,7 @@ router.get('/bill', validate({body: bill}), (req, res) => {
         .then(r => {
             res.sendFile(OUTPUT_PATH, opt, function (err) {
                 if (err) {
-                    console.log("Error",err)
+                    console.log("Error", err)
                     res.status(400).send({
                         err
 

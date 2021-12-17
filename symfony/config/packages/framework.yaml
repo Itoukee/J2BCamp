@@ -16,6 +16,10 @@ framework:
     #fragments: true
     php_errors:
         log: true
+    http_client:
+        scoped_clients:
+            bill:
+                base_uri: 'http://localhost:4242/bill'
 
 when@test:
     framework:

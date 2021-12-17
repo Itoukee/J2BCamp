@@ -6,11 +6,12 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Exception;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -21,7 +22,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\HasLifecycleCallbacks
  * @Vich\Uploadable
  */
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -34,6 +35,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
+
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $phoneNumber;
 
     /**
      * @ORM\Column(type="json")
@@ -59,7 +65,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @Assert\File(
      *     mimeTypes = {"image/jpeg", "image/gif", "image/png", "image/tiff"},
-     *     mimeTypesMessage = "Only the filetypes image are allowed."
+     *     mimeTypesMessage = "Veuillez inserer une image"
      * )
      * @Vich\UploadableField(mapping="profile_image",fileNameProperty="imageName",size="imageSize")
      * @var File|null
@@ -115,12 +121,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $country;
 
+    /**
+     * @ORM\Column(type="float",nullable=true)
+     */
+    private $lat;
+
+    /**
+     * @ORM\Column(type="float",nullable=true)
+     */
+    private $lng;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ComedianDocuments::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $documents;
 
     public function __construct()
     {
         $this->bills = new ArrayCollection();
-
-
+        $this->documents = new ArrayCollection();
     }
 
 
@@ -410,5 +429,93 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    public function getLat(): ?float
+    {
+        return $this->lat;
+    }
 
+    public function setLat(float $lat): self
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    public function getLng(): ?float
+    {
+        return $this->lng;
+    }
+
+    public function setLng(float $lng): self
+    {
+        $this->lng = $lng;
+
+        return $this;
+    }
+
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber(string $phoneNumber): self
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+    public function getPos(): array{
+        return [$this->lat,$this->lng];
+    }
+
+    public function serialize()
+    {
+        return serialize([
+            $this->id,
+            $this->email,
+            $this->password
+
+        ]);
+    }
+
+    public function unserialize($data)
+    {
+        [
+            $this->id,
+            $this->email,
+            $this->password
+            // see section on salt below
+            // $this->salt,
+        ] = unserialize($data);
+    }
+
+    /**
+     * @return Collection|ComedianDocuments[]
+     */
+    public function getDocuments(): Collection
+    {
+        return $this->documents;
+    }
+
+    public function addDocument(ComedianDocuments $document): self
+    {
+        if (!$this->documents->contains($document)) {
+            $this->documents[] = $document;
+            $document->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDocument(ComedianDocuments $document): self
+    {
+        if ($this->documents->removeElement($document)) {
+            // set the owning side to null (unless already changed)
+            if ($document->getUser() === $this) {
+                $document->setUser(null);
+            }
+        }
+
+        return $this;
+    }
 }

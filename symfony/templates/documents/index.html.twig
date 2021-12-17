@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block title %}Documents !{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/forms.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/manage.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+    <div id="middle">
+
+
+        <div class="creation">
+            <div class="child1">
+                <h1>VOS DOCUMENTS</h1>
+                {% include "documents/list.html.twig" with {documents: documents} %}
+            </div>
+
+
+
+
+                {{ form_start(form) }}
+                {{ form_row(form.imageFile) }}
+                <button type="submit" class="btn">Créer</button>
+                {{ form_end(form) }}
+
+        </div>
+
+    </div>
+{% endblock %}

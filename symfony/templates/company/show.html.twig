@@ -7,9 +7,12 @@
 {% endblock %}
 
 {% block content %}
-    <div class="middle">
-        <h1 class="view-title">{{ company.name }}</h1>
+    <div id="middle">
         <div class="child1">
+            <h1 class="view-title">{{ company.name }}</h1>
+
+        </div>
+        <div class="child2">
             <div class="right">
                 <div class="bottom">
                     <p class="tel"><span>Numéro de téléphone :</span> {{ company.getPhoneNumber() }}</p>
@@ -21,14 +24,17 @@
             </div>
             <div id="buttons">
                 <a href="{{ path('app_company_edit',{id:company.id}) }}" class="black-button">Modifier</a>
-                <a class="black-button" href="{{ path("bills_add") }}">Créer intervention</a>
+                <a class="black-button" href="{{ path("bills_client_add") }}">Créer intervention</a>
             </div>
 
 
         </div>
-        <h1 class="view-title">Addresse</h1>
+        <div class="child1">
+            <h1 class="view-title">Addresse</h1>
 
-        <div class="child2">
+        </div>
+
+        <div class="child3">
             <div class="bottom">
                 <p class="street_number"><span>Numéro de route</span> {{ company.street_number }}</p>
 

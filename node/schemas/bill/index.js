@@ -28,8 +28,7 @@ const billSchema = {
                     minLength: 2,
                 },
                 "bdc_number": {
-                    type: "integer",
-                    minimum: 1,
+                    type: "string",
                 },
 
             }
@@ -51,7 +50,7 @@ const billSchema = {
                     minimum: 1
                 },
                 "km": {
-                    type: "integer",
+                    type: "number",
                     minimum: 1
                 }
 
@@ -93,7 +92,7 @@ const billSchema = {
                 },
                 "phone": {
                     type: "string",
-                    pattern: "([0-9]{2} ?){5}"
+                    // pattern: "([0-9]{2} ?){5}"
                 },
 
             }

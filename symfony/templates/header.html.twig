@@ -3,7 +3,7 @@
         <a class="logo" href="/">
             <img src="{{ asset("images/logos/J2B_logo.png") }}">
         </a>
-        {% if app.user %}
+                {% if app.user %}
             <div class="user_info">
                 <div class="user_name">
                     <a href="{{ path('profile_show',{id: app.user.id}) }}">
@@ -21,16 +21,16 @@
         {% if app.user  %}
             <nav>
                 {% if is_granted("ROLE_ADMIN") %}
-                <a href="{{ path("bills_client_add") }}"><p>FACTURES CLIENTS</p></a>
+                <a href="{{ path("bills_client_index") }}"><p>FACTURES CLIENTS</p></a>
+                <a href="/ketchup"><p>ETAT FACTURES</p></a>
                 {% endif %}
                 {% if is_granted("ROLE_COMEDIAN") %}
-                    <a href="{{ path("bills_comedian_add") }}"><p>FACTURES COMEDIENS</p></a>
+                    <a href="{{ path("documents") }}"><p>MES FACTURES</p></a>
                 {% endif %}
-                <a href="/ketchup"><p>MESSAGES</p></a>
                 {% if is_granted('ROLE_ADMIN') %}
                     <a href="/poulet_frit"><p>GESTION</p></a>
                 {% endif %}
             </nav>
         {% endif %}
-    </div>
+
 </header>

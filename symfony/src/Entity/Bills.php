@@ -16,14 +16,17 @@ class Bills
      * @ORM\Column(type="integer")
      */
     private $id;
-
+    /**
+     * @ORM\Column(type="string",length=50)
+     */
+    private $case_number;
     /**
      * @ORM\Column(type="string",length=50)
      */
     private $num_stage;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50,nullable=true)
      */
     private $bdc;
 
@@ -190,6 +193,18 @@ class Bills
     public function setInterDate(\DateTimeInterface $inter_date): self
     {
         $this->inter_date = $inter_date;
+
+        return $this;
+    }
+
+    public function getCaseNumber(): ?string
+    {
+        return $this->case_number;
+    }
+
+    public function setCaseNumber(string $case_number): self
+    {
+        $this->case_number = $case_number;
 
         return $this;
     }

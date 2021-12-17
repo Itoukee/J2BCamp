@@ -1,0 +1,14 @@
+
+<head>
+    <link href="{{ asset('styles/mail.css') }}" rel="stylesheet">
+</head>
+<img src="https://media.discordapp.net/attachments/917333410870091817/917338857266090044/cropped-LOGO_noir-1.png" width="10%"
+ height="10%">
+<h1>Hi !</h1>
+<p>Pour réinitialiser votre mot de passe, cliquez sur ce lien !</p>
+
+<a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+
+<p>Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+
+<p>A bientôt !</p>

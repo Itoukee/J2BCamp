@@ -6,17 +6,9 @@
 {% block title %}Créer une facture!{% endblock %}
 
 {% block content %}
-
-    {{ form_start(form) }}
-    {{ form_errors(form) }}
-    {{ form_row(form.num_stage) }}
-    {{ form_row(form.bdc) }}
-    {{ form_row(form.training) }}
-    {{ form_row(form.comedian) }}
-    {{ form_row(form.company) }}
-    {{ form_row(form.inter_date) }}
-    {{ form_row(form.paid) }}
-    <button type="submit" class="btn">Créer</button>
+    <div id="middle">
+        {% include "beals/form.html.twig" with {text_button:"Créer"} %}
+    </div>
 
     {{ form_end(form) }}
 

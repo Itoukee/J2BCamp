@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('styles/forms.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}Editer une facture!{% endblock %}
+
+{% block content %}
+    <div id="middle">
+        {% include "beals/form.html.twig" with {text_button:"Update"} %}
+    </div>
+
+    {{ form_end(form) }}
+
+{% endblock %}
