@@ -15,7 +15,7 @@
 
     - ### _Depuis Windows_
 
-        - Avoir sur sa machine sous windows WSL avec docker installer sous sa machine: [Lien Tutoriel](https://docs.microsoft.com/fr-fr/windows/wsl/tutorials/wsl-containers)
+        - Avoir sur sa machine sous windows WSL avec docker installé sous sa machine: [Lien Tutoriel](https://docs.microsoft.com/fr-fr/windows/wsl/tutorials/wsl-containers)
         - Build le docker depuis le dossier docker et up le conteneur avec le serveur symfony et MySQL
 
     - ### _Depuis MacOC/OS X_
@@ -25,10 +25,10 @@
 
 ## Rapide explication du header
 
-Dans le header se trouve plusieurs onglets:
+Dans le header se trouvent plusieurs onglets:
 
-- **\[ADMIN\]** Onglet Gestion où l'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations
-- **\[COMEDIEN\]** Onglet Upload où le comédien peut ajouter ses document
-- **\[ADMIN\]** Onglet Facture où l'admin peut voir toutes les factures des comédiens ainsi que de check les factures déjà payés
+- **\[ADMIN\]** Onglet Gestion où l'admin peut CRUD les entreprises partenaires, les comptes comédiens ainsi que les formations ;
+- **\[COMEDIEN\]** Onglet Upload où le comédien peut ajouter ses documents ;
+- **\[ADMIN\]** Onglet Facture où l'admin peut voir toutes les factures des comédiens ainsi que de check les factures déjà payées.
 
 _Lien vers le [Diaporama](https://docs.google.com/presentation/d/1QikhU1qTnJB7HJkKbSU5iziktsObBMMy/edit?usp=sharing&ouid=117149520027415065755&rtpof=true&sd=true)_
